@@ -36,6 +36,25 @@ Files in `state/` are the agent's memory. It updates them itself after each run;
 4. **Allow the workflow to save its memory.** Settings → Actions → General → Workflow permissions → choose "Read and write permissions" → Save.
 5. **Test it.** Actions tab → Role Catcher → Run workflow.
 
+## OpenRouter: models, cost, and privacy
+
+**Models.** `config.yaml` has two model slugs, `scoring_model` (role fit) and `vetting_model` (company research with web search). Each also has a fallback that OpenRouter uses automatically if the first model errors or its provider is down. Change any of them by editing the text; no code changes needed. Browse slugs at openrouter.ai/models.
+
+**What it costs.** Every AI call's real cost (as reported by OpenRouter) is written to `logs/spend.jsonl`, one line per call. The daily caps use this log. Web search adds about $0.01 per search on top of the model's token cost.
+
+**Set a monthly limit on your key (important).** In OpenRouter go to Keys, open the Role Catcher key, and set a monthly credit limit (for example $20). This is a second safety net in case something misbehaves.
+
+**Keep your profile private.** `profile.md` is your career history, so:
+1. In OpenRouter go to Settings, then Privacy. Leave **"OpenRouter Use of Inputs/Outputs"** turned OFF. (Turning it on gives a 1% discount but lets OpenRouter use your prompts.)
+2. In Settings, Observability, leave **"Private Input & Output Logging"** turned OFF so prompts are not stored in your logs.
+3. Every request the agent sends already includes `data_collection: deny`, so OpenRouter only routes to providers that do not store or train on prompts. If you want the strictest option, set `zdr: true` under `privacy` in `config.yaml` (zero-data-retention endpoints only); this may limit which models and features are available.
+
+**How output is checked.** Scoring and vetting answers must match a strict format. The agent validates every answer in code and retries once with the error if it does not. A second failure stops that item instead of guessing.
+
+**Company sources.** The sources shown for a company come only from the web search results OpenRouter returns, never from the AI's memory.
+
+**Prompt caching.** Your profile is sent first in every scoring request and marked for caching, so repeated calls within a few minutes are billed at a small fraction of the normal input price.
+
 ## Schedule
 
 Runs every 3 hours at 7am, 10am, 1pm, 4pm, and 7pm Central, every day, and can be started by hand from the Actions tab. (Every 3 hours from 7am lands on 7pm; the next slot would be 10pm, after your 9pm cutoff. Change `run_hours_local` in `config.yaml` to adjust.) GitHub schedules in UTC, so the workflow lists both daylight and standard-time slots and the script skips the one that doesn't match Central time.

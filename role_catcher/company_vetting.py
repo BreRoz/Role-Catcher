@@ -1,4 +1,5 @@
 """Step 4: company health vetting with 60-day cache (section 6)."""
+from __future__ import annotations
 from .models import ScoredJob
 
 

@@ -1,4 +1,5 @@
 """Step 5: send email via Gmail SMTP (section 7 defines the final layout)."""
+from __future__ import annotations
 import os
 import smtplib
 from email.message import EmailMessage

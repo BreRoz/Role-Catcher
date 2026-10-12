@@ -1,4 +1,5 @@
 """Step 1: collect open roles from Greenhouse, Ashby, Lever (section 3)."""
+from __future__ import annotations
 from .models import Job
 
 
