@@ -5,3 +5,7 @@ seniority_exclude: []
 location:
   allow_remote: true
   allowed_places: []
+# Pay floor in USD/year. NYC roles are only "clearly high comp" when the top of the
+# listed range reaches this. No comp listed = flag "check comp", never reject.
+comp:
+  min_annual: 130000

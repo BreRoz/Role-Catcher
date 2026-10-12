@@ -92,6 +92,33 @@ def find_pay_range(text: str) -> str | None:
     return re.sub(r"\s+", " ", m.group(0)).strip() if m else None
 
 
+_NUM_RE = re.compile(r"(\d[\d,]*(?:\.\d+)?)\s?([kK])?")
+
+
+def parse_comp_range(comp: str | None) -> tuple[float, float] | None:
+    """Annual (low, high) in dollars from strings like '$211.4K - $290.6K' or
+    '$165,000 - $190,000'. None if unparseable or clearly not annual pay."""
+    if not comp:
+        return None
+    nums = []
+    for m in _NUM_RE.finditer(comp):
+        v = float(m.group(1).replace(",", ""))
+        if m.group(2):
+            v *= 1000
+        nums.append(v)
+    nums = [n for n in nums if n >= 20000]  # drops years, hours, equity percents
+    if not nums:
+        return None
+    return min(nums), max(nums)
+
+
+def comp_meets_floor(comp: str | None, floor: float) -> bool | None:
+    """True if the top of the listed range reaches `floor`, False if it does
+    not, None if no usable comp is listed (callers flag 'check comp')."""
+    r = parse_comp_range(comp)
+    return None if r is None else r[1] >= floor
+
+
 def _iso_from_ms(ms) -> str | None:
     try:
         return datetime.fromtimestamp(int(ms) / 1000, tz=timezone.utc).isoformat()

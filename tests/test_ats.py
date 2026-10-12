@@ -52,6 +52,15 @@ class ParseTests(unittest.TestCase):
         self.assertTrue(j.posted_at.startswith("2026-"))
         self.assertIn("150,000", j.comp)
 
+    def test_comp_floor(self):
+        self.assertEqual(ats.parse_comp_range("$211.4K - $290.6K"), (211400, 290600))
+        self.assertEqual(ats.parse_comp_range("USD 150,000 - 200,000 per year"), (150000, 200000))
+        self.assertTrue(ats.comp_meets_floor("$130,000 - $150,000", 130000))
+        self.assertTrue(ats.comp_meets_floor("$110K - $140K", 130000))
+        self.assertFalse(ats.comp_meets_floor("$90,000 - $120,000", 130000))
+        self.assertIsNone(ats.comp_meets_floor(None, 130000))
+        self.assertIsNone(ats.comp_meets_floor("Competitive", 130000))
+
     def test_pay_range_absent(self):
         self.assertIsNone(ats.find_pay_range("competitive salary"))
 
