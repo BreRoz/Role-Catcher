@@ -8,7 +8,8 @@ from zoneinfo import ZoneInfo
 from . import health, state
 from .config import ROOT, load_config, load_yaml
 from .discovery import LAST_SUMMARY, discover, mark_baselined
-from .emailer import email_roles
+from .catchup import already_emailed_keys, digest_blocks, order_for_cap, posted_within
+from .emailer import email_roles, render, send_email
 from .filters import prefilter, write_drop_log
 from .firstrun import cap_for_backfill, is_first_run, seed_seen
 from .scorer import passes_gate, score_jobs
@@ -78,11 +79,41 @@ def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, 
     mark_baselined({j.board for j in jobs})
 
 
+def catchup(jobs, config: dict, days: int, max_calls: int | None, dry_run: bool) -> None:
+    """One-off: score roles posted in the last `days` days (undated roles are skipped)
+    and send a single digest email. Leaves seen_jobs.json alone."""
+    cap = max_calls if max_calls is not None else config["backfill"]["max_scoring_calls"]
+    config = {**config, "limits": {**config["limits"], "max_roles_scored_per_run": cap}}
+    recent = posted_within(jobs, days)
+    emailed = already_emailed_keys()
+    recent = [j for j in recent if j.key not in emailed]
+    candidates = run_prefilter(recent)
+    to_score = order_for_cap(candidates, watchlist_names())[:cap]
+    cache = state.load("score_cache.json", {})
+    sr = score_jobs(to_score, config, cache, watchlist=watchlist_names())
+    passed = [s for s in sr.scored if passes_gate(s.result, config["scoring"]["threshold"])]
+    stats = (f"{len(recent)} dated roles posted in the last {days} days, {len(candidates)} passed the "
+             f"pre-filter, {len(sr.scored)} scored (cap {cap}, {len(candidates) - len(sr.scored)} not scored), "
+             f"{len(passed)} passed fit.")
+    print("catchup:", stats)
+    text, html_body = render(digest_blocks(passed, days, stats))
+    subject = f"[Role Catcher] Catch-up: {len(passed)} roles from the last {days} days"
+    if dry_run:
+        print(f"--- would send ---\nSubject: {subject}\n\n{text}")
+        return
+    send_email(subject, text, config, html_body)
+    state.save("score_cache.json", cache)
+    print(f"emailed: {subject}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(prog="role_catcher")
     ap.add_argument("--dry-run", action="store_true", help="do everything except send email and save state")
     ap.add_argument("--backfill", action="store_true",
                     help="score everything currently open (capped), no email, then mark it all seen")
+    ap.add_argument("--catchup", action="store_true",
+                    help="one-off: score roles posted in the last --days days and email one digest")
+    ap.add_argument("--days", type=int, default=7, help="look-back window for --catchup")
     ap.add_argument("--max-calls", type=int, help="override the backfill scoring-call cap")
     args = ap.parse_args()
 
@@ -98,9 +129,9 @@ def main() -> None:
         stats["fatal_error"] = f"{type(e).__name__}: {e}"
         raise
     finally:
-        if not args.dry_run and not args.backfill:
+        if not args.dry_run and not args.backfill and not args.catchup:
             health.record_run(stats)
-        if not args.backfill:
+        if not args.backfill and not args.catchup:
             health.maybe_send_weekly(config, dry_run=args.dry_run)
     if stats.get("discovery", {}).get("boards_tried") and not stats["discovery"].get("boards_ok"):
         raise SystemExit("DISCOVERY FAILED: no job board answered. Failing the run so it shows red.")
@@ -114,6 +145,9 @@ def pipeline(args, config: dict, stats: dict) -> None:
     stats["discovery"] = {k: LAST_SUMMARY.get(k) for k in ("boards_tried", "boards_ok", "jobs_seen", "by_ats")}
     stats["caps_hit"] = []
 
+    if args.catchup:
+        catchup(jobs, config, args.days, args.max_calls, args.dry_run)
+        return
     if args.backfill:
         backfill(jobs, config, seen, today, args.max_calls, args.dry_run)
         return

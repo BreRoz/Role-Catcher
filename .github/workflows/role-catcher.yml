@@ -6,6 +6,11 @@ on:
     # CST (UTC-6); the script skips the run that doesn't match Central time.
     - cron: "0 12,13,15,16,18,19,21,22,0,1 * * *"
   workflow_dispatch:
+    inputs:
+      args:
+        description: "Extra args, e.g. --catchup --days 7 (one-off digest email)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -31,7 +36,8 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-        run: python -m role_catcher.main
+          RUN_ARGS: ${{ github.event.inputs.args }}
+        run: python -m role_catcher.main $RUN_ARGS
       - name: Commit state back
         if: always()   # keep the run log even when the run failed
         run: |
