@@ -35,6 +35,11 @@ def blocked(jobs, blocklist: list) -> list:
     return [j for j in jobs if j.company.lower() not in names]
 
 
+def unseen(jobs, seen: dict) -> list:
+    """Dedup: drop roles already recorded in seen_jobs.json."""
+    return [j for j in jobs if j.key not in seen]
+
+
 def run_prefilter(jobs: list) -> list:
     """Pre-filter and write every drop, with its reason, to logs/last_run.json."""
     drops: list = []
@@ -132,7 +137,7 @@ def pipeline(args, config: dict, stats: dict) -> None:
     if first_run:
         return
 
-    jobs = [j for j in jobs if j.key not in seen]
+    jobs = unseen(jobs, seen)
     stats["new_roles"] = len(jobs)
     n_in = len(jobs)
     jobs = run_prefilter(jobs)

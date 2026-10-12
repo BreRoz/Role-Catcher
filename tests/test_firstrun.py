@@ -2,7 +2,7 @@
 import unittest
 
 from role_catcher.firstrun import cap_for_backfill, is_first_run, seed_seen
-from role_catcher.main import blocked
+from role_catcher.main import blocked, unseen
 from role_catcher.models import Job
 
 
@@ -37,6 +37,13 @@ class FirstRunTests(unittest.TestCase):
         seed_seen(seen, baseline, "today")
         self.assertIn(new.key, seen)
         self.assertNotIn(old.key, seen)
+
+    def test_dedup_skips_seen_and_ignores_reposts_of_same_id(self):
+        seen = {job("A", 1).key: "2026-10-01"}
+        jobs = [job("A", 1), job("A", 2), job("B", 1)]    # same id at another company is a different role
+        self.assertEqual([j.key for j in unseen(jobs, seen)],
+                         ["greenhouse:A:2", "greenhouse:B:1"])
+        self.assertEqual(unseen(jobs, {}), jobs)
 
     def test_blocklist(self):
         jobs = [job("Bad Co", 1), job("Good Co", 2)]
