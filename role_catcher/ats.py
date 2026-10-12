@@ -266,18 +266,34 @@ def fetch_board(ats: str, slug: str, company: str | None = None, *,
 
 
 def fetch_boards(boards: list[dict], *, session: requests.Session | None = None,
-                 sleep=time.sleep, pause: float = 0.3) -> tuple[list[Job], list[dict]]:
-    """boards: [{ats, slug, company?}]. Returns (jobs, errors). Never raises."""
-    jobs, errors = [], []
-    for i, b in enumerate(boards):
+                 sleep=time.sleep, pause: float = 0.2, workers: int = 6,
+                 keep=None) -> tuple[list[Job], list[dict], dict]:
+    """boards: [{ats, slug, company?}]. Returns (jobs, errors, counts) where
+    counts maps "ats:slug" to the number of open jobs seen. Never raises.
+    `keep(job) -> bool` drops jobs as each board arrives so memory stays small
+    (job counts still reflect the full board)."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    def one(b):
         try:
             found = fetch_board(b["ats"], b["slug"], b.get("company"), session=session, sleep=sleep)
-            jobs.extend(found)
             log.info("%s:%s -> %d jobs", b["ats"], b["slug"], len(found))
+            n = len(found)
+            return [j for j in found if keep(j)] if keep else found, n, None
         except Exception as e:  # catch, log, continue
             log.warning("%s:%s failed: %s", b.get("ats"), b.get("slug"), e)
-            errors.append({"ats": b.get("ats"), "slug": b.get("slug"), "error": str(e),
-                           "kind": "not_found" if isinstance(e, BoardNotFound) else "error"})
-        if pause and i < len(boards) - 1:
-            sleep(pause)
-    return jobs, errors
+            return [], 0, {"ats": b.get("ats"), "slug": b.get("slug"), "error": str(e),
+                           "kind": "not_found" if isinstance(e, BoardNotFound) else "error"}
+        finally:
+            if pause:
+                sleep(pause)
+
+    jobs, errors, counts = [], [], {}
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        for b, (found, n, err) in zip(boards, pool.map(one, boards)):
+            jobs.extend(found)
+            if err:
+                errors.append(err)
+            else:
+                counts[f"{b['ats']}:{b['slug']}"] = n
+    return jobs, errors, counts

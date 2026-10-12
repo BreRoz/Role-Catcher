@@ -37,3 +37,8 @@ email:
   default_to: bre999@gmail.com
   smtp_host: smtp.gmail.com
   smtp_port: 465
+
+discovery:
+  full_sweep_hours: 24      # whole board registry is swept this often; watchlist boards every run
+  workers: 6                # parallel board fetches (kept low to stay polite)
+  pause_seconds: 0.2        # per-request pause inside each worker

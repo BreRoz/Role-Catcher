@@ -112,10 +112,11 @@ class FetchTests(unittest.TestCase):
                 raise ats.BoardNotFound(slug)
             return [ats.Job(ats_name, "C", "1", "t", "l", "u")]
         with mock.patch.object(ats, "fetch_board", side_effect=fake):
-            jobs, errors = ats.fetch_boards(
+            jobs, errors, counts = ats.fetch_boards(
                 [{"ats": "ashby", "slug": "bad"}, {"ats": "ashby", "slug": "ok"}], sleep=lambda s: None)
         self.assertEqual(len(jobs), 1)
         self.assertEqual(errors[0]["kind"], "not_found")
+        self.assertEqual(counts, {"ashby:ok": 1})
 
 
 if __name__ == "__main__":

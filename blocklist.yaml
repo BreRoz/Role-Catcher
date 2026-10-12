@@ -1,0 +1,4 @@
+# Companies that must never be emailed, whatever their score. Add names here
+# over time (case-insensitive), one per line:
+#   - Example Corp
+companies: []

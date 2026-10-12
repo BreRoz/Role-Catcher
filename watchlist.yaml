@@ -1,2 +1,207 @@
-# Priority companies (section 3c). Roles here are always discovered first.
-companies: []
+# Priority companies (section 3c). NOT a limit: discovery searches many more
+# companies. Roles here skip company vetting but still must pass role-fit scoring.
+#
+# Each entry is a plain name, or a name plus board slugs if the automatic guess
+# misses or picks the wrong company:
+#   - name: Example Co
+#     greenhouse: examplehq
+#     ashby: example
+#     lever: example-co
+#   - name: Not Hiring Co
+#     no_board: true        # stop reporting this one as unresolved
+companies:
+  - 1047 Games
+  - 1Password
+  - 37signals
+  - Acorns
+  - AfterQuery
+  - AG1
+  - Airbnb
+  - Affirm
+  - Alma
+  - Almanac
+  - AMI Labs
+  - Anduril
+  - AngelList
+  - Apollo.io
+  - Applied Compute
+  - Armadin
+  - Asapp
+  - Ashby
+  - Assort Health
+  - Astromech
+  - Automattic
+  - Axiom Math
+  - Baseten
+  - Bilt
+  - Bird
+  - Black Forest Labs
+  - Bloom Tech
+  - Blockchain.com
+  - Brex
+  - Buffer
+  - Bungie
+  - BuySellAds
+  - Cambridge Aerospace
+  - Calendly
+  - Calm
+  - Cameo
+  - Canonical
+  - Castelion
+  - Celero
+  - Certa
+  - Chainguard
+  - Chai Discovery
+  - Chess.com
+  - Chili Piper
+  - Circle
+  - Close
+  - Cloudless Labs
+  - Cognition
+  - Coinbase
+  - Column
+  - Commsor
+  - Cribl
+  - Crusoe
+  - CuspAI
+  - DappRadar
+  - DayOne
+  - Decagon
+  - Decart
+  - Deel
+  - Degreed
+  - Discovery Loop
+  - Distyl
+  - DNSFilter
+  - Doist
+  - Dropbox
+  - Elastic
+  - Etched
+  - ElevenLabs
+  - Erebor
+  - Exa
+  - Factory
+  - Fal
+  - FieldAI
+  - Figure
+  - Fireworks
+  - Fractile
+  - Genspark
+  - Genesis AI
+  - General Intuition
+  - Generalist
+  - Ginger
+  - GitHub
+  - GitLab
+  - Glean
+  - Grafana
+  - Granola
+  - Graphy
+  - GrowthX AI
+  - Guidewheel
+  - Gumroad
+  - Harmonic
+  - Harvey
+  - Higgsfield AI
+  - Hippocratic AI
+  - Hopin
+  - "humans&"
+  - Ineffable Intelligence
+  - Instacart
+  - Jeeves
+  - JupiterOne
+  - K2 Space
+  - Kalshi
+  - Kilo Code
+  - Legora
+  - Lila Sciences
+  - Linear
+  - Liquid AI
+  - Lokalise
+  - Loops
+  - Lovable
+  - Lumilens
+  - Mariana Minerals
+  - Mastodon
+  - Medici Brands
+  - Mercor
+  - MetaX
+  - Midjourney
+  - Mirendil
+  - Modal
+  - MoonPay
+  - Moore Threads
+  - Mural
+  - NCX
+  - Nexthop AI
+  - Numbrs
+  - Obsidian
+  - Olix
+  - OnDeck
+  - OpenEvidence
+  - OpenAI
+  - Oratomic
+  - Osano
+  - Pacvue
+  - Parabol
+  - Perplexity
+  - Physical Intelligence
+  - PixVerse
+  - Plaid
+  - Poolside
+  - Posit
+  - Positron
+  - Pragmatik Labs
+  - Profound
+  - Project Discovery
+  - Project Prometheus
+  - Protocol Labs
+  - Prufrock Ventures
+  - Ramp
+  - Recursive Superintelligence
+  - Reddit
+  - Reflection AI
+  - Replit
+  - Remote
+  - Ricursive
+  - Robin Healthcare
+  - Rogo
+  - RootstockLabs
+  - Rox
+  - runZero
+  - Safe Superintelligence
+  - SafetyWing
+  - Samsara
+  - Saronic
+  - Shogun
+  - Shopify
+  - Sierra
+  - Simile
+  - Skillshare
+  - Skild
+  - Sourcegraph
+  - Standard Nuclear
+  - Starcloud
+  - Suno
+  - Superhuman
+  - Surge AI
+  - Tala Health
+  - Teamshares
+  - The Bot Company
+  - Thinking Machines
+  - Thrive Holdings
+  - Toggl
+  - Together
+  - Toptal
+  - TypeSafe AI
+  - Unconventional
+  - Upscale AI
+  - Valar Atomics
+  - Volta
+  - VSCO
+  - Whatnot
+  - Wispr Flow
+  - Wonderful
+  - Xaira
+  - Xapo
+  - Zapier
