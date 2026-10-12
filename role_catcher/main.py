@@ -91,6 +91,8 @@ def catchup(jobs, config: dict, days: int, max_calls: int | None, dry_run: bool)
     to_score = order_for_cap(candidates, watchlist_names())[:cap]
     cache = state.load("score_cache.json", {})
     sr = score_jobs(to_score, config, cache, watchlist=watchlist_names())
+    if sr.failures and not sr.scored:
+        raise SystemExit(f"CATCHUP FAILED: all {sr.failures} scoring calls failed (see errors above); no email sent.")
     passed = [s for s in sr.scored if passes_gate(s.result, config["scoring"]["threshold"])]
     stats = (f"{len(recent)} dated roles posted in the last {days} days, {len(candidates)} passed the "
              f"pre-filter, {len(sr.scored)} scored (cap {cap}, {len(candidates) - len(sr.scored)} not scored), "
