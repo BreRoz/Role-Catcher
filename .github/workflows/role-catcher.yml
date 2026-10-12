@@ -33,6 +33,7 @@ jobs:
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: python -m role_catcher.main
       - name: Commit state back
+        if: always()   # keep the run log even when the run failed
         run: |
           git config user.name "role-catcher-bot"
           git config user.email "role-catcher-bot@users.noreply.github.com"

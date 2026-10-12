@@ -5,10 +5,10 @@ import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from . import state
+from . import health, state
 from .company_vetting import vet_companies
 from .config import ROOT, load_config, load_yaml
-from .discovery import discover, mark_baselined
+from .discovery import LAST_SUMMARY, discover, mark_baselined
 from .emailer import email_roles
 from .filters import prefilter, write_drop_log
 from .firstrun import cap_for_backfill, is_first_run, seed_seen
@@ -52,7 +52,7 @@ def log_blocked(blocked: list) -> None:
     (ROOT / "logs").mkdir(exist_ok=True)
     with open(ROOT / "logs" / "blocked.jsonl", "a", encoding="utf-8") as f:
         for s in blocked:
-            f.write(json.dumps({"ts": datetime.now().isoformat(timespec="seconds"), "company": s.job.company,
+            f.write(json.dumps({"ts": datetime.now().astimezone().isoformat(timespec="seconds"), "company": s.job.company,
                                 "title": s.job.title, "url": s.job.url, "score": s.score,
                                 "reasons": s.company_verdict.get("reasons", []),
                                 "sources": s.company_verdict.get("sources", [])}) + "\n")
@@ -106,10 +106,28 @@ def main() -> None:
         print("Not a configured run hour; exiting.")
         return
 
+    stats: dict = {}
+    try:
+        pipeline(args, config, stats)
+    except Exception as e:      # recorded so the weekly email can show the crash, then re-raised (red run on GitHub)
+        stats["fatal_error"] = f"{type(e).__name__}: {e}"
+        raise
+    finally:
+        if not args.dry_run and not args.backfill:
+            health.record_run(stats)
+        if not args.backfill:
+            health.maybe_send_weekly(config, dry_run=args.dry_run)
+    if stats.get("discovery", {}).get("boards_tried") and not stats["discovery"].get("boards_ok"):
+        raise SystemExit("DISCOVERY FAILED: no job board answered. Failing the run so it shows red.")
+
+
+def pipeline(args, config: dict, stats: dict) -> None:
     today = datetime.now().date().isoformat()
     seen = state.load("seen_jobs.json", {})
     jobs = discover(config, save=not args.dry_run)
     jobs = blocked(jobs, load_yaml("blocklist.yaml").get("companies"))
+    stats["discovery"] = {k: LAST_SUMMARY.get(k) for k in ("boards_tried", "boards_ok", "jobs_seen", "by_ats")}
+    stats["caps_hit"] = []
 
     if args.backfill:
         backfill(jobs, config, seen, today, args.max_calls, args.dry_run)
@@ -135,28 +153,43 @@ def main() -> None:
         return
 
     jobs = [j for j in jobs if j.key not in seen]
+    stats["new_roles"] = len(jobs)
+    n_in = len(jobs)
     jobs = run_prefilter(jobs)
+    stats["prefilter"] = {"in": n_in, "kept": len(jobs), "dropped": n_in - len(jobs)}
     cache = state.load("score_cache.json", {})
-    run = score_jobs(jobs, config, cache, watchlist=watchlist_names())
-    scored = [s for s in run.scored if passes_gate(s.result, config["scoring"]["threshold"])]
+    sr = score_jobs(jobs, config, cache, watchlist=watchlist_names())
+    scored = [s for s in sr.scored if passes_gate(s.result, config["scoring"]["threshold"])]
+    stats["scoring"] = {"calls": sr.calls, "cache_hits": sr.cache_hits, "failures": sr.failures,
+                        "passed": len(scored), "cost": round(sr.cost, 4)}
     verdicts = state.load("company_verdicts.json", {})
     vet = vet_companies(scored, config, verdicts, watchlist_names())
-    approved = vet.approved
+    stats["vetting"] = {"calls": vet.calls, "cache_hits": vet.cache_hits, "failures": vet.failures,
+                        "approved": len(vet.approved), "blocked": len(vet.blocked), "cost": round(vet.cost, 4)}
+    if sr.cap_hit:
+        stats["caps_hit"].append(f"scoring ({config['limits']['max_roles_scored_per_run']} calls per run)")
+    if vet.cap_hit:
+        stats["caps_hit"].append(f"company vetting ({config['limits']['max_companies_vetted_per_run']} calls per run)")
+
     if args.dry_run:
-        for r in approved:
-            print(f"would email: {r.score}% {r.job.title} | {r.job.company} | "
-                  f"{r.company_verdict.get('verdict')} | {r.job.url}")
         for r in vet.blocked:
             print(f"would block: {r.score}% {r.job.title} | {r.job.company} | "
                   f"{'; '.join(r.company_verdict.get('reasons', []))}")
+        email_roles(vet.approved, config, dry_run=True)
         print("dry run: no email sent, state not saved.")
         return
-    email_roles(approved, config)
+
+    # One email per role, sent now (not a digest). Only roles whose email went out
+    # (or that were rejected) are marked seen; failed or capped sends retry next run.
+    er = email_roles(vet.approved, config)
+    stats["emails"] = {"sent": len(er.sent), "failed": len(er.failed), "capped": len(er.capped)}
+    if er.cap_hit:
+        stats["caps_hit"].append(f"emails ({config['limits']['max_emails_per_day']} per day)")
 
     log_blocked(vet.blocked)
-    deferred = {s.job.key for s in vet.deferred}
-    for s in run.scored:  # remember what was evaluated; deferred or failed roles retry next run
-        if s.job.key not in deferred:
+    retry = {s.job.key for s in vet.deferred + er.failed + er.capped}
+    for s in sr.scored:
+        if s.job.key not in retry:
             seen[s.job.key] = today
     state.save("seen_jobs.json", seen)
     state.save("score_cache.json", cache)

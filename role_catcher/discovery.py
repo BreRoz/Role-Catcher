@@ -15,6 +15,24 @@ from .slugs import board_list, load_registry
 
 log = logging.getLogger("role_catcher.discovery")
 
+LAST_SUMMARY: dict = {}   # the most recent discover() summary, read by the run log and weekly health email
+
+
+def by_ats(boards: list[dict], errors: list[dict], counts: dict) -> dict:
+    """Per-source (ATS) tallies: boards tried, boards that answered, errors, open roles seen."""
+    def row(ats):
+        return out.setdefault(ats, {"tried": 0, "ok": 0, "errors": 0, "jobs": 0})
+    out: dict = {}
+    for b in boards:
+        row(b["ats"])["tried"] += 1
+    for key, n in counts.items():
+        r = row(key.split(":", 1)[0])
+        r["ok"] += 1
+        r["jobs"] += n
+    for e in errors:
+        row(e["ats"])["errors"] += 1
+    return out
+
 
 def sweep_due(reg: dict, hours: float, now: datetime | None = None) -> bool:
     last = reg.get("last_full_sweep")
@@ -54,7 +72,10 @@ def discover(config: dict, keep=None, save: bool = True) -> list[Job]:
 
     summary = {"time": now.isoformat(), "full_sweep": full, "boards_tried": len(boards),
                "boards_ok": len(counts), "jobs_seen": sum(counts.values()), "jobs_kept": len(jobs),
+               "by_ats": by_ats(boards, errors, counts),
                "errors": errors, "watchlist_unresolved": reg.get("unresolved", [])}
+    LAST_SUMMARY.clear()
+    LAST_SUMMARY.update(summary)
     if save:
         (state.STATE_DIR.parent / "logs").mkdir(exist_ok=True)
         with open(state.STATE_DIR.parent / "logs" / "discovery.json", "w", encoding="utf-8") as f:

@@ -90,10 +90,26 @@ Only roles that passed fit scoring get vetted, and watchlist companies are skipp
 
 Try it by hand: `python vet_company.py "Company Name"`.
 
+## Email
+
+- **One email per qualifying role, sent as soon as it is found** (not a digest). Subject: `[Role Catcher] 82% | Title | Company | Growing`. A flagged company shows `Growing (flag)`; a watchlist company shows `Watchlist`; a company whose research failed shows `Not checked`.
+- **Body:** large Apply link at the top, then title, company, location, comp and posted date when known, role fit and one-line summary, "Why I fit" (3 reasons), "Gaps or risks", and company health (verdict, trajectory, headcount trend, layoffs, employee sentiment, confidence, source links). A flagged company's warning is the first line of that section. Plain text and HTML versions are both sent.
+- **No cover letter, no application answers.** All copy is scrubbed so it never contains em dashes or the word "intersection".
+- **Failed sends retry.** If Gmail rejects a send, the role is not marked seen and goes out on the next run. `limits.max_emails_per_day` (default 10) is enforced from `logs/emails.jsonl`, best scores first; roles over the cap wait until the next day and a `CAP HIT` line is printed.
+- **`--dry-run`** prints every email it would send, in full, and sends nothing.
+
+### Weekly health email (Mondays, first run of the day, Central time)
+
+Covers: boards and companies in discovery, runs completed, roles seen / new / pre-filtered / scored / passed / vetted / emailed, every blocked role with its reason and a link (so you can overrule the vetting), per-source discovery tallies, and OpenRouter spend for the week split into scoring, vetting, and discovery (discovery uses no AI, so it is $0.00).
+
+A **PROBLEMS list sits at the top** and the subject says `ATTENTION (n)` instead of `OK` when anything is wrong: a discovery source (Greenhouse, Ashby, Lever) returning zero roles or erroring on every board for 14+ days (shown as an early warning before there are 14 days of history), a crashed run, discovery reaching zero boards, far fewer runs than scheduled (or none), a daily cap hit, or failed scoring, research, or email calls. A run where no board answers also exits with an error, so it shows red in the Actions tab and GitHub emails you.
+
+Every real run appends one line to `logs/runs.jsonl`; the weekly email is built from that, `logs/blocked.jsonl`, and `logs/spend.jsonl`. The workflow commits `logs/` back even when a run fails.
+
 ## Schedule
 
 Runs every 3 hours at 7am, 10am, 1pm, 4pm, and 7pm Central, every day, and can be started by hand from the Actions tab. (Every 3 hours from 7am lands on 7pm; the next slot would be 10pm, after your 9pm cutoff. Change `run_hours_local` in `config.yaml` to adjust.) GitHub schedules in UTC, so the workflow lists both daylight and standard-time slots and the script skips the one that doesn't match Central time.
 
 ## Build status
 
-Scaffold complete. Discovery and the pre-filter are built. Role fit scoring is built. Company vetting is built. Email layout is a stub being filled in step by step.
+Scaffold complete. Discovery and the pre-filter are built. Role fit scoring is built. Company vetting is built. Email (per-role alerts and the weekly health email) is built.

@@ -33,3 +33,21 @@ def spend_today(tz_name: str, purpose: str | None = None, path: Path = LOG_PATH)
             if when == today and (purpose is None or rec.get("purpose") == purpose):
                 total += float(rec.get("cost") or 0.0)
     return total
+
+
+def spend_by_purpose(since: datetime, path: Path = LOG_PATH) -> dict[str, float]:
+    """Real USD cost since `since` (timezone-aware), grouped by purpose."""
+    out: dict[str, float] = {}
+    if not path.exists():
+        return out
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            try:
+                rec = json.loads(line)
+                when = datetime.fromisoformat(rec["ts"])
+            except (ValueError, KeyError):
+                continue
+            if when >= since:
+                purpose = rec.get("purpose", "other")
+                out[purpose] = out.get(purpose, 0.0) + float(rec.get("cost") or 0.0)
+    return out
