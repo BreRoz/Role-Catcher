@@ -17,7 +17,7 @@ def log_call(record: dict, path: Path = LOG_PATH) -> None:
 
 def spend_today(tz_name: str, purpose: str | None = None, path: Path = LOG_PATH) -> float:
     """Total real USD cost logged today (in the configured timezone).
-    Pass purpose="scoring" or "vetting" for a per-step total."""
+    Pass purpose="scoring" or "discovery" for a per-step total."""
     if not path.exists():
         return 0.0
     tz = ZoneInfo(tz_name)

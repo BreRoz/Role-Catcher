@@ -1,0 +1,19 @@
+Company: Northwind Data
+Title: Senior Backend Software Engineer, Distributed Systems
+Location: Remote (United States)
+
+Northwind Data builds a high-throughput event streaming platform. We are looking for a Senior Backend Engineer to design and operate low-latency services in Go.
+
+What you'll do:
+- Design, build and operate distributed services that process millions of events per second.
+- Own service reliability: capacity planning, on-call rotation, incident response and postmortems.
+- Optimize storage layers (Kafka, Cassandra, PostgreSQL) and tune performance under load.
+- Review code, mentor engineers and contribute to architecture decisions.
+
+What you bring:
+- 6+ years of professional backend development in Go, Java or Rust.
+- Deep knowledge of distributed systems, consensus, and data modeling.
+- BS or MS in Computer Science or equivalent experience.
+- Experience with Kubernetes, Terraform and AWS.
+
+Compensation: $185,000 - $225,000.

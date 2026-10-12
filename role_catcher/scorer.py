@@ -51,15 +51,16 @@ def passes_gate(result: dict, threshold: int) -> bool:
     )
 
 
-def load_system_prompt() -> str:
+def load_system_prompt(include_calibration: bool = True) -> str:
     """Stable text sent first on every call (so the provider can cache it):
-    rubric, profile, then optional short calibration summaries."""
+    rubric, profile, then optional short calibration summaries. calibrate.py
+    leaves the summaries out so it never grades a role against its own summary."""
     parts = [
         (ROOT / "rubric.md").read_text(encoding="utf-8").strip(),
         "# Candidate profile (source of truth)\n\n" + (ROOT / "profile.md").read_text(encoding="utf-8").strip(),
     ]
     summaries = ROOT / "calibration" / "summaries.md"
-    if summaries.exists() and summaries.read_text(encoding="utf-8").strip():
+    if include_calibration and summaries.exists() and summaries.read_text(encoding="utf-8").strip():
         parts.append("# Calibration: roles that reached late or final interview rounds and should "
                      "score roughly 75+\n\n" + summaries.read_text(encoding="utf-8").strip())
     return "\n\n".join(parts)

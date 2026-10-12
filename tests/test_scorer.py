@@ -104,3 +104,17 @@ class Tests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CalibrateFiles(unittest.TestCase):
+    def test_read_job_parses_header_and_skips_placeholder(self):
+        import calibrate
+        with tempfile.TemporaryDirectory() as d:
+            ok = Path(d) / "a.txt"
+            ok.write_text("Company: Acme\nTitle: Enablement Lead\nLocation: Remote\n\nBody text.\n")
+            job = calibrate.read_job(ok)
+            self.assertEqual((job.company, job.title, job.location, job.description),
+                             ("Acme", "Enablement Lead", "Remote", "Body text."))
+            ph = Path(d) / "b.txt"
+            ph.write_text(calibrate.PLACEHOLDER + "\nrest")
+            self.assertIsNone(calibrate.read_job(ph))

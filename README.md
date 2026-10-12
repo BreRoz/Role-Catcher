@@ -1,27 +1,26 @@
 # Role Catcher
 
-Scans open roles on Greenhouse, Ashby, and Lever job boards, scores each against my background, checks the company is healthy, and emails me only roles that pass both tests. It does not write cover letters or apply for me.
+Scans open roles on Greenhouse, Ashby, and Lever job boards, scores each against my background, and emails me only roles that are a strong fit. It does not judge companies; I look those up myself. It does not write cover letters or apply for me.
 
 ## How it works
 
 1. **Discover** open roles from many job boards.
 2. **Pre-filter** by title, seniority, and location (plain code, no AI, free).
 3. **Score** the role against `profile.md` using an AI model through OpenRouter. Default threshold: 75.
-4. **Vet the company** (only for roles that passed step 3). Results are remembered for 60 days.
-5. **Email** me only if both the role and the company pass.
+4. **Email** me each role that passes step 3.
 
-Expensive steps run last, so nothing is scored or researched that a cheaper step already rejected.
+The free steps run first, so nothing is scored that a cheaper step already rejected.
 
 ## Files you will edit
 
 | File | What it is |
 |---|---|
-| `config.yaml` | Thresholds, AI model names, daily caps, vetting rules |
+| `config.yaml` | Thresholds, AI model names, daily caps |
 | `filters.yaml` | Job titles to include/exclude, location rules |
 | `profile.md` | My background, the scorer's source of truth about me |
 | `rubric.md` | The scoring instructions and point weights sent to the model |
 | `watchlist.yaml` | Priority companies |
-| `calibration/`, `negative_examples/` | Example good and bad roles for tuning |
+| `calibration/`, `negative_examples/` | Example good and bad roles; `python calibrate.py` scores them |
 
 Files in `state/` are the agent's memory. It updates them itself after each run; don't edit by hand.
 
@@ -39,9 +38,9 @@ Files in `state/` are the agent's memory. It updates them itself after each run;
 
 ## OpenRouter: models, cost, and privacy
 
-**Models.** `config.yaml` has two model slugs, `scoring_model` (role fit) and `vetting_model` (company research with web search). Each also has a fallback that OpenRouter uses automatically if the first model errors or its provider is down. Change any of them by editing the text; no code changes needed. Browse slugs at openrouter.ai/models.
+**Models.** `config.yaml` has a `scoring_model` slug (role fit) and a `scoring_fallback` that OpenRouter uses automatically if the first model errors or its provider is down. Change either by editing the text; no code changes needed. Browse slugs at openrouter.ai/models.
 
-**What it costs.** Every AI call's real cost (as reported by OpenRouter) is written to `logs/spend.jsonl`, one line per call. The daily caps use this log. Web search adds about $0.01 per search on top of the model's token cost.
+**What it costs.** Every AI call's real cost (as reported by OpenRouter) is written to `logs/spend.jsonl`, one line per call. The daily caps use this log.
 
 **Set a monthly limit on your key (important).** In OpenRouter go to Keys, open the Role Catcher key, and set a monthly credit limit (for example $20). This is a second safety net in case something misbehaves.
 
@@ -50,9 +49,7 @@ Files in `state/` are the agent's memory. It updates them itself after each run;
 2. In Settings, Observability, leave **"Private Input & Output Logging"** turned OFF so prompts are not stored in your logs.
 3. Every request the agent sends already includes `data_collection: deny`, so OpenRouter only routes to providers that do not store or train on prompts. If you want the strictest option, set `zdr: true` under `privacy` in `config.yaml` (zero-data-retention endpoints only); this may limit which models and features are available.
 
-**How output is checked.** Scoring and vetting answers must match a strict format. The agent validates every answer in code and retries once with the error if it does not. A second failure stops that item instead of guessing.
-
-**Company sources.** The sources shown for a company come only from the web search results OpenRouter returns, never from the AI's memory.
+**How output is checked.** Scoring answers must match a strict format. The agent validates every answer in code and retries once with the error if it does not. A second failure stops that item instead of guessing.
 
 **Prompt caching.** Your profile is sent first in every scoring request and marked for caching, so repeated calls within a few minutes are billed at a small fraction of the normal input price.
 
@@ -76,35 +73,21 @@ A role passes only if `scoring.threshold` (default 75) is met, `seniority_match`
 - **Cap:** `limits.max_roles_scored_per_run` limits real model calls. Cache hits are free. Watchlist companies are scored first, then newest first. Roles over the cap, or whose scoring call failed, are not marked seen and are retried next run. A cap hit prints a `CAP HIT` line.
 - **One failure never stops the run.** A failed call is logged and skipped.
 
-## Company vetting
-
-Only roles that passed fit scoring get vetted, and watchlist companies are skipped (the email says "On your watchlist, not vetted."). The model researches the company with web search and reports facts; **the pass / flag / block verdict is then computed in code from the thresholds under `vetting.rules` in `config.yaml`**, so you control the rules. Results are cached 60 days in `state/company_verdicts.json`.
-
-- **Block** (role not emailed): headcount clearly shrinking (medium or high confidence), a layoff of 15% or more of staff in 12 months, a rating below 3.3 with at least 50 reviews, or credible reports of winding down or serious financial trouble. Blocked roles and their reasons are appended to `logs/blocked.jsonl` so you can overrule one.
-- **Flag** (emailed with a warning): any smaller layoff, a rating under 3.7, unknown trajectory, low confidence, or no sources. No evidence either way is a flag with low confidence, never a pass.
-- **Pass:** growing or stable with no red flags found.
-- **Sources** are the URLs from OpenRouter's web search results, never the model's own list.
-- **If research fails** for a company, its role is emailed flagged "not checked" and the failure is not cached.
-- **TrueUp is not used.** Its terms of service prohibit automated or AI-agent access and its robots.txt blocks AI crawlers, so vetting relies on layoff trackers, news, funding news, and search-result snippets of Glassdoor/Blind/Comparably (no logins, no scraping).
-- **These ratings are an input to your judgment, not an authority.** They may be thin or wrong.
-
-Try it by hand: `python vet_company.py "Company Name"`.
-
 ## Email
 
-- **One email per qualifying role, sent as soon as it is found** (not a digest). Subject: `[Role Catcher] 82% | Title | Company | Growing`. A flagged company shows `Growing (flag)`; a watchlist company shows `Watchlist`; a company whose research failed shows `Not checked`.
-- **Body:** large Apply link at the top, then title, company, location, comp and posted date when known, role fit and one-line summary, "Why I fit" (3 reasons), "Gaps or risks", and company health (verdict, trajectory, headcount trend, layoffs, employee sentiment, confidence, source links). A flagged company's warning is the first line of that section. Plain text and HTML versions are both sent.
+- **One email per qualifying role, sent as soon as it is found** (not a digest). Subject: `[Role Catcher] 82% | Title | Company`.
+- **Body:** large Apply link at the top, then title, company, location, comp and posted date when known, role fit and one-line summary, "Why I fit" (3 reasons), and "Gaps or risks". Plain text and HTML versions are both sent.
 - **No cover letter, no application answers.** All copy is scrubbed so it never contains em dashes or the word "intersection".
 - **Failed sends retry.** If Gmail rejects a send, the role is not marked seen and goes out on the next run. `limits.max_emails_per_day` (default 10) is enforced from `logs/emails.jsonl`, best scores first; roles over the cap wait until the next day and a `CAP HIT` line is printed.
 - **`--dry-run`** prints every email it would send, in full, and sends nothing.
 
 ### Weekly health email (Mondays, first run of the day, Central time)
 
-Covers: boards and companies in discovery, runs completed, roles seen / new / pre-filtered / scored / passed / vetted / emailed, every blocked role with its reason and a link (so you can overrule the vetting), per-source discovery tallies, and OpenRouter spend for the week split into scoring, vetting, and discovery (discovery uses no AI, so it is $0.00).
+Covers: boards and companies in discovery, runs completed, roles seen / new / pre-filtered / scored / passed / emailed, per-source discovery tallies, and OpenRouter spend for the week (scoring, discovery, and anything else such as calibration runs; discovery uses no AI, so it is $0.00).
 
-A **PROBLEMS list sits at the top** and the subject says `ATTENTION (n)` instead of `OK` when anything is wrong: a discovery source (Greenhouse, Ashby, Lever) returning zero roles or erroring on every board for 14+ days (shown as an early warning before there are 14 days of history), a crashed run, discovery reaching zero boards, far fewer runs than scheduled (or none), a daily cap hit, or failed scoring, research, or email calls. A run where no board answers also exits with an error, so it shows red in the Actions tab and GitHub emails you.
+A **PROBLEMS list sits at the top** and the subject says `ATTENTION (n)` instead of `OK` when anything is wrong: a discovery source (Greenhouse, Ashby, Lever) returning zero roles or erroring on every board for 14+ days (shown as an early warning before there are 14 days of history), a crashed run, discovery reaching zero boards, far fewer runs than scheduled (or none), a daily cap hit, or failed scoring or email calls. A run where no board answers also exits with an error, so it shows red in the Actions tab and GitHub emails you.
 
-Every real run appends one line to `logs/runs.jsonl`; the weekly email is built from that, `logs/blocked.jsonl`, and `logs/spend.jsonl`. The workflow commits `logs/` back even when a run fails.
+Every real run appends one line to `logs/runs.jsonl`; the weekly email is built from that and `logs/spend.jsonl`. The workflow commits `logs/` back even when a run fails.
 
 ## Schedule
 
@@ -112,4 +95,4 @@ Runs every 3 hours at 7am, 10am, 1pm, 4pm, and 7pm Central, every day, and can b
 
 ## Build status
 
-Scaffold complete. Discovery and the pre-filter are built. Role fit scoring is built. Company vetting is built. Email (per-role alerts and the weekly health email) is built.
+Scaffold complete. Discovery and the pre-filter are built. Role fit scoring is built. Email (per-role alerts and the weekly health email) is built.

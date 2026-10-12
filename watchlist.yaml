@@ -1,5 +1,5 @@
 # Priority companies (section 3c). NOT a limit: discovery searches many more
-# companies. Roles here skip company vetting but still must pass role-fit scoring.
+# companies. They are checked every run and scored first, and still must pass role-fit scoring.
 #
 # Each entry is a plain name, or a name plus board slugs if the automatic guess
 # misses or picks the wrong company:

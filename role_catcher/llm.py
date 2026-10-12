@@ -20,7 +20,6 @@ class LLMError(Exception):
 class LLMResult:
     text: str
     data: dict | None = None            # parsed + validated JSON when a schema was given
-    citations: list[dict] = field(default_factory=list)  # [{url, title}] from web search annotations
     cost: float = 0.0
     model_used: str = ""
 
@@ -47,19 +46,6 @@ def _system_content(cached_text: str, ttl: str) -> list[dict]:
     return [{"type": "text", "text": cached_text, "cache_control": cache}]
 
 
-def _extract_citations(message: dict) -> list[dict]:
-    seen, out = set(), []
-    for ann in message.get("annotations") or []:
-        if ann.get("type") != "url_citation":
-            continue
-        c = ann.get("url_citation") or {}
-        url = c.get("url")
-        if url and url not in seen:
-            seen.add(url)
-            out.append({"url": url, "title": c.get("title", "")})
-    return out
-
-
 def _parse_json(text: str):
     text = text.strip()
     text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
@@ -72,7 +58,7 @@ def _parse_json(text: str):
         raise
 
 
-def _log(resp: dict, purpose: str, requested: str, attempt: int, web: bool) -> float:
+def _log(resp: dict, purpose: str, requested: str, attempt: int) -> float:
     usage = resp.get("usage") or {}
     details = usage.get("prompt_tokens_details") or {}
     cost = usage.get("cost")
@@ -81,7 +67,6 @@ def _log(resp: dict, purpose: str, requested: str, attempt: int, web: bool) -> f
         "model_requested": requested,
         "model_used": resp.get("model"),
         "attempt": attempt,
-        "web_search": web,
         "prompt_tokens": usage.get("prompt_tokens"),
         "completion_tokens": usage.get("completion_tokens"),
         "cached_tokens": details.get("cached_tokens"),
@@ -95,12 +80,11 @@ def _log(resp: dict, purpose: str, requested: str, attempt: int, web: bool) -> f
 def complete(
     client: OpenAI,
     config: dict,
-    role: str,                 # "scoring" or "vetting": picks model + fallback from config
+    role: str,                 # "scoring": picks model + fallback from config
     system_cached: str,        # stable text: cached by the provider
     user: str,                 # per-call text (the job, the company)
     schema: dict | None = None,
     schema_name: str = "result",
-    web_search: bool = False,
     purpose: str | None = None,
 ) -> LLMResult:
     cfg = config["openrouter"]
@@ -116,11 +100,6 @@ def complete(
     }
     if cfg["privacy"].get("zdr"):
         extra_body["provider"]["zdr"] = True
-    if web_search:
-        plugin = {"id": "web", "max_results": cfg["web_search"]["max_results"]}
-        if cfg["web_search"].get("engine"):
-            plugin["engine"] = cfg["web_search"]["engine"]
-        extra_body["plugins"] = [plugin]
 
     messages = [
         {"role": "system", "content": _system_content(system_cached, cfg["prompt_cache_ttl"])},
@@ -141,11 +120,10 @@ def complete(
         resp = client.chat.completions.create(
             model=primary, messages=messages, extra_body=extra_body, **kwargs
         ).model_dump()
-        total_cost += _log(resp, purpose, primary, attempt, web_search)
+        total_cost += _log(resp, purpose, primary, attempt)
         message = (resp.get("choices") or [{}])[0].get("message") or {}
         text = message.get("content") or ""
-        citations = _extract_citations(message)
-        result = LLMResult(text=text, citations=citations, cost=total_cost,
+        result = LLMResult(text=text, cost=total_cost,
                            model_used=resp.get("model") or primary)
         if not schema:
             return result

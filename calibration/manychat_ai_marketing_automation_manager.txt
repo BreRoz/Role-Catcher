@@ -1,0 +1,2 @@
+PASTE JOB DESCRIPTION HERE
+(The manychat posting was taken down. Replace this whole file with the job description text, keeping a Company: and Title: line at the top. calibrate.py skips this file until the marker line above is gone.)

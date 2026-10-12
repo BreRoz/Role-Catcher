@@ -116,45 +116,8 @@ def _date(iso: str | None) -> str | None:
     return f"{d:%b} {d.day}, {d.year}"
 
 
-def trajectory_label(verdict: dict) -> str:
-    v = verdict.get("verdict")
-    if v == "watchlist":
-        return "Watchlist"
-    if any("not checked" in r for r in verdict.get("reasons", [])):
-        return "Not checked"
-    t = (verdict.get("trajectory") or "unknown").capitalize()
-    return f"{t} (flag)" if v == "flag" else t
-
-
 def role_subject(s: ScoredJob) -> str:
-    return clean(f"[Role Catcher] {s.score}% | {s.job.title} | {s.job.company} | "
-                 f"{trajectory_label(s.company_verdict)}")
-
-
-def company_health_blocks(verdict: dict) -> list:
-    v = verdict.get("verdict")
-    blocks: list = [("h", "Company health")]
-    if v == "watchlist":
-        return blocks + [("p", "On your watchlist, not vetted.")]
-    reasons = verdict.get("reasons") or []
-    if any("not checked" in r for r in reasons):
-        blocks.append(("warn", "Warning: company research failed, so this company was not checked. "
-                               "Look it up before you apply."))
-    elif v == "flag":
-        blocks.append(("warn", ("Warning: " + "; ".join(reasons) + ".") if reasons
-                       else "Warning: flagged, see the signals below."))
-    sig = verdict.get("signals") or {}
-    rows = [("Verdict", "Flag" if v == "flag" else "Pass"),
-            ("Trajectory", (verdict.get("trajectory") or "unknown").capitalize())]
-    for label, key in (("Headcount trend", "headcount_trend"), ("Layoffs", "recent_layoffs"),
-                       ("Employee sentiment", "employee_sentiment")):
-        if sig.get(key):
-            rows.append((label, sig[key]))
-    rows.append(("Confidence", (verdict.get("confidence") or "unknown").capitalize()))
-    blocks.append(("kv", rows))
-    if verdict.get("sources"):
-        blocks += [("p", "Sources:"), ("links", verdict["sources"])]
-    return blocks
+    return clean(f"[Role Catcher] {s.score}% | {s.job.title} | {s.job.company}")
 
 
 def role_blocks(s: ScoredJob) -> list:
@@ -174,7 +137,7 @@ def role_blocks(s: ScoredJob) -> list:
                ("h", "Gaps or risks")]
     gaps = list(r.get("gaps") or [])
     blocks.append(("bullets", gaps if gaps else ["None noted."]))
-    return blocks + company_health_blocks(s.company_verdict)
+    return blocks
 
 
 def build_role_email(s: ScoredJob) -> tuple[str, str, str]:

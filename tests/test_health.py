@@ -49,25 +49,22 @@ class WeeklyTests(unittest.TestCase):
         self.assertFalse(health.weekly_due(CONFIG, NOW, {"last_weekly": "2026-10-12"}))
         self.assertFalse(health.weekly_due(CONFIG, NOW + timedelta(days=1), {}))
 
-    def test_build_reports_blocks_spend_and_caps(self):
+    def test_build_reports_spend_and_caps(self):
         d = Path(tempfile.mkdtemp())
         recs = [run_rec(i, scoring={"calls": 4, "cache_hits": 1, "failures": 1, "passed": 2},
-                        vetting={"calls": 2, "cache_hits": 0, "failures": 0}, emails={"sent": 1},
+                        emails={"sent": 1},
                         new_roles=20, prefilter={"dropped": 15}, caps_hit=["scoring (150 calls per run)"])
                 for i in range(1, 4)]
         (d / "runs.jsonl").write_text("\n".join(json.dumps(r) for r in recs))
-        (d / "blocked.jsonl").write_text(json.dumps({
-            "ts": (NOW - timedelta(days=1)).isoformat(), "company": "Badco", "title": "Head of Enablement",
-            "url": "https://x.test/1", "score": 88, "reasons": ["layoff of about 20% of staff"]}) + "\n")
         (d / "spend.jsonl").write_text("\n".join(json.dumps(
             {"ts": (NOW - timedelta(days=1)).isoformat(), "purpose": p, "cost": c})
-            for p, c in (("scoring", 0.5), ("vetting", 0.25))))
+            for p, c in (("scoring", 0.5), ("calibration", 0.25))))
         subject, text, html = health.build_weekly(
-            CONFIG, NOW, d / "runs.jsonl", d / "blocked.jsonl", d / "spend.jsonl",
+            CONFIG, NOW, d / "runs.jsonl", d / "spend.jsonl",
             registry={"boards": {"greenhouse:a": {"company": "A", "status": "live"}}})
         self.assertIn("ATTENTION", subject)
-        for needle in ("Badco: Head of Enablement (88%)", "layoff of about 20%", "Scoring: $0.50",
-                       "Vetting: $0.25", "Discovery: $0.00", "Total OpenRouter spend: $0.75",
+        for needle in ("Scoring: $0.50", "Other (calibration, manual tests): $0.25",
+                       "Discovery: $0.00", "Total OpenRouter spend: $0.75",
                        "Daily cap hit this week: scoring", "Role scoring calls failed: 3",
                        "Roles emailed: 3"):
             self.assertIn(needle, text)
@@ -75,6 +72,6 @@ class WeeklyTests(unittest.TestCase):
 
     def test_missing_logs_still_loud(self):
         d = Path(tempfile.mkdtemp())
-        subject, text, _ = health.build_weekly(CONFIG, NOW, d / "r", d / "b", d / "s", registry={"boards": {}})
+        subject, text, _ = health.build_weekly(CONFIG, NOW, d / "r", d / "s", registry={"boards": {}})
         self.assertIn("ATTENTION", subject)
         self.assertIn("No runs were recorded", text)

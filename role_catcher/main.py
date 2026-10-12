@@ -6,7 +6,6 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from . import health, state
-from .company_vetting import vet_companies
 from .config import ROOT, load_config, load_yaml
 from .discovery import LAST_SUMMARY, discover, mark_baselined
 from .emailer import email_roles
@@ -45,42 +44,24 @@ def run_prefilter(jobs: list) -> list:
     return kept
 
 
-def log_blocked(blocked: list) -> None:
-    """Append blocked roles and the reason to logs/blocked.jsonl so a wrong block can be overruled."""
-    if not blocked:
-        return
-    (ROOT / "logs").mkdir(exist_ok=True)
-    with open(ROOT / "logs" / "blocked.jsonl", "a", encoding="utf-8") as f:
-        for s in blocked:
-            f.write(json.dumps({"ts": datetime.now().astimezone().isoformat(timespec="seconds"), "company": s.job.company,
-                                "title": s.job.title, "url": s.job.url, "score": s.score,
-                                "reasons": s.company_verdict.get("reasons", []),
-                                "sources": s.company_verdict.get("sources", [])}) + "\n")
-
-
 def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, dry_run: bool) -> None:
     """Score everything currently open (hard-capped) and write logs/backfill.json.
     Sends no email. Marks everything open as seen so the next normal run only
     reports roles posted after this point."""
     cap = max_calls if max_calls is not None else config["backfill"]["max_scoring_calls"]
-    config = {**config, "limits": {**config["limits"], "max_roles_scored_per_run": cap,
-                                   "max_companies_vetted_per_run": config["backfill"]["max_vetting_calls"]}}
+    config = {**config, "limits": {**config["limits"], "max_roles_scored_per_run": cap}}
     candidates = run_prefilter(jobs)
     to_score, skipped = cap_for_backfill(candidates, watchlist_names(), cap)
     cache = state.load("score_cache.json", {})
     run = score_jobs(to_score, config, cache, watchlist=watchlist_names())
     passed = [s for s in run.scored if passes_gate(s.result, config["scoring"]["threshold"])]
-    verdicts = state.load("company_verdicts.json", {})
-    vet = vet_companies(passed, config, verdicts, watchlist_names())
-    approved = vet.approved
     print(f"backfill: {len(jobs)} open, {len(candidates)} passed pre-filter, {len(to_score)} scored "
-          f"(cap {cap}, {skipped} not scored), {len(passed)} passed fit, {len(approved)} passed vetting, "
-          f"{len(vet.blocked)} blocked")
+          f"(cap {cap}, {skipped} not scored), {len(passed)} passed fit")
     report = {"time": datetime.now().isoformat(timespec="seconds"), "open": len(jobs),
               "prefiltered": len(candidates), "scored": len(to_score), "not_scored_over_cap": skipped,
               "results": [{"score": s.score, "company": s.job.company, "title": s.job.title,
-                           "url": s.job.url, "verdict": s.company_verdict}
-                          for s in approved + vet.blocked]}
+                           "url": s.job.url}
+                          for s in passed]}
     if dry_run:
         print("dry run: not writing logs/backfill.json or seen_jobs.json")
         return
@@ -89,7 +70,6 @@ def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, 
     seed_seen(seen, jobs, today)
     state.save("seen_jobs.json", seen)
     state.save("score_cache.json", cache)
-    state.save("company_verdicts.json", verdicts)
     mark_baselined({j.board for j in jobs})
 
 
@@ -162,38 +142,27 @@ def pipeline(args, config: dict, stats: dict) -> None:
     scored = [s for s in sr.scored if passes_gate(s.result, config["scoring"]["threshold"])]
     stats["scoring"] = {"calls": sr.calls, "cache_hits": sr.cache_hits, "failures": sr.failures,
                         "passed": len(scored), "cost": round(sr.cost, 4)}
-    verdicts = state.load("company_verdicts.json", {})
-    vet = vet_companies(scored, config, verdicts, watchlist_names())
-    stats["vetting"] = {"calls": vet.calls, "cache_hits": vet.cache_hits, "failures": vet.failures,
-                        "approved": len(vet.approved), "blocked": len(vet.blocked), "cost": round(vet.cost, 4)}
     if sr.cap_hit:
         stats["caps_hit"].append(f"scoring ({config['limits']['max_roles_scored_per_run']} calls per run)")
-    if vet.cap_hit:
-        stats["caps_hit"].append(f"company vetting ({config['limits']['max_companies_vetted_per_run']} calls per run)")
 
     if args.dry_run:
-        for r in vet.blocked:
-            print(f"would block: {r.score}% {r.job.title} | {r.job.company} | "
-                  f"{'; '.join(r.company_verdict.get('reasons', []))}")
-        email_roles(vet.approved, config, dry_run=True)
+        email_roles(scored, config, dry_run=True)
         print("dry run: no email sent, state not saved.")
         return
 
     # One email per role, sent now (not a digest). Only roles whose email went out
     # (or that were rejected) are marked seen; failed or capped sends retry next run.
-    er = email_roles(vet.approved, config)
+    er = email_roles(scored, config)
     stats["emails"] = {"sent": len(er.sent), "failed": len(er.failed), "capped": len(er.capped)}
     if er.cap_hit:
         stats["caps_hit"].append(f"emails ({config['limits']['max_emails_per_day']} per day)")
 
-    log_blocked(vet.blocked)
-    retry = {s.job.key for s in vet.deferred + er.failed + er.capped}
+    retry = {s.job.key for s in er.failed + er.capped}
     for s in sr.scored:
         if s.job.key not in retry:
             seen[s.job.key] = today
     state.save("seen_jobs.json", seen)
     state.save("score_cache.json", cache)
-    state.save("company_verdicts.json", verdicts)
 
 
 if __name__ == "__main__":

@@ -79,7 +79,9 @@ def html_to_text(raw: str | None) -> str:
         li.insert_before("\n- ")
     text = soup.get_text("\n")
     text = text.replace("\xa0", " ")
-    return re.sub(r"\n\s*\n+", "\n\n", re.sub(r"[ \t]+", " ", text)).strip()
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"(^|\n)- *\n+\s*", r"\1- ", text)      # <li><p>..</p></li> leaves "- " alone on a line
+    return re.sub(r"\n\s*\n+", "\n\n", text).strip()
 
 
 _PAY_RE = re.compile(

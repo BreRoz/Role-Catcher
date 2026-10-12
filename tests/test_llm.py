@@ -64,14 +64,6 @@ class Tests(unittest.TestCase):
         with self.assertRaises(llm.LLMError):
             llm.complete(c, self.cfg, "scoring", "p", "j", SCHEMA)
 
-    def test_citations_come_from_annotations(self):
-        ann = [{"type": "url_citation", "url_citation": {"url": "https://a.com/x", "title": "A"}},
-               {"type": "url_citation", "url_citation": {"url": "https://a.com/x", "title": "A"}}]
-        c = FakeClient([FakeResp('{"score": 1}', ann)])
-        r = llm.complete(c, self.cfg, "vetting", "p", "j", SCHEMA, web_search=True)
-        self.assertEqual(r.citations, [{"url": "https://a.com/x", "title": "A"}])
-        self.assertEqual(c.calls[0]["extra_body"]["plugins"][0]["id"], "web")
-
     def test_spend_log_and_total(self):
         c = FakeClient([FakeResp('{"score": 1}')])
         llm.complete(c, self.cfg, "scoring", "p", "j", SCHEMA)

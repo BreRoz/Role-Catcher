@@ -1,7 +1,7 @@
 """Run log and the Monday health email (section 7).
 
 Every real run appends one line to logs/runs.jsonl. The weekly email is built
-from that log plus logs/blocked.jsonl and logs/spend.jsonl. Silent failure is the
+from that log plus logs/spend.jsonl. Silent failure is the
 main risk, so anything wrong goes in a PROBLEMS list at the very top."""
 from __future__ import annotations
 import json
@@ -16,7 +16,6 @@ from .config import ROOT
 log = logging.getLogger("role_catcher.health")
 
 RUNS_LOG = ROOT / "logs" / "runs.jsonl"
-BLOCKED_LOG = ROOT / "logs" / "blocked.jsonl"
 SOURCES = ("greenhouse", "ashby", "lever")
 SOURCE_ALARM_DAYS = 14
 
@@ -81,13 +80,12 @@ def _sum(runs: list[dict], *path) -> int:
 
 
 def build_weekly(config: dict, now: datetime | None = None, runs_path: Path = RUNS_LOG,
-                 blocked_path: Path = BLOCKED_LOG, spend_path: Path = spend.LOG_PATH,
+                 spend_path: Path = spend.LOG_PATH,
                  registry: dict | None = None) -> tuple[str, str, str]:
     now = now or datetime.now(timezone.utc)
     week_ago = now - timedelta(days=7)
     all_runs = read_jsonl(runs_path)
     runs = since(all_runs, week_ago)
-    blocked = since(read_jsonl(blocked_path), week_ago)
     costs = spend.spend_by_purpose(week_ago, spend_path)
     tz = ZoneInfo(config["timezone"])
 
@@ -108,7 +106,6 @@ def build_weekly(config: dict, now: datetime | None = None, runs_path: Path = RU
     for c in caps:
         problems.append(f"Daily cap hit this week: {c}. Affected roles were deferred, not lost.")
     for label, path in (("Role scoring calls failed", ("scoring", "failures")),
-                        ("Company research calls failed", ("vetting", "failures")),
                         ("Email sends failed", ("emails", "failed"))):
         n = _sum(runs, *path)
         if n:
@@ -139,18 +136,7 @@ def build_weekly(config: dict, now: datetime | None = None, runs_path: Path = RU
                        ("Roles scored", f"{_sum(runs, 'scoring', 'calls')} model calls, "
                                         f"{_sum(runs, 'scoring', 'cache_hits')} from cache"),
                        ("Passed role fit", str(_sum(runs, "scoring", "passed"))),
-                       ("Companies vetted", f"{_sum(runs, 'vetting', 'calls')} researched, "
-                                            f"{_sum(runs, 'vetting', 'cache_hits')} from cache"),
-                       ("Roles emailed", str(_sum(runs, "emails", "sent")))]),
-               ("h", "Blocked roles (overrule if the vetting is wrong)")]
-    if blocked:
-        items = []
-        for b in blocked:
-            why = "; ".join(b.get("reasons") or ["no reason recorded"])
-            items.append((f"{b['company']}: {b['title']} ({b.get('score', '?')}%). Blocked because: {why}", b.get("url")))
-        blocks.append(("bullets", items))
-    else:
-        blocks.append(("p", "None this week."))
+                       ("Roles emailed", str(_sum(runs, "emails", "sent")))])]
 
     blocks.append(("h", "Discovery sources, this week"))
     rows = []
@@ -162,8 +148,8 @@ def build_weekly(config: dict, now: datetime | None = None, runs_path: Path = RU
     blocks.append(("kv", rows))
 
     total = sum(costs.values())
-    other = total - costs.get("scoring", 0) - costs.get("vetting", 0) - costs.get("discovery", 0)
-    spend_rows = [("Scoring", f"${costs.get('scoring', 0):.2f}"), ("Vetting", f"${costs.get('vetting', 0):.2f}"),
+    other = total - costs.get("scoring", 0) - costs.get("discovery", 0)
+    spend_rows = [("Scoring", f"${costs.get('scoring', 0):.2f}"),
                   ("Discovery", f"${costs.get('discovery', 0):.2f}")]
     if other > 0.005:
         spend_rows.append(("Other (calibration, manual tests)", f"${other:.2f}"))

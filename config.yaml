@@ -11,32 +11,16 @@ openrouter:
   # Change these freely; no code changes needed.
   scoring_model: anthropic/claude-sonnet-5.5
   scoring_fallback: anthropic/claude-sonnet-5       # used automatically if the primary errors
-  vetting_model: anthropic/claude-sonnet-5.5
-  vetting_fallback: anthropic/claude-sonnet-5
-  web_search:                                        # used by company vetting only
-    max_results: 5
-    engine: null                                     # null = provider's native search for Anthropic models
   prompt_cache_ttl: 5m                               # "5m" or "1h" (1h costs more to write)
   privacy:
     data_collection: deny    # only route to providers that do not store or train on prompts
     zdr: false               # true = zero-data-retention endpoints only (may limit model/provider choice)
 
 scoring:
-  threshold: 75            # minimum role-fit score to continue to company vetting
-
-vetting:
-  cache_days: 60           # never research the same company twice in this window
-  rules:                   # thresholds for the code that turns research into pass / flag / block
-    block_layoff_pct: 15          # layoff of this share of staff in the last 12 months blocks
-    block_rating_below: 3.3       # employee rating (out of 5) below this blocks ...
-    min_reviews_for_rating: 50    # ... but only with at least this many reviews behind it
-    flag_rating_below: 3.7        # a lower-than-this rating is a moderate negative (flag)
-    block_if_shrinking: true      # clearly shrinking headcount blocks (needs medium or high confidence)
-    flag_on_unknown_sentiment: false   # true = missing employee rating alone also flags
+  threshold: 75            # minimum role-fit score to get an email
 
 limits:
   max_roles_scored_per_run: 150    # daily/per-run caps keep OpenRouter cost bounded
-  max_companies_vetted_per_run: 25
   max_emails_per_day: 10
 
 email:
@@ -51,4 +35,3 @@ discovery:
 
 backfill:
   max_scoring_calls: 100    # hard cap on scoring calls for one --backfill run (override: --max-calls N)
-  max_vetting_calls: 20

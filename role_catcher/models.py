@@ -27,6 +27,5 @@ class ScoredJob:
     job: Job
     score: int
     reasons: list = field(default_factory=list)
-    company_verdict: dict = field(default_factory=dict)
     result: dict = field(default_factory=dict)   # full scorer JSON (section 5 schema)
     from_cache: bool = False
