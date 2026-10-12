@@ -56,10 +56,19 @@ class ParseTests(unittest.TestCase):
         self.assertEqual(ats.parse_comp_range("$211.4K - $290.6K"), (211400, 290600))
         self.assertEqual(ats.parse_comp_range("USD 150,000 - 200,000 per year"), (150000, 200000))
         self.assertTrue(ats.comp_meets_floor("$130,000 - $150,000", 130000))
-        self.assertTrue(ats.comp_meets_floor("$110K - $140K", 130000))
-        self.assertFalse(ats.comp_meets_floor("$90,000 - $120,000", 130000))
+        self.assertFalse(ats.comp_meets_floor("$110K - $140K", 130000))  # bottom is below the floor
+        self.assertFalse(ats.comp_meets_floor("$150K - $250K", 190000))
+        self.assertTrue(ats.comp_meets_floor("$190K - $250K", 190000))
         self.assertIsNone(ats.comp_meets_floor(None, 130000))
         self.assertIsNone(ats.comp_meets_floor("Competitive", 130000))
+
+    def test_floor_by_location(self):
+        cfg = {"min_annual_remote_austin": 130000, "min_annual_nyc": 190000}
+        f = ats.comp_floor_for_location
+        self.assertEqual(f("Remote (US)", cfg), 130000)
+        self.assertEqual(f("Austin, TX", cfg), 130000)
+        self.assertEqual(f("New York, NY | Remote (US)", cfg), 130000)
+        self.assertEqual(f("New York, NY (HQ)", cfg), 190000)
 
     def test_pay_range_absent(self):
         self.assertIsNone(ats.find_pay_range("competitive salary"))

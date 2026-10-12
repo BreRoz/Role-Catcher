@@ -5,7 +5,9 @@ seniority_exclude: []
 location:
   allow_remote: true
   allowed_places: []
-# Pay floor in USD/year. NYC roles are only "clearly high comp" when the top of the
-# listed range reaches this. No comp listed = flag "check comp", never reject.
+# Pay floors in USD/year, checked against the BOTTOM of the listed range.
+# Remote or Austin: 130k. NYC (when no remote option): 190k.
+# No comp listed = flag "check comp", never reject.
 comp:
-  min_annual: 130000
+  min_annual_remote_austin: 130000
+  min_annual_nyc: 190000

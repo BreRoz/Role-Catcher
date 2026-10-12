@@ -113,10 +113,19 @@ def parse_comp_range(comp: str | None) -> tuple[float, float] | None:
 
 
 def comp_meets_floor(comp: str | None, floor: float) -> bool | None:
-    """True if the top of the listed range reaches `floor`, False if it does
+    """True if the BOTTOM of the listed range reaches `floor`, False if it does
     not, None if no usable comp is listed (callers flag 'check comp')."""
     r = parse_comp_range(comp)
-    return None if r is None else r[1] >= floor
+    return None if r is None else r[0] >= floor
+
+
+def comp_floor_for_location(location: str, cfg: dict) -> float:
+    """Remote or Austin roles use the lower floor, even if NYC is also listed
+    (the remote option is available). NYC-only roles use the higher floor."""
+    loc = (location or "").lower()
+    if "remote" in loc or "austin" in loc:
+        return cfg["min_annual_remote_austin"]
+    return cfg["min_annual_nyc"]
 
 
 def _iso_from_ms(ms) -> str | None:
