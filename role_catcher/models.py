@@ -11,6 +11,8 @@ class Job:
     location: str
     url: str
     description: str = ""
+    posted_at: str | None = None   # ISO 8601 UTC, if the board provides it
+    comp: str | None = None        # human-readable pay range, if listed
 
     @property
     def key(self) -> str:
