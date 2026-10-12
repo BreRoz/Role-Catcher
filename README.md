@@ -65,7 +65,7 @@ Before anything is scored, `filters.yaml` cuts roles by title, level, location, 
 
 ## Role fit scoring
 
-Each role that survives the pre-filter is sent to the scoring model with `rubric.md`, `profile.md`, and (when present) short calibration summaries in `calibration/summaries.md`. The model must return the strict JSON in section 5 (fit score, flavor, seniority and location checks, 3 reasons, gaps, deal-breakers, comp, one-line summary).
+Each role that survives the pre-filter is sent to the scoring model with `rubric.md`, `profile.md`, and (when present) short calibration summaries in `calibration/summaries.md`. The model must return strict JSON: a short reasoning, the fit score, seniority and location checks, deal-breakers, and the comp as written. The reasoning is kept for debugging and `calibrate.py`; it is not in the email.
 
 A role passes only if `scoring.threshold` (default 75) is met, `seniority_match` and `location_ok` are true, and no deal-breaker is hit. Raise the threshold in `config.yaml` if the inbox gets noisy.
 
@@ -76,7 +76,7 @@ A role passes only if `scoring.threshold` (default 75) is met, `seniority_match`
 ## Email
 
 - **One email per qualifying role, sent as soon as it is found** (not a digest). Subject: `[Role Catcher] 82% | Title | Company`.
-- **Body:** large Apply link at the top, then title, company, location, comp and posted date when known, role fit and one-line summary, "Why I fit" (3 reasons), and "Gaps or risks". Plain text and HTML versions are both sent.
+- **Body:** large Apply link at the top, then title, company, location, comp and posted date when known, any "Check:" flags (NYC, check comp), and the role fit percent. Nothing else; I read the posting myself. Plain text and HTML versions are both sent.
 - **No cover letter, no application answers.** All copy is scrubbed so it never contains em dashes or the word "intersection".
 - **Failed sends retry.** If Gmail rejects a send, the role is not marked seen and goes out on the next run. `limits.max_emails_per_day` (default 10) is enforced from `logs/emails.jsonl`, best scores first; roles over the cap wait until the next day and a `CAP HIT` line is printed.
 - **`--dry-run`** prints every email it would send, in full, and sends nothing.

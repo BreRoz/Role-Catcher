@@ -6,15 +6,13 @@ from unittest import mock
 from role_catcher import emailer
 from role_catcher.models import Job, ScoredJob
 
-RESULT = {"fit_score": 82, "one_line_summary": "Owns the enablement knowledge base — a strong match.",
-          "top_reasons": ["Built enablement systems", "AI workflow experience", "Remote US"],
-          "gaps": ["No direct CRM admin work", "Intersection of sales and product is new"],
+RESULT = {"fit_score": 82, "reasoning": "Built enablement systems at Meta, a strong match.",
           "comp_if_listed": "$150k–$180k"}
 def scored(**kw):
     job = Job(ats="greenhouse", company="Acme", job_id="1", title="Senior Manager, GTM Enablement",
               location="Remote (US)", url="https://boards.greenhouse.io/acme/jobs/1",
               posted_at="2026-10-09T14:00:00Z", flags=kw.get("flags", []))
-    return ScoredJob(job=job, score=82, reasons=RESULT["top_reasons"], result=RESULT)
+    return ScoredJob(job=job, score=82, result=RESULT)
 
 
 class RoleEmailTests(unittest.TestCase):
@@ -33,9 +31,11 @@ class RoleEmailTests(unittest.TestCase):
 
     def test_sections_present(self):
         _, text, _ = emailer.build_role_email(scored(flags=["NYC"]))
-        for needle in ("Posted: Oct 9, 2026", "Comp: $150k-$180k", "WHY I FIT", "GAPS OR RISKS",
+        for needle in ("Posted: Oct 9, 2026", "Comp: $150k-$180k", "Role fit: 82%",
                        "Check: NYC"):
             self.assertIn(needle, text)
+        for gone in ("WHY I FIT", "GAPS OR RISKS", "Built enablement systems", "a strong match"):
+            self.assertNotIn(gone, text)
 
 
 class SendingTests(unittest.TestCase):

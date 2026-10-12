@@ -10,26 +10,18 @@ from .models import Job, ScoredJob
 
 log = logging.getLogger("role_catcher.scorer")
 
-FLAVORS = [
-    "knowledge systems", "sales/revenue enablement", "GTM ops/tooling", "content ops",
-    "AI integration/AI-forward enablement", "GTM engineering", "other",
-]
-
 SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["fit_score", "role_flavor", "seniority_match", "location_ok", "top_reasons",
-                 "gaps", "deal_breakers_hit", "comp_if_listed", "one_line_summary"],
+    "required": ["reasoning", "fit_score", "seniority_match", "location_ok",
+                 "deal_breakers_hit", "comp_if_listed"],
     "properties": {
+        "reasoning": {"type": "string", "minLength": 1},
         "fit_score": {"type": "integer", "minimum": 0, "maximum": 100},
-        "role_flavor": {"type": "string", "enum": FLAVORS},
         "seniority_match": {"type": "boolean"},
         "location_ok": {"type": "boolean"},
-        "top_reasons": {"type": "array", "items": {"type": "string"}, "minItems": 3, "maxItems": 3},
-        "gaps": {"type": "array", "items": {"type": "string"}},
         "deal_breakers_hit": {"type": "array", "items": {"type": "string"}},
         "comp_if_listed": {"type": ["string", "null"]},
-        "one_line_summary": {"type": "string", "minLength": 1},
     },
 }
 
@@ -130,7 +122,6 @@ def score_jobs(jobs: list[Job], config: dict, cache: dict | None = None,
         hit = cache.get(job.key)
         if hit and hit.get("hash") == h:
             run.scored.append(ScoredJob(job=job, score=hit["result"]["fit_score"],
-                                        reasons=hit["result"]["top_reasons"],
                                         result=hit["result"], from_cache=True))
             run.cache_hits += 1
             continue
@@ -156,8 +147,7 @@ def score_jobs(jobs: list[Job], config: dict, cache: dict | None = None,
             continue
         run.cost += cost
         cache[job.key] = {"hash": h, "result": result}
-        run.scored.append(ScoredJob(job=job, score=result["fit_score"],
-                                    reasons=result["top_reasons"], result=result))
+        run.scored.append(ScoredJob(job=job, score=result["fit_score"], result=result))
 
     print(f"scoring: {len(run.scored)} scored ({run.calls - run.failures} new calls, {run.cache_hits} cached), "
           f"{run.failures} failed, {len(run.unscored)} deferred/unscored, ${run.cost:.4f}")

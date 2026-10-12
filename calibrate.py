@@ -37,14 +37,10 @@ def read_job(path: Path) -> Job | None:
 
 
 def explain(r: dict) -> None:
-    print(f"      summary: {r['one_line_summary']}")
-    print(f"      flavor: {r['role_flavor']} | seniority_match: {r['seniority_match']} | location_ok: {r['location_ok']}")
-    for t in r["top_reasons"]:
-        print(f"      + {t}")
-    for g in r["gaps"]:
-        print(f"      - gap: {g}")
+    print(f"      seniority_match: {r['seniority_match']} | location_ok: {r['location_ok']}")
     for d in r["deal_breakers_hit"]:
         print(f"      ! deal-breaker: {d}")
+    print(f"      reasoning: {r['reasoning']}")
 
 
 def run_group(label: str, folder: str, client, config, system_prompt, is_positive: bool) -> tuple[float, int]:
@@ -70,8 +66,6 @@ def run_group(label: str, folder: str, client, config, system_prompt, is_positiv
               f"{job.company} | {job.title} ({gate})")
         if bad or not is_positive:
             explain(r)
-        if is_positive and not bad:
-            print(f"      {r['one_line_summary']}")
     return cost, problems
 
 

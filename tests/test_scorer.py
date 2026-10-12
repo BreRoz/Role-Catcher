@@ -10,9 +10,8 @@ from role_catcher.config import load_config
 from role_catcher.models import Job
 from role_catcher.schema import validate
 
-GOOD = {"fit_score": 82, "role_flavor": "sales/revenue enablement", "seniority_match": True,
-        "location_ok": True, "top_reasons": ["a", "b", "c"], "gaps": ["g"], "deal_breakers_hit": [],
-        "comp_if_listed": None, "one_line_summary": "Leads enablement systems."}
+GOOD = {"reasoning": "Built enablement systems at Meta. Gap: no CRM admin.", "fit_score": 82,
+        "seniority_match": True, "location_ok": True, "deal_breakers_hit": [], "comp_if_listed": None}
 
 
 class Resp:
@@ -53,8 +52,7 @@ class Tests(unittest.TestCase):
 
     def test_schema_accepts_good_and_rejects_bad(self):
         self.assertEqual(validate(GOOD, scorer.SCHEMA), [])
-        self.assertTrue(validate({**GOOD, "top_reasons": ["a"]}, scorer.SCHEMA))
-        self.assertTrue(validate({**GOOD, "role_flavor": "nope"}, scorer.SCHEMA))
+        self.assertTrue(validate({**GOOD, "reasoning": ""}, scorer.SCHEMA))
         self.assertTrue(validate({**GOOD, "fit_score": 101}, scorer.SCHEMA))
 
     def test_gate(self):

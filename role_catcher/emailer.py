@@ -132,11 +132,7 @@ def role_blocks(s: ScoredJob) -> list:
     blocks: list = [("apply", j.url), ("title", j.title), ("kv", meta)]
     if j.flags:
         blocks.append(("p", "Check: " + ", ".join(j.flags) + "."))
-    blocks += [("kv", [("Role fit", f"{s.score}%")]), ("p", r.get("one_line_summary", "")),
-               ("h", "Why I fit"), ("bullets", list(s.reasons or r.get("top_reasons", []))),
-               ("h", "Gaps or risks")]
-    gaps = list(r.get("gaps") or [])
-    blocks.append(("bullets", gaps if gaps else ["None noted."]))
+    blocks.append(("kv", [("Role fit", f"{s.score}%")]))
     return blocks
 
 
