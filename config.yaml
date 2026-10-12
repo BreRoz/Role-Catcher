@@ -1,0 +1,26 @@
+# Role Catcher settings. Plain values you can edit.
+timezone: America/Chicago
+# Local hours (Central) the scheduled run is allowed to proceed. Handles daylight saving.
+run_hours_local: [7, 10, 13, 16, 19]
+
+openrouter:
+  base_url: https://openrouter.ai/api/v1
+  scoring_model: "anthropic/claude-sonnet-4.5"   # placeholder, set in a later step
+  vetting_model: "anthropic/claude-sonnet-4.5"   # placeholder, set in a later step
+
+scoring:
+  threshold: 75            # minimum role-fit score to continue to company vetting
+
+vetting:
+  cache_days: 60           # never research the same company twice in this window
+  rules: {}                # filled in with section 6
+
+limits:
+  max_roles_scored_per_run: 150    # daily/per-run caps keep OpenRouter cost bounded
+  max_companies_vetted_per_run: 25
+  max_emails_per_day: 10
+
+email:
+  default_to: bre999@gmail.com
+  smtp_host: smtp.gmail.com
+  smtp_port: 465

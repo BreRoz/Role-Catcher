@@ -1,0 +1,4 @@
+requests>=2.31
+openai>=1.40
+pyyaml>=6.0
+beautifulsoup4>=4.12

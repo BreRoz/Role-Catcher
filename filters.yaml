@@ -1,0 +1,7 @@
+# Code-only pre-filter (no AI). Filled in with section 4.
+title_include: []
+title_exclude: []
+seniority_exclude: []
+location:
+  allow_remote: true
+  allowed_places: []
