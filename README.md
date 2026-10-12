@@ -18,7 +18,8 @@ Expensive steps run last, so nothing is scored or researched that a cheaper step
 |---|---|
 | `config.yaml` | Thresholds, AI model names, daily caps, vetting rules |
 | `filters.yaml` | Job titles to include/exclude, location rules |
-| `profile.md` | My background and how roles get scored |
+| `profile.md` | My background, the scorer's source of truth about me |
+| `rubric.md` | The scoring instructions and point weights sent to the model |
 | `watchlist.yaml` | Priority companies |
 | `calibration/`, `negative_examples/` | Example good and bad roles for tuning |
 
@@ -65,10 +66,20 @@ Before anything is scored, `filters.yaml` cuts roles by title, level, location, 
 - **Pay:** compared against the midpoint of the listed range. Remote or Austin roles need $130k, NYC-only roles need $190k. If a posting lists several pay bands, one meeting the floor is enough. No pay listed is never a reason to drop; NYC roles with no pay get a "check comp" flag. NYC roles are always flagged "NYC".
 - **Audit:** every dropped role and its reason is written to `logs/last_run.json` (section `prefilter`), along with the roles that were kept.
 
+## Role fit scoring
+
+Each role that survives the pre-filter is sent to the scoring model with `rubric.md`, `profile.md`, and (when present) short calibration summaries in `calibration/summaries.md`. The model must return the strict JSON in section 5 (fit score, flavor, seniority and location checks, 3 reasons, gaps, deal-breakers, comp, one-line summary).
+
+A role passes only if `scoring.threshold` (default 75) is met, `seniority_match` and `location_ok` are true, and no deal-breaker is hit. Raise the threshold in `config.yaml` if the inbox gets noisy.
+
+- **Cache:** results are saved in `state/score_cache.json` by job ID plus a hash of the description, so a role is re-scored only if its text changed.
+- **Cap:** `limits.max_roles_scored_per_run` limits real model calls. Cache hits are free. Watchlist companies are scored first, then newest first. Roles over the cap, or whose scoring call failed, are not marked seen and are retried next run. A cap hit prints a `CAP HIT` line.
+- **One failure never stops the run.** A failed call is logged and skipped.
+
 ## Schedule
 
 Runs every 3 hours at 7am, 10am, 1pm, 4pm, and 7pm Central, every day, and can be started by hand from the Actions tab. (Every 3 hours from 7am lands on 7pm; the next slot would be 10pm, after your 9pm cutoff. Change `run_hours_local` in `config.yaml` to adjust.) GitHub schedules in UTC, so the workflow lists both daylight and standard-time slots and the script skips the one that doesn't match Central time.
 
 ## Build status
 
-Scaffold complete. Discovery and the pre-filter are built. Scoring, vetting, and email layout are stubs being filled in step by step.
+Scaffold complete. Discovery and the pre-filter are built. Role fit scoring is built. Vetting and email layout are stubs being filled in step by step.

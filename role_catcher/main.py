@@ -12,7 +12,7 @@ from .discovery import discover, mark_baselined
 from .emailer import email_roles
 from .filters import prefilter, write_drop_log
 from .firstrun import cap_for_backfill, is_first_run, seed_seen
-from .scorer import score_jobs
+from .scorer import passes_gate, score_jobs
 
 
 def should_run(config: dict) -> bool:
@@ -54,8 +54,9 @@ def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, 
                                    "max_companies_vetted_per_run": config["backfill"]["max_vetting_calls"]}}
     candidates = run_prefilter(jobs)
     to_score, skipped = cap_for_backfill(candidates, watchlist_names(), cap)
-    scored = score_jobs(to_score, config)
-    passed = [s for s in scored if s.score >= config["scoring"]["threshold"]]
+    cache = state.load("score_cache.json", {})
+    run = score_jobs(to_score, config, cache, watchlist=watchlist_names())
+    passed = [s for s in run.scored if passes_gate(s.result, config["scoring"]["threshold"])]
     approved = vet_companies(passed, config)
     print(f"backfill: {len(jobs)} open, {len(candidates)} passed pre-filter, {len(to_score)} scored "
           f"(cap {cap}, {skipped} not scored), {len(passed)} passed fit, {len(approved)} passed vetting")
@@ -70,6 +71,7 @@ def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, 
     (ROOT / "logs" / "backfill.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     seed_seen(seen, jobs, today)
     state.save("seen_jobs.json", seen)
+    state.save("score_cache.json", cache)
     mark_baselined({j.board for j in jobs})
 
 
@@ -116,8 +118,9 @@ def main() -> None:
 
     jobs = [j for j in jobs if j.key not in seen]
     jobs = run_prefilter(jobs)
-    scored = score_jobs(jobs, config)
-    scored = [s for s in scored if s.score >= config["scoring"]["threshold"]]
+    cache = state.load("score_cache.json", {})
+    run = score_jobs(jobs, config, cache, watchlist=watchlist_names())
+    scored = [s for s in run.scored if passes_gate(s.result, config["scoring"]["threshold"])]
     approved = vet_companies(scored, config)
     if args.dry_run:
         for r in approved:
@@ -126,9 +129,10 @@ def main() -> None:
         return
     email_roles(approved, config)
 
-    for j in jobs:  # remember everything evaluated so it is never processed twice
-        seen[j.key] = today
+    for s in run.scored:  # remember what was evaluated; deferred or failed roles retry next run
+        seen[s.job.key] = today
     state.save("seen_jobs.json", seen)
+    state.save("score_cache.json", cache)
 
 
 if __name__ == "__main__":
