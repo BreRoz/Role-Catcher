@@ -69,6 +69,18 @@ class Tests(unittest.TestCase):
         llm.complete(c, self.cfg, "scoring", "p", "j", SCHEMA)
         self.assertAlmostEqual(spend.spend_today("America/Chicago", path=self.tmp), 0.002)
 
+    def test_daily_caps_block_calls_before_they_are_made(self):
+        for _ in range(2):
+            llm.complete(FakeClient([FakeResp('{"score": 1}')]), self.cfg, "scoring", "p", "j", SCHEMA)
+        c = FakeClient([FakeResp('{"score": 1}')])
+        calls_cfg = {**self.cfg, "limits": {**self.cfg["limits"], "max_scoring_calls_per_day": 2}}
+        with self.assertRaises(llm.CapReached):
+            llm.complete(c, calls_cfg, "scoring", "p", "j", SCHEMA)
+        spend_cfg = {**self.cfg, "limits": {**self.cfg["limits"], "max_spend_per_day_usd": 0.003}}
+        with self.assertRaises(llm.CapReached):
+            llm.complete(c, spend_cfg, "scoring", "p", "j", SCHEMA)
+        self.assertEqual(c.calls, [])      # nothing was sent
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -101,6 +101,7 @@ class ScoreRun:
     failures: int = 0
     cost: float = 0.0
     cap_hit: bool = False
+    cap_reason: str = ""     # why scoring stopped early, when cap_hit
 
 
 def score_jobs(jobs: list[Job], config: dict, cache: dict | None = None,
@@ -129,7 +130,10 @@ def score_jobs(jobs: list[Job], config: dict, cache: dict | None = None,
             if not run.cap_hit:
                 log.warning("scoring cap hit (%d calls this run); remaining roles deferred to the next run", cap)
                 print(f"CAP HIT: scoring cap of {cap} calls reached; remaining roles deferred.")
-            run.cap_hit = True
+            run.cap_hit, run.cap_reason = True, f"scoring ({cap} calls per run)"
+            run.unscored.append(job)
+            continue
+        if run.cap_hit:      # a daily cap stopped the model calls; cached roles above still pass through
             run.unscored.append(job)
             continue
         if client is None:
@@ -139,6 +143,13 @@ def score_jobs(jobs: list[Job], config: dict, cache: dict | None = None,
         run.calls += 1
         try:
             result, cost = score_one(client, config, job, system_prompt)
+        except llm.CapReached as e:
+            run.calls -= 1
+            run.cap_hit, run.cap_reason = True, str(e)
+            run.unscored.append(job)
+            log.warning("CAP HIT: %s; remaining roles deferred", e)
+            print(f"CAP HIT: {e}; remaining roles deferred until tomorrow.")
+            continue
         except Exception as e:      # one bad call must never stop the run
             run.failures += 1
             run.unscored.append(job)

@@ -71,6 +71,7 @@ A role passes only if `scoring.threshold` (default 75) is met, `seniority_match`
 
 - **Cache:** results are saved in `state/score_cache.json` by job ID plus a hash of the description, so a role is re-scored only if its text changed.
 - **Cap:** `limits.max_roles_scored_per_run` limits real model calls. Cache hits are free. Watchlist companies are scored first, then newest first. Roles over the cap, or whose scoring call failed, are not marked seen and are retried next run. A cap hit prints a `CAP HIT` line.
+- **Daily caps:** before every model call, today's calls and real spend are read from `logs/spend.jsonl`. `limits.max_scoring_calls_per_day` (200), `limits.max_discovery_spend_per_day_usd` ($1) and `limits.max_spend_per_day_usd` ($5, everything combined) stop further calls when reached. Remaining roles wait for tomorrow, a `CAP HIT` line is printed, and the weekly email lists it.
 - **One failure never stops the run.** A failed call is logged and skipped.
 
 ## Email

@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from role_catcher import scorer, spend
+from role_catcher import llm, scorer, spend
 from role_catcher.config import load_config
 from role_catcher.models import Job
 from role_catcher.schema import validate
@@ -91,6 +91,14 @@ class Tests(unittest.TestCase):
         r = scorer.score_jobs([job(1), job(2), job(3)], cfg, cache, client=c)
         self.assertEqual((r.calls, r.cache_hits, len(r.unscored), r.cap_hit), (1, 1, 1, True))
         self.assertEqual(len(r.scored), 2)
+
+    def test_daily_cap_defers_rest_but_cached_roles_still_pass(self):
+        cache = {job(3).key: {"hash": scorer.description_hash(job(3)), "result": GOOD}}
+        c = Client([Resp(GOOD), llm.CapReached("daily scoring cap of 200 calls")])
+        r = scorer.score_jobs([job(1), job(2), job(3)], self.cfg, cache, client=c)
+        self.assertEqual((r.calls, r.cache_hits, len(r.scored), len(r.unscored), r.failures), (1, 1, 2, 1, 0))
+        self.assertTrue(r.cap_hit)
+        self.assertIn("daily scoring cap", r.cap_reason)
 
     def test_watchlist_scored_first_under_cap(self):
         cfg = {**self.cfg, "limits": {**self.cfg["limits"], "max_roles_scored_per_run": 1}}

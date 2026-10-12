@@ -20,7 +20,13 @@ scoring:
   threshold: 75            # minimum role-fit score to get an email
 
 limits:
-  max_roles_scored_per_run: 150    # daily/per-run caps keep OpenRouter cost bounded
+  max_roles_scored_per_run: 150    # per-run cap on scoring calls
+  # Daily caps, checked before every model call against the real cost OpenRouter
+  # returns (logs/spend.jsonl). When one is hit, remaining roles wait for tomorrow
+  # and the weekly health email says so.
+  max_scoring_calls_per_day: 200
+  max_discovery_spend_per_day_usd: 1.00   # applies to any model call tagged "discovery"
+  max_spend_per_day_usd: 5.00             # all OpenRouter spend combined
   max_emails_per_day: 10
 
 email:

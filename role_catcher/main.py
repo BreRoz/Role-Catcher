@@ -143,7 +143,7 @@ def pipeline(args, config: dict, stats: dict) -> None:
     stats["scoring"] = {"calls": sr.calls, "cache_hits": sr.cache_hits, "failures": sr.failures,
                         "passed": len(scored), "cost": round(sr.cost, 4)}
     if sr.cap_hit:
-        stats["caps_hit"].append(f"scoring ({config['limits']['max_roles_scored_per_run']} calls per run)")
+        stats["caps_hit"].append(sr.cap_reason)
 
     if args.dry_run:
         email_roles(scored, config, dry_run=True)

@@ -16,6 +16,25 @@ class LLMError(Exception):
     pass
 
 
+class CapReached(LLMError):
+    """A daily cap from config.yaml `limits` stops further model calls today."""
+
+
+def check_caps(config: dict, purpose: str) -> None:
+    """Raise CapReached if today's real spend or call count (from logs/spend.jsonl)
+    has hit a cap. Called before every model call, so no step can overspend."""
+    lim, tz = config.get("limits", {}), config["timezone"]
+    max_total = lim.get("max_spend_per_day_usd")
+    if max_total is not None and spend.spend_today(tz) >= max_total:
+        raise CapReached(f"daily OpenRouter spend cap of ${max_total:.2f}")
+    max_calls = lim.get(f"max_{purpose}_calls_per_day")
+    if max_calls is not None and spend.calls_today(tz, purpose) >= max_calls:
+        raise CapReached(f"daily {purpose} cap of {max_calls} calls")
+    max_purpose = lim.get(f"max_{purpose}_spend_per_day_usd")
+    if max_purpose is not None and spend.spend_today(tz, purpose) >= max_purpose:
+        raise CapReached(f"daily {purpose} spend cap of ${max_purpose:.2f}")
+
+
 @dataclass
 class LLMResult:
     text: str
@@ -32,6 +51,8 @@ def get_client(config: dict) -> OpenAI:
     return OpenAI(
         base_url=cfg["base_url"],
         api_key=os.environ["OPENROUTER_API_KEY"],  # sent as a Bearer token
+        max_retries=4,      # the client backs off and honors Retry-After on 429/5xx/network errors
+        timeout=120,
         default_headers={"HTTP-Referer": cfg["app_url"], "X-Title": cfg["app_title"]},
     )
 
@@ -90,6 +111,7 @@ def complete(
     cfg = config["openrouter"]
     primary, fallback = cfg[f"{role}_model"], cfg.get(f"{role}_fallback")
     purpose = purpose or role
+    check_caps(config, purpose)
 
     extra_body: dict = {
         "models": [m for m in (primary, fallback) if m],   # fallback list
