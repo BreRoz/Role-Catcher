@@ -26,7 +26,13 @@ scoring:
 
 vetting:
   cache_days: 60           # never research the same company twice in this window
-  rules: {}                # filled in with section 6
+  rules:                   # thresholds for the code that turns research into pass / flag / block
+    block_layoff_pct: 15          # layoff of this share of staff in the last 12 months blocks
+    block_rating_below: 3.3       # employee rating (out of 5) below this blocks ...
+    min_reviews_for_rating: 50    # ... but only with at least this many reviews behind it
+    flag_rating_below: 3.7        # a lower-than-this rating is a moderate negative (flag)
+    block_if_shrinking: true      # clearly shrinking headcount blocks (needs medium or high confidence)
+    flag_on_unknown_sentiment: false   # true = missing employee rating alone also flags
 
 limits:
   max_roles_scored_per_run: 150    # daily/per-run caps keep OpenRouter cost bounded

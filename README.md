@@ -76,10 +76,24 @@ A role passes only if `scoring.threshold` (default 75) is met, `seniority_match`
 - **Cap:** `limits.max_roles_scored_per_run` limits real model calls. Cache hits are free. Watchlist companies are scored first, then newest first. Roles over the cap, or whose scoring call failed, are not marked seen and are retried next run. A cap hit prints a `CAP HIT` line.
 - **One failure never stops the run.** A failed call is logged and skipped.
 
+## Company vetting
+
+Only roles that passed fit scoring get vetted, and watchlist companies are skipped (the email says "On your watchlist, not vetted."). The model researches the company with web search and reports facts; **the pass / flag / block verdict is then computed in code from the thresholds under `vetting.rules` in `config.yaml`**, so you control the rules. Results are cached 60 days in `state/company_verdicts.json`.
+
+- **Block** (role not emailed): headcount clearly shrinking (medium or high confidence), a layoff of 15% or more of staff in 12 months, a rating below 3.3 with at least 50 reviews, or credible reports of winding down or serious financial trouble. Blocked roles and their reasons are appended to `logs/blocked.jsonl` so you can overrule one.
+- **Flag** (emailed with a warning): any smaller layoff, a rating under 3.7, unknown trajectory, low confidence, or no sources. No evidence either way is a flag with low confidence, never a pass.
+- **Pass:** growing or stable with no red flags found.
+- **Sources** are the URLs from OpenRouter's web search results, never the model's own list.
+- **If research fails** for a company, its role is emailed flagged "not checked" and the failure is not cached.
+- **TrueUp is not used.** Its terms of service prohibit automated or AI-agent access and its robots.txt blocks AI crawlers, so vetting relies on layoff trackers, news, funding news, and search-result snippets of Glassdoor/Blind/Comparably (no logins, no scraping).
+- **These ratings are an input to your judgment, not an authority.** They may be thin or wrong.
+
+Try it by hand: `python vet_company.py "Company Name"`.
+
 ## Schedule
 
 Runs every 3 hours at 7am, 10am, 1pm, 4pm, and 7pm Central, every day, and can be started by hand from the Actions tab. (Every 3 hours from 7am lands on 7pm; the next slot would be 10pm, after your 9pm cutoff. Change `run_hours_local` in `config.yaml` to adjust.) GitHub schedules in UTC, so the workflow lists both daylight and standard-time slots and the script skips the one that doesn't match Central time.
 
 ## Build status
 
-Scaffold complete. Discovery and the pre-filter are built. Role fit scoring is built. Vetting and email layout are stubs being filled in step by step.
+Scaffold complete. Discovery and the pre-filter are built. Role fit scoring is built. Company vetting is built. Email layout is a stub being filled in step by step.

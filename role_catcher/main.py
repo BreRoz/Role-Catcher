@@ -45,6 +45,19 @@ def run_prefilter(jobs: list) -> list:
     return kept
 
 
+def log_blocked(blocked: list) -> None:
+    """Append blocked roles and the reason to logs/blocked.jsonl so a wrong block can be overruled."""
+    if not blocked:
+        return
+    (ROOT / "logs").mkdir(exist_ok=True)
+    with open(ROOT / "logs" / "blocked.jsonl", "a", encoding="utf-8") as f:
+        for s in blocked:
+            f.write(json.dumps({"ts": datetime.now().isoformat(timespec="seconds"), "company": s.job.company,
+                                "title": s.job.title, "url": s.job.url, "score": s.score,
+                                "reasons": s.company_verdict.get("reasons", []),
+                                "sources": s.company_verdict.get("sources", [])}) + "\n")
+
+
 def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, dry_run: bool) -> None:
     """Score everything currently open (hard-capped) and write logs/backfill.json.
     Sends no email. Marks everything open as seen so the next normal run only
@@ -57,13 +70,17 @@ def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, 
     cache = state.load("score_cache.json", {})
     run = score_jobs(to_score, config, cache, watchlist=watchlist_names())
     passed = [s for s in run.scored if passes_gate(s.result, config["scoring"]["threshold"])]
-    approved = vet_companies(passed, config)
+    verdicts = state.load("company_verdicts.json", {})
+    vet = vet_companies(passed, config, verdicts, watchlist_names())
+    approved = vet.approved
     print(f"backfill: {len(jobs)} open, {len(candidates)} passed pre-filter, {len(to_score)} scored "
-          f"(cap {cap}, {skipped} not scored), {len(passed)} passed fit, {len(approved)} passed vetting")
+          f"(cap {cap}, {skipped} not scored), {len(passed)} passed fit, {len(approved)} passed vetting, "
+          f"{len(vet.blocked)} blocked")
     report = {"time": datetime.now().isoformat(timespec="seconds"), "open": len(jobs),
               "prefiltered": len(candidates), "scored": len(to_score), "not_scored_over_cap": skipped,
               "results": [{"score": s.score, "company": s.job.company, "title": s.job.title,
-                           "url": s.job.url, "verdict": s.company_verdict} for s in passed]}
+                           "url": s.job.url, "verdict": s.company_verdict}
+                          for s in approved + vet.blocked]}
     if dry_run:
         print("dry run: not writing logs/backfill.json or seen_jobs.json")
         return
@@ -72,6 +89,7 @@ def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, 
     seed_seen(seen, jobs, today)
     state.save("seen_jobs.json", seen)
     state.save("score_cache.json", cache)
+    state.save("company_verdicts.json", verdicts)
     mark_baselined({j.board for j in jobs})
 
 
@@ -121,18 +139,28 @@ def main() -> None:
     cache = state.load("score_cache.json", {})
     run = score_jobs(jobs, config, cache, watchlist=watchlist_names())
     scored = [s for s in run.scored if passes_gate(s.result, config["scoring"]["threshold"])]
-    approved = vet_companies(scored, config)
+    verdicts = state.load("company_verdicts.json", {})
+    vet = vet_companies(scored, config, verdicts, watchlist_names())
+    approved = vet.approved
     if args.dry_run:
         for r in approved:
-            print(f"would email: {r.score}% {r.job.title} | {r.job.company} | {r.job.url}")
+            print(f"would email: {r.score}% {r.job.title} | {r.job.company} | "
+                  f"{r.company_verdict.get('verdict')} | {r.job.url}")
+        for r in vet.blocked:
+            print(f"would block: {r.score}% {r.job.title} | {r.job.company} | "
+                  f"{'; '.join(r.company_verdict.get('reasons', []))}")
         print("dry run: no email sent, state not saved.")
         return
     email_roles(approved, config)
 
+    log_blocked(vet.blocked)
+    deferred = {s.job.key for s in vet.deferred}
     for s in run.scored:  # remember what was evaluated; deferred or failed roles retry next run
-        seen[s.job.key] = today
+        if s.job.key not in deferred:
+            seen[s.job.key] = today
     state.save("seen_jobs.json", seen)
     state.save("score_cache.json", cache)
+    state.save("company_verdicts.json", verdicts)
 
 
 if __name__ == "__main__":

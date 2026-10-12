@@ -27,6 +27,9 @@ class LLMResult:
 
 def get_client(config: dict) -> OpenAI:
     cfg = config["openrouter"]
+    if not os.environ.get("OPENROUTER_API_KEY"):
+        raise LLMError("OPENROUTER_API_KEY is not set. For local runs put OPENROUTER_API_KEY=... "
+                       "in a file named .env in the project folder (it is gitignored).")
     return OpenAI(
         base_url=cfg["base_url"],
         api_key=os.environ["OPENROUTER_API_KEY"],  # sent as a Bearer token
