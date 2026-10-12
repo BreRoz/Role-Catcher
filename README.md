@@ -55,10 +55,20 @@ Files in `state/` are the agent's memory. It updates them itself after each run;
 
 **Prompt caching.** Your profile is sent first in every scoring request and marked for caching, so repeated calls within a few minutes are billed at a small fraction of the normal input price.
 
+## The pre-filter (free, no AI)
+
+Before anything is scored, `filters.yaml` cuts roles by title, level, location, and pay. Edit that file to change the rules; no code changes needed.
+
+- **Title:** kept only if it matches an include pattern and no exclude pattern. Matching ignores case and punctuation and needs whole words ("internal" does not trip "intern"). "Program manager" counts only alongside enablement, GTM, or systems. "Associate" is allowed for "associate director", "designer" for "solutions designer", and "specialist" when the job description is clearly about building systems.
+- **Level:** only titles that are clearly junior are dropped (for example "analyst"). An unclear level goes through to scoring.
+- **Location:** fully remote (US), Austin, or NYC. A remote role that names only other countries is dropped. Odd or empty locations are kept with a "check location" flag.
+- **Pay:** compared against the bottom of the listed range. Remote or Austin roles need $130k, NYC-only roles need $190k. If a posting lists several pay bands, one meeting the floor is enough. No pay listed is never a reason to drop; NYC roles with no pay get a "check comp" flag. NYC roles are always flagged "NYC".
+- **Audit:** every dropped role and its reason is written to `logs/last_run.json` (section `prefilter`), along with the roles that were kept.
+
 ## Schedule
 
 Runs every 3 hours at 7am, 10am, 1pm, 4pm, and 7pm Central, every day, and can be started by hand from the Actions tab. (Every 3 hours from 7am lands on 7pm; the next slot would be 10pm, after your 9pm cutoff. Change `run_hours_local` in `config.yaml` to adjust.) GitHub schedules in UTC, so the workflow lists both daylight and standard-time slots and the script skips the one that doesn't match Central time.
 
 ## Build status
 
-Scaffold complete. Discovery, filters, scoring, vetting, and email layout are stubs being filled in step by step.
+Scaffold complete. Discovery and the pre-filter are built. Scoring, vetting, and email layout are stubs being filled in step by step.

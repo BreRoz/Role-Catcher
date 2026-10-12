@@ -92,6 +92,11 @@ def find_pay_range(text: str) -> str | None:
     return re.sub(r"\s+", " ", m.group(0)).strip() if m else None
 
 
+def find_pay_ranges(text: str) -> list[str]:
+    """Every pay range in a description (postings with one band per location)."""
+    return [re.sub(r"\s+", " ", m.group(0)).strip() for m in _PAY_RE.finditer(text or "")]
+
+
 _NUM_RE = re.compile(r"(\d[\d,]*(?:\.\d+)?)\s?([kK])?")
 
 

@@ -15,6 +15,7 @@ class Job:
     comp: str | None = None        # human-readable pay range, if listed
     board: str = ""                # "ats:slug" this job was fetched from
     new_board: bool = False        # board not yet baselined: its current jobs are not "new"
+    flags: list = field(default_factory=list)  # set by the pre-filter: "NYC", "check comp", "check location"
 
     @property
     def key(self) -> str:

@@ -1,13 +1,238 @@
-# Code-only pre-filter (no AI). Filled in with section 4.
-title_include: []
-title_exclude: []
-seniority_exclude: []
+# Code-only pre-filter (section 4). No AI, no cost. Edit freely; no code changes needed.
+#
+# How titles are matched: case insensitive, whole words only, with punctuation
+# ignored ("go-to-market" = "go to market", "L&D" = "l and d"). A role is kept
+# when its title matches at least one include pattern and no exclude pattern.
+# Every drop, with its reason, is written to logs/last_run.json so you can audit it.
+# When in doubt the filter lets a role through; the scorer makes the real call.
+
+title_include:
+  - enablement
+  - revenue enablement
+  - sales enablement
+  - gtm
+  - go to market
+  - gtm engineer
+  - gtm systems
+  - gtm operations
+  - revenue operations
+  - rev ops
+  - revops
+  - sales operations
+  - sales engineer
+  - sales engineering
+  - solutions engineer
+  - solution engineer
+  - solutions engineering
+  - solution engineering
+  - solutions architect
+  - solution architect
+  - solutions designer
+  - solutions consultant
+  - knowledge management
+  - content operations
+  - content systems
+  - learning and development
+  - l and d
+  - onboarding
+  - product marketing
+  - marketing engineer
+  - marketing operations
+  - marketing automation
+  - ai automation
+  - ai workflow
+  - ai deployment
+  - ai architect
+  - ai transformation
+  - forward deployed
+  - customer education
+
+# Include only when the title also contains one of the "with" words.
+title_include_paired:
+  - match: program manager
+    with: [enablement, gtm, go to market, systems]
+
+title_exclude:
+  - intern
+  - internship
+  - new grad
+  - entry level
+  - junior
+  - jr
+  - associate
+  - coordinator
+  - specialist
+  - recruiter
+  - recruiting
+  - talent acquisition
+  - talent partner
+  - people partner
+  - account executive
+  - sdr
+  - bdr
+  - sales development
+  - software engineer
+  - backend
+  - back end
+  - frontend
+  - front end
+  - machine learning engineer
+  - research scientist
+  - data scientist
+  - designer
+  - legal
+  - finance
+  - accountant
+  - hr business partner
+
+# An exclude pattern does not fire when the title also contains one of these.
+title_exclude_exceptions:
+  associate: [associate director]
+  designer: [solutions designer]
+
+# An exclude pattern does not fire when the job description is clearly systems
+# building: at least min_hits mentions of the terms below in total.
+title_exclude_unless_description:
+  specialist:
+    min_hits: 4
+    terms: [systems, automation, workflow, integration, infrastructure, api, engineering, architecture, build]
+
+# Roles clearly below Senior Manager. Titles with an unclear level (plain
+# "Manager", "Lead", no level at all) always go through to scoring.
+seniority_exclude:
+  - analyst
+  - assistant
+  - apprentice
+  - trainee
+  - co op
+  - graduate
+  - early career
+
 location:
-  allow_remote: true
-  allowed_places: []
+  allow_remote: true        # remote roles open to US candidates
+  allowed_places:           # on-site or hybrid places that are acceptable
+    austin: [austin]
+    nyc: [new york, nyc, brooklyn, manhattan]
+  # A remote role is dropped only when it names these and nothing in us_markers.
+  non_us_markers:
+    - uk
+    - united kingdom
+    - england
+    - scotland
+    - ireland
+    - emea
+    - europe
+    - european union
+    - eu
+    - apac
+    - asia
+    - india
+    - canada
+    - germany
+    - france
+    - spain
+    - italy
+    - netherlands
+    - poland
+    - portugal
+    - sweden
+    - denmark
+    - norway
+    - finland
+    - switzerland
+    - israel
+    - australia
+    - new zealand
+    - japan
+    - singapore
+    - china
+    - korea
+    - brazil
+    - mexico
+    - argentina
+    - colombia
+    - latam
+    - latin america
+    - south africa
+    - nigeria
+    - uae
+    - dubai
+    - london
+    - toronto
+    - berlin
+    - paris
+    - dublin
+    - sydney
+    - tel aviv
+    - riyadh
+    - doha
+    - abu dhabi
+    - saudi arabia
+    - qatar
+    - mena
+    - anz
+    - dach
+    - nordics
+    - southeast asia
+    - sea
+    - tokyo
+    - seoul
+    - delhi
+    - mumbai
+    - bangalore
+    - bengaluru
+    - hong kong
+    - taiwan
+    - thailand
+    - vietnam
+    - indonesia
+    - philippines
+    - malaysia
+    - turkey
+    - egypt
+    - kenya
+    - munich
+    - zurich
+    - madrid
+    - barcelona
+    - lisbon
+    - amsterdam
+    - stockholm
+    - copenhagen
+    - oslo
+    - helsinki
+    - vienna
+    - austria
+    - belgium
+    - brussels
+    - czech
+    - prague
+    - romania
+    - greece
+    - ukraine
+    - warsaw
+    - milan
+    - rome
+    - manchester
+    - edinburgh
+    - melbourne
+    - auckland
+    - montreal
+    - vancouver
+    - chile
+    - peru
+    - sao paulo
+    - mexico city
+    - buenos aires
+    - bogota
+  us_markers: [us, usa, united states, america, north america]
+  # Locations that say nothing useful. Kept and flagged "check location".
+  ambiguous: [multiple, various, flexible, hybrid, tbd, anywhere, global, worldwide, nationwide]
+
 # Pay floors in USD/year, checked against the BOTTOM of the listed range.
 # Remote or Austin: 130k. NYC (when no remote option): 190k.
-# No comp listed = flag "check comp", never reject.
+# No comp listed = flag "check comp" (NYC) or no flag (elsewhere), never reject.
+# Several pay bands in one posting: the role is kept if any band meets the floor.
 comp:
   min_annual_remote_austin: 130000
   min_annual_nyc: 190000

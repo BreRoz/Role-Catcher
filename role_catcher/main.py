@@ -10,7 +10,7 @@ from .company_vetting import vet_companies
 from .config import ROOT, load_config, load_yaml
 from .discovery import discover, mark_baselined
 from .emailer import email_roles
-from .filters import prefilter
+from .filters import prefilter, write_drop_log
 from .firstrun import cap_for_backfill, is_first_run, seed_seen
 from .scorer import score_jobs
 
@@ -36,6 +36,15 @@ def blocked(jobs, blocklist: list) -> list:
     return [j for j in jobs if j.company.lower() not in names]
 
 
+def run_prefilter(jobs: list) -> list:
+    """Pre-filter and write every drop, with its reason, to logs/last_run.json."""
+    drops: list = []
+    kept = prefilter(jobs, load_yaml("filters.yaml"), drops)
+    write_drop_log(len(jobs), kept, drops)
+    print(f"pre-filter: {len(jobs)} in, {len(kept)} kept, {len(drops)} dropped (see logs/last_run.json)")
+    return kept
+
+
 def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, dry_run: bool) -> None:
     """Score everything currently open (hard-capped) and write logs/backfill.json.
     Sends no email. Marks everything open as seen so the next normal run only
@@ -43,7 +52,7 @@ def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, 
     cap = max_calls if max_calls is not None else config["backfill"]["max_scoring_calls"]
     config = {**config, "limits": {**config["limits"], "max_roles_scored_per_run": cap,
                                    "max_companies_vetted_per_run": config["backfill"]["max_vetting_calls"]}}
-    candidates = prefilter(jobs, load_yaml("filters.yaml"))
+    candidates = run_prefilter(jobs)
     to_score, skipped = cap_for_backfill(candidates, watchlist_names(), cap)
     scored = score_jobs(to_score, config)
     passed = [s for s in scored if s.score >= config["scoring"]["threshold"]]
@@ -106,7 +115,7 @@ def main() -> None:
         return
 
     jobs = [j for j in jobs if j.key not in seen]
-    jobs = prefilter(jobs, load_yaml("filters.yaml"))
+    jobs = run_prefilter(jobs)
     scored = score_jobs(jobs, config)
     scored = [s for s in scored if s.score >= config["scoring"]["threshold"]]
     approved = vet_companies(scored, config)
