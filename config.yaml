@@ -42,3 +42,7 @@ discovery:
   full_sweep_hours: 24      # whole board registry is swept this often; watchlist boards every run
   workers: 6                # parallel board fetches (kept low to stay polite)
   pause_seconds: 0.2        # per-request pause inside each worker
+
+backfill:
+  max_scoring_calls: 100    # hard cap on scoring calls for one --backfill run (override: --max-calls N)
+  max_vetting_calls: 20

@@ -24,7 +24,7 @@ def sweep_due(reg: dict, hours: float, now: datetime | None = None) -> bool:
     return now - datetime.fromisoformat(last) >= timedelta(hours=hours)
 
 
-def discover(config: dict, keep=None) -> list[Job]:
+def discover(config: dict, keep=None, save: bool = True) -> list[Job]:
     """Returns normalized open postings. Never raises on a bad board: failures
     are logged and written to logs/discovery.json (zero boards or many errors
     is what the weekly health email reports)."""
@@ -36,7 +36,11 @@ def discover(config: dict, keep=None) -> list[Job]:
         boards, workers=cfg.get("workers", 6), pause=cfg.get("pause_seconds", 0.2), keep=keep)
 
     now = datetime.now(timezone.utc)
+    for j in jobs:
+        j.new_board = not reg["boards"].get(j.board, {}).get("baselined")
     for key, n in counts.items():
+        if n == 0:
+            reg["boards"][key]["baselined"] = True  # nothing open yet, so nothing to hide
         reg["boards"][key]["jobs"] = n
         reg["boards"][key]["checked"] = now.date().isoformat()
     for e in errors:
@@ -45,15 +49,29 @@ def discover(config: dict, keep=None) -> list[Job]:
             reg["boards"][key]["status"] = "dead"  # harvested board that vanished; watchlist boards are kept
     if full:
         reg["last_full_sweep"] = now.isoformat()
-    state.save("board_registry.json", reg)
+    if save:
+        state.save("board_registry.json", reg)
 
     summary = {"time": now.isoformat(), "full_sweep": full, "boards_tried": len(boards),
                "boards_ok": len(counts), "jobs_seen": sum(counts.values()), "jobs_kept": len(jobs),
                "errors": errors, "watchlist_unresolved": reg.get("unresolved", [])}
-    (state.STATE_DIR.parent / "logs").mkdir(exist_ok=True)
-    with open(state.STATE_DIR.parent / "logs" / "discovery.json", "w", encoding="utf-8") as f:
-        json.dump(summary, f, indent=2)
+    if save:
+        (state.STATE_DIR.parent / "logs").mkdir(exist_ok=True)
+        with open(state.STATE_DIR.parent / "logs" / "discovery.json", "w", encoding="utf-8") as f:
+            json.dump(summary, f, indent=2)
     log.info("discovery: %d/%d boards ok, %d jobs seen", len(counts), len(boards), summary["jobs_seen"])
     if not counts:
         log.error("DISCOVERY RETURNED ZERO BOARDS")
     return jobs
+
+
+def mark_baselined(board_keys: set[str]) -> None:
+    """Call after a board's current jobs have been recorded as seen, so later
+    runs treat only newly posted jobs on it as new."""
+    if not board_keys:
+        return
+    reg = load_registry()
+    for k in board_keys:
+        if k in reg["boards"]:
+            reg["boards"][k]["baselined"] = True
+    state.save("board_registry.json", reg)

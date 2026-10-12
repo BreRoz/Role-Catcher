@@ -1,13 +1,17 @@
+from __future__ import annotations
+import argparse
+import json
 import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from . import state
 from .company_vetting import vet_companies
-from .config import load_config, load_yaml
-from .discovery import discover
+from .config import ROOT, load_config, load_yaml
+from .discovery import discover, mark_baselined
 from .emailer import email_roles
 from .filters import prefilter
+from .firstrun import cap_for_backfill, is_first_run, seed_seen
 from .scorer import score_jobs
 
 
@@ -20,24 +24,101 @@ def should_run(config: dict) -> bool:
     return hour in config["run_hours_local"]
 
 
+def watchlist_names() -> set[str]:
+    out = set()
+    for item in load_yaml("watchlist.yaml").get("companies") or []:
+        out.add((item if isinstance(item, str) else item["name"]).lower())
+    return out
+
+
+def blocked(jobs, blocklist: list) -> list:
+    names = {str(n).lower() for n in blocklist or []}
+    return [j for j in jobs if j.company.lower() not in names]
+
+
+def backfill(jobs, config: dict, seen: dict, today: str, max_calls: int | None, dry_run: bool) -> None:
+    """Score everything currently open (hard-capped) and write logs/backfill.json.
+    Sends no email. Marks everything open as seen so the next normal run only
+    reports roles posted after this point."""
+    cap = max_calls if max_calls is not None else config["backfill"]["max_scoring_calls"]
+    config = {**config, "limits": {**config["limits"], "max_roles_scored_per_run": cap,
+                                   "max_companies_vetted_per_run": config["backfill"]["max_vetting_calls"]}}
+    candidates = prefilter(jobs, load_yaml("filters.yaml"))
+    to_score, skipped = cap_for_backfill(candidates, watchlist_names(), cap)
+    scored = score_jobs(to_score, config)
+    passed = [s for s in scored if s.score >= config["scoring"]["threshold"]]
+    approved = vet_companies(passed, config)
+    print(f"backfill: {len(jobs)} open, {len(candidates)} passed pre-filter, {len(to_score)} scored "
+          f"(cap {cap}, {skipped} not scored), {len(passed)} passed fit, {len(approved)} passed vetting")
+    report = {"time": datetime.now().isoformat(timespec="seconds"), "open": len(jobs),
+              "prefiltered": len(candidates), "scored": len(to_score), "not_scored_over_cap": skipped,
+              "results": [{"score": s.score, "company": s.job.company, "title": s.job.title,
+                           "url": s.job.url, "verdict": s.company_verdict} for s in passed]}
+    if dry_run:
+        print("dry run: not writing logs/backfill.json or seen_jobs.json")
+        return
+    (ROOT / "logs").mkdir(exist_ok=True)
+    (ROOT / "logs" / "backfill.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    seed_seen(seen, jobs, today)
+    state.save("seen_jobs.json", seen)
+    mark_baselined({j.board for j in jobs})
+
+
 def main() -> None:
+    ap = argparse.ArgumentParser(prog="role_catcher")
+    ap.add_argument("--dry-run", action="store_true", help="do everything except send email and save state")
+    ap.add_argument("--backfill", action="store_true",
+                    help="score everything currently open (capped), no email, then mark it all seen")
+    ap.add_argument("--max-calls", type=int, help="override the backfill scoring-call cap")
+    args = ap.parse_args()
+
     config = load_config()
     if not should_run(config):
         print("Not a configured run hour; exiting.")
         return
 
+    today = datetime.now().date().isoformat()
     seen = state.load("seen_jobs.json", {})
+    jobs = discover(config, save=not args.dry_run)
+    jobs = blocked(jobs, load_yaml("blocklist.yaml").get("companies"))
 
-    jobs = discover(config)
+    if args.backfill:
+        backfill(jobs, config, seen, today, args.max_calls, args.dry_run)
+        return
+
+    # Jobs already open on a board we have not seen before are baseline, not news:
+    # seed them silently. On the very first run that is every job.
+    first_run = is_first_run(seen)
+    baseline = [j for j in jobs if j.new_board]
+    if first_run and not jobs:
+        print("First run, but discovery returned no jobs; not seeding (will retry next run).")
+        return
+    if baseline:
+        if args.dry_run:
+            print(f"{'First run: ' if first_run else ''}would seed {len(baseline)} open roles as seen, no email.")
+        else:
+            n = seed_seen(seen, baseline, today)
+            state.save("seen_jobs.json", seen)
+            mark_baselined({j.board for j in baseline})
+            print(f"{'First run: ' if first_run else ''}seeded {n} open roles as seen. No email sent.")
+        jobs = [j for j in jobs if not j.new_board]
+    if first_run:
+        return
+
     jobs = [j for j in jobs if j.key not in seen]
     jobs = prefilter(jobs, load_yaml("filters.yaml"))
     scored = score_jobs(jobs, config)
     scored = [s for s in scored if s.score >= config["scoring"]["threshold"]]
     approved = vet_companies(scored, config)
+    if args.dry_run:
+        for r in approved:
+            print(f"would email: {r.score}% {r.job.title} | {r.job.company} | {r.job.url}")
+        print("dry run: no email sent, state not saved.")
+        return
     email_roles(approved, config)
 
     for j in jobs:  # remember everything evaluated so it is never processed twice
-        seen[j.key] = datetime.now().date().isoformat()
+        seen[j.key] = today
     state.save("seen_jobs.json", seen)
 
 

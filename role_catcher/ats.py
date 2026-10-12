@@ -259,10 +259,14 @@ def fetch_board(ats: str, slug: str, company: str | None = None, *,
     if ats == "lever":
         if isinstance(data, dict):  # {"ok": false, "error": ...}
             raise BoardNotFound(f"lever:{slug}: {data.get('error', 'unexpected response')}")
-        return parse_lever(data, name)
-    if ats == "greenhouse":
-        return parse_greenhouse(data, name)
-    return parse_ashby(data, name)
+        jobs = parse_lever(data, name)
+    elif ats == "greenhouse":
+        jobs = parse_greenhouse(data, name)
+    else:
+        jobs = parse_ashby(data, name)
+    for j in jobs:
+        j.board = f"{ats}:{slug}"
+    return jobs
 
 
 def fetch_boards(boards: list[dict], *, session: requests.Session | None = None,
