@@ -132,9 +132,9 @@ class LocationTests(unittest.TestCase):
 
 
 class CompTests(unittest.TestCase):
-    def test_remote_floor_uses_bottom_of_range(self):
-        self.assertIsNone(verdict("GTM Engineer", comp="$130,000 - $180,000")[0])
-        self.assertTrue(verdict("GTM Engineer", comp="$120,000 - $200,000")[0].startswith("comp:"))
+    def test_remote_floor_uses_midpoint_of_range(self):
+        self.assertIsNone(verdict("GTM Engineer", comp="$110,000 - $180,000")[0])
+        self.assertTrue(verdict("GTM Engineer", comp="$100,000 - $150,000")[0].startswith("comp:"))
 
     def test_no_or_unparseable_comp_is_never_a_reason_to_drop(self):
         self.assertEqual(verdict("GTM Engineer"), (None, []))
@@ -142,7 +142,7 @@ class CompTests(unittest.TestCase):
 
     def test_nyc_flagged_and_needs_high_comp(self):
         self.assertEqual(verdict("GTM Engineer", location="New York, NY", comp="$200K - $250K"), (None, ["NYC"]))
-        self.assertTrue(verdict("GTM Engineer", location="New York, NY", comp="$150K - $250K")[0].startswith("comp: NYC"))
+        self.assertTrue(verdict("GTM Engineer", location="New York, NY", comp="$150K - $220K")[0].startswith("comp: NYC"))
 
     def test_nyc_without_comp_is_check_comp(self):
         self.assertEqual(verdict("GTM Engineer", location="New York, NY"), (None, ["NYC", "check comp"]))

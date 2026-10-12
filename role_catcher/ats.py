@@ -118,10 +118,10 @@ def parse_comp_range(comp: str | None) -> tuple[float, float] | None:
 
 
 def comp_meets_floor(comp: str | None, floor: float) -> bool | None:
-    """True if the BOTTOM of the listed range reaches `floor`, False if it does
-    not, None if no usable comp is listed (callers flag 'check comp')."""
+    """True if the MIDPOINT of the listed range reaches `floor`, False if it
+    does not, None if no usable comp is listed (callers flag 'check comp')."""
     r = parse_comp_range(comp)
-    return None if r is None else r[0] >= floor
+    return None if r is None else (r[0] + r[1]) / 2 >= floor
 
 
 def comp_floor_for_location(location: str, cfg: dict) -> float:

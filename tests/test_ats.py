@@ -56,9 +56,10 @@ class ParseTests(unittest.TestCase):
         self.assertEqual(ats.parse_comp_range("$211.4K - $290.6K"), (211400, 290600))
         self.assertEqual(ats.parse_comp_range("USD 150,000 - 200,000 per year"), (150000, 200000))
         self.assertTrue(ats.comp_meets_floor("$130,000 - $150,000", 130000))
-        self.assertFalse(ats.comp_meets_floor("$110K - $140K", 130000))  # bottom is below the floor
-        self.assertFalse(ats.comp_meets_floor("$150K - $250K", 190000))
-        self.assertTrue(ats.comp_meets_floor("$190K - $250K", 190000))
+        self.assertTrue(ats.comp_meets_floor("$110K - $150K", 130000))  # midpoint is exactly the floor
+        self.assertFalse(ats.comp_meets_floor("$110K - $140K", 130000))  # midpoint 125k
+        self.assertFalse(ats.comp_meets_floor("$150K - $220K", 190000))  # midpoint 185k
+        self.assertTrue(ats.comp_meets_floor("$150K - $250K", 190000))
         self.assertIsNone(ats.comp_meets_floor(None, 130000))
         self.assertIsNone(ats.comp_meets_floor("Competitive", 130000))
 

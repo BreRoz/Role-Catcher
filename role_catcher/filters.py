@@ -175,13 +175,13 @@ def evaluate(job: Job, rules: dict) -> tuple[str | None, list[str]]:
     elif kind in ("remote", "austin"):
         floor = comp["min_annual_remote_austin"]
         if comp_check(job, floor) is False:
-            return f"comp: {kind} role, listed range starts below ${floor:,.0f} ({shown})", []
+            return f"comp: {kind} role, listed range midpoint is below ${floor:,.0f} ({shown})", []
     else:  # nyc, with no remote option
         floor = comp["min_annual_nyc"]
         flags.append("NYC")
         ok = comp_check(job, floor)
         if ok is False:
-            return f"comp: NYC role, listed range starts below ${floor:,.0f} ({shown})", []
+            return f"comp: NYC role, listed range midpoint is below ${floor:,.0f} ({shown})", []
         if ok is None:
             flags.append("check comp")
     return None, flags

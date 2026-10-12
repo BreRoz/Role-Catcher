@@ -229,7 +229,7 @@ location:
   # Locations that say nothing useful. Kept and flagged "check location".
   ambiguous: [multiple, various, flexible, hybrid, tbd, anywhere, global, worldwide, nationwide]
 
-# Pay floors in USD/year, checked against the BOTTOM of the listed range.
+# Pay floors in USD/year, checked against the MIDPOINT of the listed range.
 # Remote or Austin: 130k. NYC (when no remote option): 190k.
 # No comp listed = flag "check comp" (NYC) or no flag (elsewhere), never reject.
 # Several pay bands in one posting: the role is kept if any band meets the floor.
