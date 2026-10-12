@@ -31,9 +31,9 @@ class RoleEmailTests(unittest.TestCase):
 
     def test_sections_present(self):
         _, text, _ = emailer.build_role_email(scored(flags=["NYC"]))
-        for needle in ("Posted: Oct 9, 2026", "Comp: $150k-$180k", "Role fit: 82%",
-                       "Check: NYC"):
+        for needle in ("Posted: Oct 9, 2026", "Comp: $150k-$180k", "Role fit: 82%"):
             self.assertIn(needle, text)
+        self.assertNotIn("Check:", text)
         for gone in ("WHY I FIT", "GAPS OR RISKS", "Built enablement systems", "a strong match"):
             self.assertNotIn(gone, text)
 

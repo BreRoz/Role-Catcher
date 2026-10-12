@@ -130,8 +130,6 @@ def role_blocks(s: ScoredJob) -> list:
     if posted:
         meta.append(("Posted", posted))
     blocks: list = [("apply", j.url), ("title", j.title), ("kv", meta)]
-    if j.flags:
-        blocks.append(("p", "Check: " + ", ".join(j.flags) + "."))
     blocks.append(("kv", [("Role fit", f"{s.score}%")]))
     return blocks
 
