@@ -21,7 +21,7 @@ Skills: Knowledge management systems, content operations, GTM infrastructure, on
 
 Education: B.A. History, SUNY Brockport; A.S. Web Development, Genesee Community College.
 
-Target roles: Senior Manager or Director level across Sales/Revenue/GTM Enablement, GTM Engineering, GTM-focused Product Marketing, RevOps, Solutions Engineering, Knowledge Management and Content Operations, at AI-native or AI-forward companies. Titles that signal systems building (GTM Engineer, Enablement Architect, Program Manager for Enablement or GTM Systems) are a better match than Specialist-level roles or pure sales-methodology coaching roles.
+Target roles: Manager, Senior Manager or Director level across Sales/Revenue/GTM Enablement, GTM Engineering, GTM-focused Product Marketing, RevOps, Solutions Engineering, Knowledge Management and Content Operations, at AI-native or AI-forward companies. Titles that signal systems building (GTM Engineer, Enablement Architect, Program Manager for Enablement or GTM Systems) are a better match than Specialist-level roles or pure sales-methodology coaching roles.
 
 Pattern from my own job search data (use it to calibrate):
 

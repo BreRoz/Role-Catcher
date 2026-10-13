@@ -7,7 +7,15 @@
 # When in doubt the filter lets a role through; the scorer makes the real call.
 
 title_include:
+  # Broad single keywords: any one of these in the title is enough.
   - enablement
+  - gtm
+  - go to market
+  - marketing
+  - ai
+  - automation
+  - knowledge
+  # More specific phrases (now mostly covered by the keywords above).
   - revenue enablement
   - sales enablement
   - gtm
@@ -97,7 +105,7 @@ title_exclude_unless_description:
     min_hits: 4
     terms: [systems, automation, workflow, integration, infrastructure, api, engineering, architecture, build]
 
-# Roles clearly below Senior Manager. Titles with an unclear level (plain
+# Roles clearly below Manager (Manager is the lowest level that still passes). Titles with an unclear level (plain
 # "Manager", "Lead", no level at all) always go through to scoring.
 seniority_exclude:
   - analyst

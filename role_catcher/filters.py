@@ -71,7 +71,7 @@ def title_verdict(job: Job, rules: dict) -> str | None:
 
     level = first_match(title, rules.get("seniority_exclude"))
     if level:
-        return f"seniority: '{level}' is below Senior Manager"
+        return f"seniority: '{level}' is below Manager"
     return None
 
 

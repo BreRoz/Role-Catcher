@@ -14,7 +14,7 @@ Hard requirements: penalize hard requirements she clearly lacks (for example "5+
 
 Field rules:
 
-* seniority_match: true only if the role is Senior Manager or Director level (or an equivalent scope such as Lead, Principal, Head of, or a senior individual-contributor systems-building role). False for Specialist, Coordinator, Associate, junior, or VP/C-level scope far above her history.
+* seniority_match: true only if the role is Manager, Senior Manager or Director level (or an equivalent scope such as Lead, Principal, Head of, or a senior individual-contributor systems-building role). False for Specialist, Coordinator, Associate, Analyst, junior, or VP/C-level scope far above her history.
 * location_ok: true for fully remote US, or Austin TX. NYC onsite or hybrid is true only if the listed compensation is clearly high; if comp is not listed for an NYC role, set true and mention that comp is unlisted in `reasoning`. False for any other onsite or hybrid location, or remote outside the US.
 * deal_breakers_hit: list any that apply from her deal-breaker list (bad-reputation company, mission conflict with her values, step down in scope or not moving in the AI direction, Specialist or Coordinator scope, mainly cold outbound sales or quota carrying). Only list what the job description or well-known public fact supports. Empty list if none.
 * comp_if_listed: the pay as written in the posting (a range, or base and total pay if that is how it is stated), or null.
