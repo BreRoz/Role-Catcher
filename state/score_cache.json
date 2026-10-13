@@ -150,6 +150,17 @@
       "seniority_match": false
     }
   },
+  "greenhouse:Dropbox:8067362": {
+    "hash": "524362389ff2865b",
+    "result": {
+      "comp_if_listed": "$348,500 - $471,500",
+      "deal_breakers_hit": [],
+      "fit_score": 14,
+      "location_ok": true,
+      "reasoning": "This is a VP-level RevOps role owning forecasting, territory design, quota strategy, incentive compensation, and Marketing Ops for a global B2B org, which Bre's history does not cover. Her Meta proof points (knowledge repository overhaul, sales hub rebuild with Eng and UX, dashboard with 30+ new metrics, Metamate retrieval work) touch GTM systems and AI adoption, but only as a small slice of this scope. The biggest gaps are the 15+ years of RevOps/Sales Ops/Finance experience, the lack of any forecasting, planning, or comp design background, and a VP scope far above her history, so the hard requirements cap the score low.",
+      "seniority_match": false
+    }
+  },
   "greenhouse:Elastic:8239261": {
     "hash": "5974ec4f4242efe4",
     "result": {
