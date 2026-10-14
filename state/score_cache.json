@@ -109,6 +109,17 @@
       "seniority_match": true
     }
   },
+  "ashby:Lovable:3944f55e-910f-4248-ba28-2c1e6143eb28": {
+    "hash": "4b0c3bec30a285cb",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 50,
+      "location_ok": true,
+      "reasoning": "Bre's Meta work maps well to the scaled programs half: she built an enablement and knowledge infrastructure that grew a sales org from 46 to 3,000+ reps, launched an internal video platform from 0 to 1 (691% lift in views), and tracked adoption with 30+ new dashboard metrics. Lovable is an AI-native company and her Hours & Co. products and Anthropic certifications show she builds with AI. The biggest gap is that half the role is owning a book of hundreds of customer accounts with renewals and gross retention targets, and she has no external CSM or renewal ownership, and the posting asks for 6-8+ years in customer success, customer education or post-sales roles, a hard requirement she largely lacks, so the score is capped at 70 and lands lower. The NYC/Boston/SF hybrid location has no listed comp, so check comp; the role is hybrid and the title reads as senior IC rather than clearly Manager-level.",
+      "seniority_match": true
+    }
+  },
   "ashby:Modal:dd6fe63b-8265-474e-b1f0-fcc1c5a28daf": {
     "hash": "42095a92b9c0c5f2",
     "result": {
@@ -118,6 +129,17 @@
       "location_ok": true,
       "reasoning": "The GTM Engineer title and AI-forward context fit her target, and her Meta dashboard rebuild (30+ new metrics, data discrepancies resolved with data science and engineering) and her Hours & Co. products show some data and builder work. But this role is mostly analytics engineering: Snowflake and dbt models, reverse ETL, identity resolution, CRM schemas, and routing and territory logic. Her profile shows no hands-on SQL, Python, dbt, or production pipeline or CRM architecture experience, so she lacks several hard requirements and the production data engineering risk is high. NYC is acceptable because the listed $200K to $220K is clearly high, and no deal-breakers apply.",
       "seniority_match": true
+    }
+  },
+  "ashby:OpenAI:1ae64ddb-505f-4ad2-a731-3a857e94edee": {
+    "hash": "a1cd6e299ca6bea8",
+    "result": {
+      "comp_if_listed": "$189K - $265K",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": false,
+      "reasoning": "The workflow-building side overlaps a little with Bre's Meta systems work (repository overhaul, video platform 0 to 1, dashboard with 30+ metrics, cross-functional work with Eng, UX and Design), and OpenAI is AI-native. But the core function is paid creative and ad operations: trafficking campaigns, UTMs, pixels, conversion events, and running creative testing roadmaps on ad platforms. Her profile shows no paid media or performance marketing experience, and the 7+ years in creative ops or paid marketing is a hard requirement she lacks, so the score is capped at 70 and lands well below it. The role is also an operator and executor job heavy on detail and coordination, which is where she converts worse, and the location is SF hybrid with a Remote option listed in the header, while the body says the role is based in San Francisco 3 days a week, so location fails.",
+      "seniority_match": false
     }
   },
   "ashby:OpenAI:8ad567c5-70ca-46bf-85ae-eb5bbc8a2a39": {
@@ -131,6 +153,17 @@
       "location_ok": true,
       "reasoning": "This is a sales leadership role: it requires leading Account Directors, owning pipeline, forecasting, subscription and consumption targets, and running enterprise and country-level deals. Bre's Meta work (scaling enablement from 46 to 3,000+ reps, the knowledge repository and video platform, the Metamate retrieval partnership with Gen AI engineering) overlaps only with the adoption and capability-building piece, and she has no record of hiring or managing sales teams, carrying quota or leading enterprise sales or partnerships. The scope is Head of, so seniority is far above her history, and the missing hard requirements (sales team leadership and complex enterprise sales) cap the score low. Location is fine since remote is listed, and the $385K-$405K comp is a clear mismatch for her current level but not a deal-breaker; the company is AI-native, but the quota and sales-leadership focus is a risk.",
       "seniority_match": false
+    }
+  },
+  "ashby:OpenAI:a6815609-594d-4f22-93a2-610a69e861a2": {
+    "hash": "3e0397bc53f09f38",
+    "result": {
+      "comp_if_listed": "$287K - $318K",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": false,
+      "reasoning": "This is a creative production and delivery leadership role (executive producer scope, managing producers, project managers and agencies), which is a different function from Bre's Meta enablement and knowledge infrastructure work. Her proof points like the 0-to-1 video platform and the cross-functional Eng, UX and Design rebuild show some delivery and program skill, and sales enablement is one item in the portfolio, but she has no stated people management of producers, agency or vendor management, or 10+ years running a high-volume creative portfolio, which are hard requirements she lacks. Location is the other problem: the role is a hybrid 3 days per week in San Francisco, which is not remote US or Austin, and at $287K-$318K the pay is high but the role is still not a builder or AI-systems role.",
+      "seniority_match": true
     }
   },
   "ashby:Plaid:10c3bc9a-0c32-46c6-982e-89e66e0d0a89": {
@@ -205,6 +238,20 @@
       "seniority_match": false
     }
   },
+  "ashby:Saronic:9c3baa1f-ae9f-44b0-a74a-31440fa556a2": {
+    "hash": "00542d46136b8c72",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not moving in the AI direction or GTM target path (manufacturing automation engineering)",
+        "Defense and autonomous weapons-adjacent maritime mission may conflict with her values"
+      ],
+      "fit_score": 4,
+      "location_ok": true,
+      "reasoning": "This is a physical manufacturing automation engineering role in shipbuilding (robotics, PLCs, welding, commissioning, FAT/SAT). Bre's Meta enablement and knowledge infrastructure work, and her Hours & Co. software products, share almost nothing with it, apart from a loose link in cross-functional project ownership. She lacks several hard requirements: an engineering degree (her degrees are History and Web Development), 5+ years in manufacturing automation, and PLC and robotics experience. It is also not a GTM or AI-direction role, so it would be a step away from her target path. Austin is listed, so location works, and comp is not listed.",
+      "seniority_match": false
+    }
+  },
   "ashby:Saronic:fd7aa7cb-8036-43a2-82b1-c451469a8d1a": {
     "hash": "d0d881a15e7571d9",
     "result": {
@@ -226,6 +273,70 @@
       "fit_score": 38,
       "location_ok": true,
       "reasoning": "This is an enterprise product marketing role at an AI-forward company, fully remote US, with a clear comp range. Bre's Meta enablement and knowledge infrastructure work (3,000+ reps onboarded, the sales hub rebuild with Eng and UX, partnering with the Gen AI team on Metamate retrieval) and her AI products at Hours & Co. give her some overlap on field-ready materials and technical credibility, but the core of the job is positioning, pricing and packaging, and enterprise deal support. Her profile shows no PMM title, no 8+ years in product marketing, no pricing and packaging work taking a new product to revenue, and no experience explaining MCP or agent workflows to C-level buyers. Those are hard requirements she lacks, so the score is capped, and the role rewards a narrative and positioning executor more than a systems builder.",
+      "seniority_match": true
+    }
+  },
+  "ashby:alephalpha:fce0b58f-e95a-45bc-9ca5-b47b1c3cbabd": {
+    "hash": "1151e31ea74c7236",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 4,
+      "location_ok": false,
+      "reasoning": "This is a hands-on LLM post-training research role (SFT, RL, distributed multi-node training, PyTorch) with a hallucination reduction focus. Bre's Meta proof points, such as the Metamate retrieval troubleshooting with the Gen AI engineering team and the knowledge base integrity work, touch grounding only loosely and are not research or training experience. She lacks every hard requirement (fine-tuning LLMs with distributed frameworks, published or implemented hallucination or uncertainty research, strong PyTorch), so the score is capped far below 70, and this is the heavy hands-on production AI engineering risk she was warned about. Location is listed as Heidelberg, Berlin or Remote, but the remote scope is likely Germany or EU rather than US, so location is not clearly ok. Comp is not listed.",
+      "seniority_match": false
+    }
+  },
+  "ashby:anyone-ai:f3867e43-24b3-4207-9d64-a656ccfebcf9": {
+    "hash": "8b67d926f0be13fa",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Step down in scope and not a builder or leadership role",
+        "Specialist-level scope",
+        "Short-term part-time contract"
+      ],
+      "fit_score": 8,
+      "location_ok": false,
+      "reasoning": "This is a part-time, up to 3-month contractor evaluation role. It is annotation work on AI outputs, not enablement, knowledge infrastructure, or GTM systems building. Bre's Meta work on Metamate retrieval troubleshooting and knowledge base integrity touches AI output quality, and her Deal Dossier LLM classification work gives light coding exposure, but nothing shows the multilingual fluency in Dutch, Welsh, German, Italian, Greek or Portuguese that the role requires, so a hard requirement is missing. It is also an executor role well below Manager scope, and the listed locations are all outside the US, so she does not qualify. Compensation is not listed.",
+      "seniority_match": false
+    }
+  },
+  "ashby:anyone-ai:f90e4b5c-1682-4ddf-bb00-c8a11738a393": {
+    "hash": "0079f4d3d6a9b9bb",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Step down in scope and not a systems-building role",
+        "Specialist-level scope (part-time contract evaluator)"
+      ],
+      "fit_score": 8,
+      "location_ok": false,
+      "reasoning": "This is a part-time, up-to-3-month contract for AI conversation evaluation, a data-labeling style task. It is not Manager or Director scope and does not use her Meta enablement or knowledge infrastructure work. The only loose overlap is her Metamate retrieval troubleshooting and her AI tool fluency, which the role does not ask for beyond comparing chatbot responses. The role is also listed only for locations in Latin America and Europe, and requires fluency in a supported non-US locale, so her US or Austin location does not fit. It is a step down in scope and offers no systems building.",
+      "seniority_match": false
+    }
+  },
+  "ashby:atlan:69d60d3b-8466-4abd-809b-0e37abcbf05f": {
+    "hash": "5fdef2fc54dce216",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "Atlan is AI-native and sells a context layer, which lines up with Bre's Metamate retrieval troubleshooting, knowledge base integrity work, and her own AI products (Deal Dossier, Whispuur). But this is a customer-facing Sales Engineer role that wants 5+ years in an SE, FDE or Solutions Architect job, a data science, ML or data engineering background, and recent hands-on LLM and agent building. Bre has none of those hard requirements: her Meta years were enablement, not pre-sales engineering or data practitioner work. The role is also heavy on hands-on technical AI work, which is the exact depth interviewers have said she lacks. The title is a senior IC builder role, so seniority fits, and the posting is remote-first US. Comp is not listed.",
+      "seniority_match": true
+    }
+  },
+  "ashby:axelera:06e3a556-7131-4b1b-b6e2-1892e81a28b2": {
+    "hash": "191de1f8eca4f702",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Role is not moving in the AI direction she wants to build in and is a different function (partner marketing execution) rather than enablement or GTM systems"
+      ],
+      "fit_score": 18,
+      "location_ok": true,
+      "reasoning": "This is a partner and co-marketing role with named global accounts, joint plans, co-branded campaigns, and event presence. Bre's Meta work was enablement and knowledge infrastructure with Eng, UX and Design partnership, and nothing in her history is partner, channel or alliance marketing. The one stated must-have, partner/channel/alliance marketing experience with joint plans, is a hard requirement she lacks, which caps the score. It is also an executor and relationship role rather than a systems-building one, so it reads as a lateral move away from her enablement and GTM systems direction. The company is AI-forward silicon, remote US, and comp is unlisted, but the function overlap is weak.",
       "seniority_match": true
     }
   },
@@ -251,6 +362,28 @@
       "seniority_match": false
     }
   },
+  "ashby:beaconai:580ebda1-66f4-48cb-adc1-bbf4b09f5de8": {
+    "hash": "55442e1cb41e274b",
+    "result": {
+      "comp_if_listed": "$224K - $260K",
+      "deal_breakers_hit": [],
+      "fit_score": 18,
+      "location_ok": false,
+      "reasoning": "This is a hands-on production AI engineering role (agent architectures, LangGraph, AWS Bedrock, pgvector, distributed services, evals) and Bre has no production software engineering background of that depth. Her real overlaps are the retrieval troubleshooting with Meta's Gen AI team during the Metamate launch, the search rebuild that cut call prep time 8.84%, and the LLM classification in Deal Dossier, but these fall well short of the 'beyond basic model API integrations' and strong software engineering fundamentals hard requirements, which caps the score and is the biggest risk. It is also an onsite-heavy hybrid in San Carlos (3+ days per week), outside her allowed locations, and it is an engineer role rather than a GTM enablement or systems role.",
+      "seniority_match": true
+    }
+  },
+  "ashby:bedrock-robotics:d0235101-b7e7-4127-855e-eba2fd1a2797": {
+    "hash": "8153c836637e04e4",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 42,
+      "location_ok": true,
+      "reasoning": "The overlap is real but partial. Bre's Meta work on onboarding, the 0-to-1 video platform that reached 3,000+ reps, and adoption tracking maps to Bedrock University and the crew readiness measures. This role is external customer and field-crew education in construction, though, and she has no customer-facing training or advisory-board community work, and no field or construction exposure (a stated plus). It is also written as a hands-on writer and facilitator inside Marketing with regular travel, so it reads as an executor role rather than the systems and AI workflow building she converts best on. The AI context is autonomy deployment, not applied AI tooling she can build. Location is workable with Austin preferred and Lockhart TX listed, but the posting says primarily in-office, and compensation is unlisted.",
+      "seniority_match": true
+    }
+  },
   "ashby:benepass:0c7eb18a-fb5d-467b-b0f0-0460244c5484": {
     "hash": "39f4bb2af2589501",
     "result": {
@@ -264,6 +397,17 @@
       "seniority_match": false
     }
   },
+  "ashby:bridgepoint-consulting:47123c15-c2fc-4564-ad3c-cbea6b5b66e7": {
+    "hash": "9fa7aa58f97671b5",
+    "result": {
+      "comp_if_listed": "$125K - $135K",
+      "deal_breakers_hit": [],
+      "fit_score": 42,
+      "location_ok": true,
+      "reasoning": "Some real overlap: the 50% AI/automation/data half maps to her Meta work with the Gen AI team on Metamate retrieval, the Tableau dashboard rebuild with 30+ new metrics and data discrepancy fixes, and her Claude certifications and Hours & Co. LLM products. The role is a Manager-level, fully remote US internal operations job, but the scope is a consulting firm's internal ops: staffing, resource management, utilization forecasting, Power BI, Power Automate, HubSpot governance, and consultant advocacy. She has no stated Microsoft stack, HubSpot, or staffing/resource planning experience, and the AI side leans toward maintaining agents rather than GTM enablement systems building. Pay of $125K-$135K is listed, and this reads more like a business ops executor role than her enablement infrastructure sweet spot, so it is a stretch rather than a strong match.",
+      "seniority_match": true
+    }
+  },
   "ashby:chainalysis-careers:a8fa332e-a2b8-40cb-aa26-ca473a1999b4": {
     "hash": "3c1eecabbcbea8d7",
     "result": {
@@ -272,6 +416,31 @@
       "fit_score": 9,
       "location_ok": true,
       "reasoning": "This is an HR Business Partner role supporting GTM, requiring 10+ years of progressive HRBP experience, sales compensation design, employee relations, and org design. Bre has none of that; her Meta enablement work (onboarding for 3,000+ reps, knowledge repository, sales hub rebuild) only touches the small 'onboarding and ramp-time' slice of the role, so core function overlap is minimal and the missing HRBP experience is a clear hard-requirement gap that caps the score. The Director-level IC scope and AI-native company context fit her target direction, and remote US is listed, but this is a people-function role rather than a systems-building one, so it is not a realistic match.",
+      "seniority_match": true
+    }
+  },
+  "ashby:clera:40b6c73f-96f7-47d8-985c-3bde537c3daf": {
+    "hash": "31862e5b724b8c5b",
+    "result": {
+      "comp_if_listed": "$130,000 to $175,000 annually",
+      "deal_breakers_hit": [
+        "Not moving in the AI direction",
+        "Step down in scope or not aligned with target function"
+      ],
+      "fit_score": 8,
+      "location_ok": false,
+      "reasoning": "This is a client-facing paid media role (Meta, TikTok, Google ad buying, seven-figure budgets, QBRs, SKAN and mobile measurement). Bre's Meta work was internal sales enablement and knowledge infrastructure, not running paid advertising, so core function overlap is near zero and she lacks the hard requirement of 5+ years of paid media experience, which caps the score. The only loose overlaps are data-to-recommendation analysis and cross-functional partnership, and there is no AI or systems-building angle. Location is on-site in New York even though the header says Remote, and the listed pay of $130,000 to $175,000 is not clearly high enough to justify NYC onsite.",
+      "seniority_match": false
+    }
+  },
+  "ashby:clera:42eb2924-d484-4112-90d0-63210929b9d4": {
+    "hash": "765e3f18686fcd0f",
+    "result": {
+      "comp_if_listed": "$180,000 to $250,000 USD base salary annually",
+      "deal_breakers_hit": [],
+      "fit_score": 35,
+      "location_ok": true,
+      "reasoning": "Her Meta work partnering with Eng and Data Science on dashboard metric discrepancies (30+ new metrics) and on Metamate retrieval troubleshooting, plus her own LLM products like Deal Dossier, touch the data-definition and agent sides of this founding FDE role. The role is hands-on data engineering and applied statistics (strong SQL, dbt, undocumented warehouse schemas, validation design, calibration, modeling), and nothing in her profile shows production-level SQL/dbt or statistics work, so that missing hard requirement caps the score and this is a real production AI and data engineering risk. The header says New York | Remote but the body says on-site in New York, so I treated it as NYC onsite, where the $180,000 to $250,000 base is high enough to pass; her founder background helps with the degree clause.",
       "seniority_match": true
     }
   },
@@ -286,6 +455,43 @@
       "seniority_match": true
     }
   },
+  "ashby:clickhouse:4c4977fe-55eb-4605-be00-6ef9a9746ee1": {
+    "hash": "b1570cbe0b7c6a90",
+    "result": {
+      "comp_if_listed": "$143,550 - $194,500",
+      "deal_breakers_hit": [
+        "Role is not moving in the AI direction"
+      ],
+      "fit_score": 18,
+      "location_ok": true,
+      "reasoning": "This is a hands-on lifecycle and email marketing role, not enablement or knowledge infrastructure. Bre's Meta work (the knowledge repository overhaul, the 0-to-1 video platform, the sales hub search rebuild) does not map to owning trial-to-paid conversion, behavior-triggered nurture, or PLG email programs. She also lacks several hard requirements: 6+ years in lifecycle or growth marketing, 3+ years at a developer or data infrastructure company, and PLG lifecycle experience. Her Deal Dossier newsletter product and adoption-tracking work give only slight adjacent credit. The role is an individual contributor at a senior level, so seniority is arguably fine, and it is remote US with listed comp. It reads as an executor role on a generic marketing title, which is where her conversion is weakest, and it has no real AI angle.",
+      "seniority_match": true
+    }
+  },
+  "ashby:clickhouse:bdad5644-3c80-4b7f-b5a2-aacd5ef3e5d1": {
+    "hash": "9cbdbc212772e962",
+    "result": {
+      "comp_if_listed": "$237,477 - $262,800 per year",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "Bre's Meta work in GTM enablement (the knowledge repository overhaul, the 0-to-1 video platform, 3,000+ reps onboarded) overlaps only with the enablement collateral and GTM enablement program duties in a Principal PMM role. The core of the job is product marketing for a technical data product: competitive analysis, positioning open source versus commercial, launches, and customer research. She has no PMM title or stated launch, competitive analysis, or messaging experience. The posting also lists a Master's degree and 3 years as a PMM, and she has a B.A. and an A.S., so she misses at least two hard requirements, which caps the score and makes this a stretch. Remote US is fine and listed comp is high, but the role is marketing-heavy rather than systems building, and the AI angle is weak.",
+      "seniority_match": true
+    }
+  },
+  "ashby:clickup:4081192f-f4b2-484b-a7d0-26714bbeb18d": {
+    "hash": "b912784b73f4d61e",
+    "result": {
+      "comp_if_listed": "$148K - $180K",
+      "deal_breakers_hit": [
+        "Not moving in the AI direction in her target function (recruiting management is outside her GTM enablement and systems-building path)"
+      ],
+      "fit_score": 8,
+      "location_ok": true,
+      "reasoning": "This is a recruiting management role: leading recruiters, carrying GTM reqs, and building a Boston talent community. Bre has no recruiting or talent acquisition history, so the core function overlap is near zero. The only links are the AI-native context, her cross-functional partnership with GTM leaders, and her data and dashboard work at Meta. The role also asks for a New England network, ATS expertise, equity negotiation and a track record hiring sales roles, all of which she lacks. It is manager scope and the remote option is listed, but the posting centers on Boston in-person events and a New England base, so remote eligibility is unclear.",
+      "seniority_match": true
+    }
+  },
   "ashby:coderabbit:a40336da-00c0-41a5-a545-187e006dd421": {
     "hash": "cfa68b3b87aff738",
     "result": {
@@ -295,6 +501,20 @@
       "location_ok": true,
       "reasoning": "The title and scope fit her target direction (GTM systems, AI-forward company, staff-level builder role, remote option), and her Deal Dossier work with Stripe billing and LLM classification, plus Metamate retrieval troubleshooting with Gen AI engineers, show some applied AI and systems orientation. However, the role is heavy on hands-on production engineering: deep Salesforce Apex and LWC, full-stack TypeScript, Next.js and Postgres, CPQ and quote-to-cash, and 7+ years of Salesforce and full-stack engineering. Her profile shows no Salesforce engineering, no production software engineering career, and no CPQ or billing integration experience beyond a Stripe integration in a side product, so several hard requirements are clearly missing, which caps the score at 70 and places it well below that because the core function is engineering rather than enablement or knowledge infrastructure.",
       "seniority_match": true
+    }
+  },
+  "ashby:darkroom:091f5ef0-6142-4f0b-9d53-07693b6f6fcc": {
+    "hash": "bf41f6900267e56c",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Step down in scope and not moving in the AI direction",
+        "Specialist-level executor scope"
+      ],
+      "fit_score": 4,
+      "location_ok": false,
+      "reasoning": "This is a hands-on social video editor role (Premiere, Final Cut, After Effects, 3-4+ years editing for social-first brands), which has almost no overlap with Bre's Meta enablement and knowledge infrastructure work. The only loose tie is the Meta internal video platform she built from 0 to 1 (691% lift in views), but that was platform and program building, not editing, so she clearly lacks the core hard requirement. It is also an agency executor role, not AI-forward, and is open only to candidates based in Brazil, Portugal, and Spain, so a US-based Bre is not eligible; comp is unlisted.",
+      "seniority_match": false
     }
   },
   "ashby:docker:3458c40b-e757-4bb3-8b53-235c392fcab0": {
@@ -308,6 +528,17 @@
       "seniority_match": true
     }
   },
+  "ashby:dualentry:14840956-c005-4457-bfae-a9a40613958f": {
+    "hash": "22cc3a8ccdfb9fec",
+    "result": {
+      "comp_if_listed": "Base $175K-$280K USD, plus $80K+ equity",
+      "deal_breakers_hit": [],
+      "fit_score": 38,
+      "location_ok": true,
+      "reasoning": "Bre's Meta enablement work (sales hub rebuild, repository overhaul with 12,000 hours saved, video platform for 3,000+ reps) overlaps only partly with the sales-collateral and dashboard parts of this role, but the core of the job is external messaging, competitive positioning, copywriting, and multi-channel campaigns (events, paid, webinars) aimed at CFOs, and she has no product marketing or B2B SaaS marketing track record or fintech/ERP background. The 4+ years of high-growth B2B SaaS marketing is a hard requirement she lacks, which caps the score, and the role is a campaign and content executor shape rather than a systems-building one, though it is an AI-native company with a manager scope and she has Hours & Co. products as evidence of building. NYC in-office with listed base of $175K to $280K plus $80K+ equity is clearly high comp, so location is acceptable.",
+      "seniority_match": true
+    }
+  },
   "ashby:dualentry:fa976419-a598-47ee-bec2-2c6e9920386e": {
     "hash": "22cc3a8ccdfb9fec",
     "result": {
@@ -316,6 +547,39 @@
       "fit_score": 42,
       "location_ok": true,
       "reasoning": "The overlap is partial. Her Meta enablement work (sales knowledge repository overhaul, 691% video view lift, 3,000+ reps onboarded) maps to the sales collateral and content-for-Sales part of this role, and the dashboard work with 30+ new metrics fits the analytics piece. The core of the job, though, is classic B2B product marketing for CFOs: messaging, competitive positioning, launches, copywriting, and multi-channel campaigns across events, paid, and email. She has no listed fintech, ERP, or accounting PMM background and no 4+ years in high-growth B2B SaaS marketing, so a hard requirement is missing and the score is capped at 70. It is an AI-native company, but the role is not systems building and leans toward an executor in campaign work. The role is in-office in NYC, and the $175K to $280K base is clearly high, so location is acceptable.",
+      "seniority_match": true
+    }
+  },
+  "ashby:embedding-vc:2aee4ca5-53c5-431b-a4b7-26ef05dca311": {
+    "hash": "854b3b5a4caa470e",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 35,
+      "location_ok": false,
+      "reasoning": "Partial overlap only. Bre's Meta work on launches, enablement material for sales, adoption tracking, and the sales hub rebuild (8.84% call prep reduction, 2.75% sales lift) maps to the launch, enablement and adoption pieces, and Deal Dossier plus Claude certifications give some AI credibility. The core of the role is growth product management: funnel instrumentation, A/B experiments with statistical rigor, pricing and packaging, SQL and product analytics, and B2B SaaS growth shipped personally, none of which are in her history, so this is a stretch on a hard requirement and the score is capped. Location is Bay Area hybrid, which fails her rules, and there is a preference for Mandarin and ad tech experience she lacks.",
+      "seniority_match": false
+    }
+  },
+  "ashby:foley:1df254f8-7c91-4a4e-a6dd-f21a0000783b": {
+    "hash": "505c4ad0bade81f0",
+    "result": {
+      "comp_if_listed": "$130K - $175K",
+      "deal_breakers_hit": [],
+      "fit_score": 42,
+      "location_ok": true,
+      "reasoning": "Overlap is partial. The product training and certification piece, plus measuring ramp and readiness, maps to her Meta enablement work (3,000+ reps onboarded, 691% video view lift, repository overhaul), and the builder mindset and AI workflow use fit her Hours & Co. products and the Metamate retrieval partnership. The core of the role is pricing and packaging, launch ownership, positioning and win/loss, and she has no listed B2B SaaS product marketing, pricing, or launch ownership, so the 7+ years of product marketing and hands-on pricing requirements are clear hard gaps that cap the score at 70 and likely land lower. Texas is on the allowed state list and the role is remote US, so location works, and the $130K-$175K comp is listed.",
+      "seniority_match": true
+    }
+  },
+  "ashby:foley:5a659124-e235-4b59-a2dc-98e5473942d7": {
+    "hash": "44597b75ca345781",
+    "result": {
+      "comp_if_listed": "$130K - $175K",
+      "deal_breakers_hit": [],
+      "fit_score": 32,
+      "location_ok": true,
+      "reasoning": "This is a Director-level people-management role over customer onboarding (Customer Success, SMB to Enterprise), which is a different function from Bre's internal sales enablement and knowledge infrastructure work. Relevant overlap: onboarding program design, scaling 46 to 3,000+ reps, building playbooks and adoption tracking, and cross-functional work with Eng and Ops. The biggest gaps are that she has no customer-facing CS, onboarding or implementation experience, no record of managing a team of onboarding specialists and managers (the core of the role), and the 7+ years in CS/Onboarding/Implementation hard requirement is not met, which caps the score. The AI element is only a light 'openness to AI' ask, and it is an executor and people-leader role more than a systems-building one. Location is remote US, but Texas is listed as an allowed state, so Austin is fine.",
       "seniority_match": true
     }
   },
@@ -332,6 +596,17 @@
       "seniority_match": true
     }
   },
+  "ashby:gen-digital:2f1ee539-865a-42c8-a138-b19c508a9504": {
+    "hash": "94bcc841e2375f48",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is an IT infrastructure engineering role. Bre's Meta work on knowledge infrastructure, her Metamate retrieval troubleshooting with the Gen AI team, and adoption and enablement metrics touch the AI rollout and change management portion. However, the core of the job is Slack Enterprise Grid and M365 administration, M&A platform migrations, SIEM integration, and 10+ years of enterprise IT infrastructure, none of which she has. Those missing hard requirements cap the score, and the hands-on engineering depth is a real risk. It is a senior IC role and listed as Tempe AZ or Remote, so it is remote-eligible, and comp is not listed.",
+      "seniority_match": true
+    }
+  },
   "ashby:gen-digital:40b7c825-278b-428c-b303-4d799dfb6496": {
     "hash": "8f223b6d6963e50e",
     "result": {
@@ -341,6 +616,181 @@
       "location_ok": false,
       "reasoning": "This is a brand and creative campaign leadership role for LifeLock, centered on creative concepting, agency partnership, and campaign production. Bre's Meta proof points (knowledge repository overhaul, video platform 0 to 1, Metamate retrieval work) are enablement and systems work, not brand creative, and she has no stated brand campaign or 10+ years of integrated marketing experience, which is a missing hard requirement that caps the score. The AI-enablement angle is light and the location is ambiguous: the header says Remote but the body says Mountain View onsite 3 days per week, which fails her location rule, and the posting lists two different pay ranges.",
       "seniority_match": true
+    }
+  },
+  "ashby:gen-digital:e01422cb-1272-4cb4-bc9d-c0981fa296f8": {
+    "hash": "4c642572810399b8",
+    "result": {
+      "comp_if_listed": "$145K - $168K",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a client-facing pre-sales Solutions Engineer role at a fintech marketplace platform, asking for 5+ years in sales engineering, solutions architecture or technical account management. Bre has none of that on her resume. Her Meta work (knowledge infrastructure, cross-functional builds with Eng, UX and Design, playbook and template work) touches only the scoping, documentation and enablement-style parts, and nothing shows partner-facing technical demos or architecture. The missing hard requirement caps the score low, and the role is closer to a technical pre-sales executor than an enablement or knowledge systems builder. The role is remote-friendly, though the listing also names New York, and the comp is listed at $145K to $168K.",
+      "seniority_match": true
+    }
+  },
+  "ashby:gen-digital:f32a288d-8e0d-410e-9973-83d3a84dcdcd": {
+    "hash": "4788193de495577e",
+    "result": {
+      "comp_if_listed": "$190,000 - $215,000 base salary",
+      "deal_breakers_hit": [
+        "Not moving in the AI direction: consumer campaign marketing with only light AI tool use"
+      ],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a consumer integrated marketing and campaign role for Avast, AVG, Avira and CCleaner, built on consumer storytelling, campaign management, free-to-paid conversion and regional localization. Bre's Meta work was internal sales enablement and knowledge infrastructure, so only the cross-functional work with Eng, UX and Product and the metrics and dashboard work transfer. She has no consumer campaign, copywriting, paid media or acquisition experience, and the 8+ years of integrated marketing or campaign management is a hard requirement she clearly lacks, which caps the score. The role also has little systems-building or AI-native content and only light AI tool use, and it is hybrid 3 days in NYC; the $190K-$215K base is clearly high, so location passes.",
+      "seniority_match": true
+    }
+  },
+  "ashby:hatch:979e3b0d-1af6-4960-8280-7def6f7d2177": {
+    "hash": "38546cceae5438f4",
+    "result": {
+      "comp_if_listed": "$113,400 to $170,000",
+      "deal_breakers_hit": [
+        "Role is closer to a technical pre-sales and implementation executor than a step up in scope toward GTM systems or enablement leadership"
+      ],
+      "fit_score": 34,
+      "location_ok": true,
+      "reasoning": "This is a hands-on Sales Engineer role in pre-sales and implementation: discovery calls, API and integration feasibility, Technical Scope documents, and leading onboarding through go-live. Bre's Meta work (cross-functional builds with Eng, UX, Data Science, the Metamate retrieval troubleshooting, the dashboard data discrepancy fixes) and her Hours & Co. products show some technical credibility, but she has no listed experience in CRM or API integrations, SQL, or customer-facing technical pre-sales, and the role is an executor in deals rather than an enablement or knowledge systems builder. The one piece that overlaps is building and owning the integration discovery question set for the broader sales team, which is thin next to the rest of the role. Seniority reads as individual contributor and mid-level, with a $113k-$170k range, so it is not clearly Manager-level scope and may be a step down; I treat it as a technical IC without a clear match. Remote US is fine, and the AI context (AI for service businesses) is real, but the work is integration scoping, not applied AI workflow design.",
+      "seniority_match": false
+    }
+  },
+  "ashby:hivemq:57cd5dd9-04f5-448a-9c60-cdfb464c0e2a": {
+    "hash": "458e0f19fbf93c33",
+    "result": {
+      "comp_if_listed": "$136K - $215K",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a RevOps planning and analytics seat: bookings models, quota design, capacity modeling, forecasting and funnel analytics. Bre's Meta work does not cover that function. Her closest proof points are the repository dashboard revamp (30+ new metrics, data discrepancies resolved with data science) and the sales hub search diagnosis tied to call prep time and sales lift, which show data intuition but not annual planning, quota setting, or finance partnership. She also lacks the stated hard requirements of 7+ years in RevOps or GTM FP&A, Salesforce data model depth, and advanced modeling, so the score is capped well below 70. Seniority is fine and remote US with listed comp works, and the builder language and practical AI note help slightly, but the core function is mismatched and enablement systems building is not the focus.",
+      "seniority_match": true
+    }
+  },
+  "ashby:hostinger:f4e46bbc-f74f-4b98-8575-72450f64bd73": {
+    "hash": "7ade7887fff72505",
+    "result": {
+      "comp_if_listed": "Starts at \u20ac4,000 EUR/month, depending on experience and skills",
+      "deal_breakers_hit": [
+        "Step down in scope or not moving in the AI direction"
+      ],
+      "fit_score": 18,
+      "location_ok": false,
+      "reasoning": "This is a campaign and project management role in product marketing for Domains, with affiliate partner work and campaign analytics. It does not match Bre's Meta enablement and knowledge infrastructure proof points (repository overhaul, video platform 0 to 1, search rebuild with Eng and UX, Metamate retrieval work), and it is an executor role where she reads as a builder. The cross-functional coordination and metrics work are loosely transferable, but she has no digital marketing campaign or affiliate experience, and the AI-first framing is company-level only, with no applied AI work in the role. Remote is listed without a US restriction, so location is ambiguous, and the stated pay is a floor of 4,000 EUR per month, which is a likely step down in scope and pay.",
+      "seniority_match": false
+    }
+  },
+  "ashby:ibotta:cd13cc14-5a38-4bb5-b2cb-5ba3aab3f451": {
+    "hash": "3419563f387bf1cb",
+    "result": {
+      "comp_if_listed": "Base $120,000 - $140,000, plus equity and a variable component",
+      "deal_breakers_hit": [
+        "Role is not moving in the AI direction",
+        "Mainly consumer lifecycle marketing execution, not GTM enablement or systems building"
+      ],
+      "fit_score": 15,
+      "location_ok": false,
+      "reasoning": "This is a consumer lifecycle and CRM marketing role (Braze journeys, push, SMS, rewards budgets, 4+ years in lifecycle or retention, 2+ years managing marketers). Bre's Meta work on adoption tracking, the sales hub rebuild with Eng and UX, and dashboard metrics touches segmentation and experimentation loosely, but she has no lifecycle, CRM, or Braze experience, no people management listed, and no loyalty or rewards program budget experience. These are several missing hard requirements, and there is no AI-forward angle, so it is a generic marketing manager title where she converts poorly. Location is a Denver hybrid with 3 days in office and the listed comp of $120,000 to $140,000 base is not high, so it fails the location rule.",
+      "seniority_match": true
+    }
+  },
+  "ashby:iceye:4c630f65-1093-4a4a-a106-41cb47de7fa2": {
+    "hash": "be3b1091723b4aca",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not moving in the AI direction",
+        "Step down in scope"
+      ],
+      "fit_score": 8,
+      "location_ok": false,
+      "reasoning": "This is a pre-sales Sales Engineer role for space-based SAR satellite missions, centered on responding to government tenders (ESA, EDF) and running mission analyses. Bre's Meta work in enablement and knowledge infrastructure, plus cross-functional work with Eng and Product, has almost no overlap with space systems, tender writing or sales engineering. She lacks several hard requirements: an engineering, aerospace or physics degree (her degrees are in History and Web Development), 5+ years in sales engineering or bid management, and space or EO domain knowledge. The role is also not AI-forward, and the location is Espoo, Finland or remote within Europe, with national security screening required, so it is not workable for a US-based candidate. Comp is not listed.",
+      "seniority_match": false
+    }
+  },
+  "ashby:iceye:ce2358dd-63dd-401e-9bbf-61a4b94ad170": {
+    "hash": "ceb8723ffe16d2d9",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not moving in the AI direction",
+        "Defense and military ISR focus may conflict with her values"
+      ],
+      "fit_score": 6,
+      "location_ok": false,
+      "reasoning": "This is a pre-sales technical role for space-based SAR satellite missions, centered on government tenders, mission simulations, and RFP responses. Bre's Meta enablement and knowledge infrastructure work (repository overhaul, video platform, search rebuild) has almost no overlap with it, and she lacks several hard requirements: a Master's in Engineering, Aerospace or Physics, 8+ years in sales engineering or bid management, space and EO domain knowledge, and national security screening eligibility. The role is also onsite or hybrid in Finland with remote only within Europe, so it fails on location, and it is not an AI-forward role.",
+      "seniority_match": true
+    }
+  },
+  "ashby:imprint:936fe2a1-bcce-4ab9-a51a-42c11c203406": {
+    "hash": "4a0039b477ef978f",
+    "result": {
+      "comp_if_listed": "$150K - $180K",
+      "deal_breakers_hit": [],
+      "fit_score": 45,
+      "location_ok": true,
+      "reasoning": "The knowledge management and AI-readiness half of this role matches her Meta work: the repository overhaul (71% traffic, 12,000 hours saved), the search diagnosis and rebuild, and the Metamate retrieval troubleshooting with the Gen AI team. The role is Sr. Manager scope, remote, and rewards a builder who connects quality inputs to knowledge and training outputs. The biggest gap is that it is a contact center CX role: it requires 7+ years in customer experience, QA framework ownership at 100+ agents, QM platforms (Maestro, Klaus), Zendesk, and hands-on AI deflection tools like Sierra, none of which she has. Her enablement was for sales reps, not support agents, so several hard requirements are missing, which caps the score at 70, and she would read as a stretch.",
+      "seniority_match": true
+    }
+  },
+  "ashby:instructure:2a73ed4a-b512-496d-9bcb-0259565ae3e0": {
+    "hash": "205c07dd2642b574",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not moving in the AI direction"
+      ],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a pre-sales Solutions Engineer role: product demos, technical discovery with IT teams, RFP support and edtech domain knowledge. Bre's Meta work in enablement infrastructure and cross-functional Eng/UX partnership overlaps only on the small enablement and product feedback pieces. She lacks the hard requirements of edtech or SE experience, LTI/API/XML/JSON and relational database depth, SIS familiarity, and 40% travel, so the score is capped well below 70. The role is also customer-facing sales support rather than systems building, it is not clearly AI-forward, and the level looks mid-career IC with no stated seniority. Remote US is fine, and comp is not listed.",
+      "seniority_match": false
+    }
+  },
+  "ashby:jobber:49072a3c-b6d3-4c75-b6f9-8cbd86205f40": {
+    "hash": "1cadefc23690976d",
+    "result": {
+      "comp_if_listed": "Minimum annual salary of $125,800, midpoint of $147,900, maximum of $170,100",
+      "deal_breakers_hit": [
+        "not moving in the AI direction"
+      ],
+      "fit_score": 18,
+      "location_ok": false,
+      "reasoning": "This is a senior software engineering role in integrations and marketplace APIs (REST and GraphQL), with code reviews, architecture, and a take-home coding challenge. Bre's Meta work (knowledge infrastructure, cross-functional Eng/UX partnership, Metamate retrieval troubleshooting) and her shipped products at Hours & Co. show builder instincts, but she has no application marketplace, partner integration, or production software architecture history, and her A.S. in web development does not cover the 'highly scalable software across multiple layers' requirement. Those missing hard requirements cap the score, and the role is not GTM enablement. Location is also an issue: the posting says candidates must be based in Edmonton, Toronto, Vancouver, or Kitchener-Waterloo, so it is not US remote or Austin, even though the header lists Remote. Comp is listed in CAD only for a Canadian hub.",
+      "seniority_match": true
+    }
+  },
+  "ashby:kong:8c606908-c786-4f50-91f5-2a859e8854e8": {
+    "hash": "ea75a74545277cfb",
+    "result": {
+      "comp_if_listed": "$171,430 - $275,000",
+      "deal_breakers_hit": [],
+      "fit_score": 12,
+      "location_ok": true,
+      "reasoning": "This is a paid media and performance marketing leadership role. Bre has no paid search or paid social, media budget, or ROAS ownership in her Meta enablement history, so core function overlap is minimal, and the 10+ years of performance marketing and budget ownership are hard requirements she clearly lacks. The only real overlaps are the cross-functional partnership with Eng and Data Science, the dashboard and metrics work (30+ new metrics), and applied AI interest, which are thin against this scope. Kong is an AI and API company and the comp is clearly high, but this is a generic marketing-style role where she would read as a builder against an executor and optimizer profile. Location: remote is listed alongside San Francisco, so treating it as remote US.",
+      "seniority_match": true
+    }
+  },
+  "ashby:lancedb:89585d0c-019a-4ac2-ab2c-812f8ea306ca": {
+    "hash": "e9fe856aeb01b6a6",
+    "result": {
+      "comp_if_listed": "$160K - $190K",
+      "deal_breakers_hit": [],
+      "fit_score": 34,
+      "location_ok": true,
+      "reasoning": "Bre's Meta work (sales hub rebuild with Eng/UX, dashboard revamp enabling 30+ metrics, data discrepancy fixes with data science) and her AI products (Deal Dossier, Claude certs) show builder and reporting strengths. But this is a marketing ops role: it requires 6-8 years of hands-on HubSpot/SFDC marketing automation, lead routing, scoring and attribution, plus Clay, Common Room and Apollo. She has none of that on her record, and her Meta work was enablement and knowledge infrastructure, not marketing ops. That is a clear missing hard requirement, so the score is capped at 70 and lands well below it. Location is fine as US remote, the comp is strong, and the 0-to-1 AI-forward setting suits her, but the core function overlap is thin and the hands-on CRM and GTM data stack depth is a real risk.",
+      "seniority_match": true
+    }
+  },
+  "ashby:latchbio:08d47716-b878-4364-ba31-79ec681ec14c": {
+    "hash": "5abda691645afd24",
+    "result": {
+      "comp_if_listed": "Most people in this position earn $120K-$180K+ (uncapped), paid per certified task after a guaranteed weeks 1-4 ramp; 1099 contract",
+      "deal_breakers_hit": [
+        "Step down in scope and not a GTM or enablement role (1099 per-task domain expert contract)"
+      ],
+      "fit_score": 4,
+      "location_ok": true,
+      "reasoning": "This role is a domain-expert benchmark and annotation job for neuroscience. It requires a PhD or MD/PhD in neuroscience, a publication record, hands-on raw data analysis in at least two modalities such as electrophysiology or single-cell omics, and deep expertise in experimental design and statistics. Bre has none of these (her degrees are a B.A. in History and an A.S. in Web Development), so a missing hard requirement caps the score well below 70. Her Meta enablement and knowledge infrastructure work, the Metamate retrieval troubleshooting and her Claude certifications touch on judging AI outputs, but nothing in her history maps to neuroscience ground truth. The role is also a 1099 contract paid per certified task, not a Manager or Director systems-building role, so it is a step down in scope and not a match on seniority. Remote anywhere is allowed, but the contract structure and task-based pay run against her target.",
+      "seniority_match": false
     }
   },
   "ashby:lavendo:7c3795af-5267-4723-a7bc-51c25d63b968": {
@@ -356,6 +806,20 @@
       "seniority_match": false
     }
   },
+  "ashby:leap:6aafbe59-32a3-4eb5-8c1e-8261ed8eae22": {
+    "hash": "2ebc6985db70b0eb",
+    "result": {
+      "comp_if_listed": "$133K - $165K",
+      "deal_breakers_hit": [
+        "Role is not moving in the AI direction",
+        "Mostly campaign execution rather than systems building"
+      ],
+      "fit_score": 14,
+      "location_ok": true,
+      "reasoning": "This is a hands-on lifecycle marketing role (email, SMS, direct mail, Braze-style journey orchestration, A/B testing, HIPAA/TCPA compliance) for member activation in healthcare. Bre's Meta work in adoption tracking, content operations and the video platform launch (691% lift in views, 3,000+ reps onboarded) gives only loose overlap, but she has no lifecycle marketing platform experience, no CRM or retention marketing background, and no healthcare comms compliance knowledge, so the 5-7+ years of lifecycle experience and Braze or Iterable requirements are clear hard-requirement misses. The role is an individual contributor executor on external member communications with no AI angle, which is the pattern where she reads as a builder against an executor role; the comp of $133K-$165K and remote US location are fine.",
+      "seniority_match": false
+    }
+  },
   "ashby:manifest-os:9bca7707-d731-49d5-8176-4b42d04259b0": {
     "hash": "e10c346954f781c4",
     "result": {
@@ -364,6 +828,17 @@
       "fit_score": 38,
       "location_ok": true,
       "reasoning": "The role is a customer-facing Forward Deployed Engineer at an AI-native company, and Bre's cross-functional work with Eng, UX, and Design (the sales hub rebuild) and her Hours & Co. products (Deal Dossier with LLM classification, Whispuur) show a builder orientation and some customer presentation skill. The biggest gap is the hard requirement of 3+ years of software engineering experience with production-grade customer solutions: her background is enablement and knowledge infrastructure, plus an A.S. in Web Development and self-built products, not professional software engineering. That caps the score at 70, and the role also leans on RFPs, deal-timeline scoping, and commercial engineering she has not done. NYC onsite comp of $170K-$230K is fairly high, so location is acceptable, and the Meta Gen AI retrieval troubleshooting and Anthropic certifications give some credible AI context, but this is hands-on engineering heavy, which is a risk.",
+      "seniority_match": true
+    }
+  },
+  "ashby:mintmcp:0d4dee83-883a-4dcd-9c1a-30f5ec603714": {
+    "hash": "326b4178edf7ebf8",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 38,
+      "location_ok": false,
+      "reasoning": "Her Meta enablement work (sales hub rebuild, video platform 0 to 1 with 3,000+ reps, Metamate retrieval partnership) and her Hours & Co. AI products map to the sales content system, AI-native, and builder parts of this role, and she has Claude certifications. The core function is founding product marketing: messaging, launches, category positioning, thought leadership, and SEO/AEO. She has no product marketing title and no 5+ years in PMM, and no experience marketing to CISOs or running agency-driven launches, so a hard requirement is missing and the score is capped. Location is the larger problem: the description says in person in San Mateo and San Francisco, which fails her remote US or Austin rule despite 'Remote' in the header, and comp is not listed.",
       "seniority_match": true
     }
   },
@@ -389,6 +864,28 @@
       "seniority_match": true
     }
   },
+  "ashby:mintmcp:5a4dd4ae-6468-46d4-98f4-a8001f1f88ab": {
+    "hash": "8c0e7e44dc15aa93",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 28,
+      "location_ok": false,
+      "reasoning": "Bre's Meta work (knowledge infrastructure, Metamate retrieval troubleshooting with the Gen AI team, Eng/Product partnership) and her AI-native building at Hours & Co. fit the AI-native context and the builder orientation. But the core job is a presales technical sale for an infrastructure and security product: leading technical discovery, running demos, designing POCs, debugging deployments, and building custom MCP servers and middleware. She has no sales engineering, solutions engineering, or security/infra selling history, and the posting asks for 4+ years of sales engineering and complex technical product sales, plus a CS or logic-based background (her degrees are History and Web Development). Those are missing hard requirements, so the score is capped well below 70. The role is also in person in the SF Bay Area with no remote listing that clearly applies, and comp is not listed.",
+      "seniority_match": true
+    }
+  },
+  "ashby:mudflap:275ca5ec-9611-466d-bc16-189d1f3dd505": {
+    "hash": "2ed1ce3683335ddf",
+    "result": {
+      "comp_if_listed": "$185,000 - $210,000 base salary",
+      "deal_breakers_hit": [],
+      "fit_score": 42,
+      "location_ok": true,
+      "reasoning": "Bre's Meta work in GTM enablement (sales hub rebuild with Eng/UX/Design, 3,000+ rep video platform, Metamate retrieval work) maps to the Sales and CS enablement piece and the AI workflow building, and her Hours & Co. products show she builds with AI. The biggest gaps are that this is a Freight GM-style marketing lead with 7+ years of B2B product marketing, positioning, launches, copy, budget ownership and growth orchestration, none of which are her core history, plus no freight or fintech background; she reads as a builder and enablement owner rather than a PMM and marketing quarterback. Location works for Austin, but it is hybrid in Austin with listed comp of $185K to $210K, which is not an NYC onsite case, so I treat Austin as acceptable; the role is senior in scope, but the missing PMM hard requirement caps the fit well below 70.",
+      "seniority_match": true
+    }
+  },
   "ashby:n8n:fea09cae-58f1-4f3e-b4a0-daba6e7e5002": {
     "hash": "09682ff48d33a0a5",
     "result": {
@@ -398,6 +895,17 @@
       "location_ok": false,
       "reasoning": "The role is strong on shape: building a new internal AI enablement function, running recurring workshops, and helping non-technical teams adopt tools. That echoes Bre's Meta enablement and knowledge infrastructure work, including the 3,000+ rep onboarding, the video platform built from 0 to 1, the adoption-tracking dashboards, and the Metamate retrieval partnership with Gen AI engineering. Her Deal Dossier and Whispuur builds and her Anthropic certifications help on the applied AI side. The biggest gaps are the must-have practitioner-level n8n fluency, which she has not shown and which caps the score at 70, and the CET overlap requirement, since she is US-based and the posting lists only European locations plus a generic Remote, so location_ok is false. Seniority is a Lead title but the scope reads more like a program owner than a Senior Manager or Director, though building a new function from scratch is a reasonable systems-builder scope. Compensation is not listed.",
       "seniority_match": true
+    }
+  },
+  "ashby:nango:87ae18c8-5bef-423e-968e-7ea6ab4f97b8": {
+    "hash": "d856b7b53876f79c",
+    "result": {
+      "comp_if_listed": "$120K - $200K",
+      "deal_breakers_hit": [],
+      "fit_score": 28,
+      "location_ok": true,
+      "reasoning": "This is a founding Forward Deployed Engineer role that requires 5+ years of full-stack engineering and hands-on debugging of APIs, integrations and production systems. Bre's Meta proof points (the search rebuild led with Eng and UX, the Metamate retrieval troubleshooting with Gen AI engineers) show she can partner with engineers and work on customer-facing technical problems. She has an A.S. in Web Development and builds products at Hours & Co., but she has no 5+ years of professional full-stack engineering, which is a clear missing hard requirement and a real risk, since the role is heavy on hands-on production engineering. The role is remote with listed pay of $120K to $200K, and it is a developer-tools company rather than GTM enablement, so core function overlap is low.",
+      "seniority_match": false
     }
   },
   "greenhouse:12twenty:4743172005": {
@@ -413,6 +921,32 @@
       "seniority_match": true
     }
   },
+  "greenhouse:A-LIGN External:8886067002": {
+    "hash": "9cf13aa488cafa2e",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not moving in the AI direction: role is brand, PR and creative leadership rather than GTM enablement, systems building or applied AI"
+      ],
+      "fit_score": 15,
+      "location_ok": true,
+      "reasoning": "This is a corporate brand, PR, and creative leadership role, and it does not match Bre's Meta enablement and knowledge infrastructure work. Her real overlaps are the cross-functional partnership with Eng, UX and Design, the self-service asset library and intake workflow angle (like her repository overhaul, 71% traffic lift), and some AI tool adoption. The biggest gaps are the hard requirements she lacks: 10+ years in corporate marketing, comms, brand or creative, 4+ years leading teams, media relations, crisis comms, PR agency management, and design team leadership. Remote US works, but the AI context is thin (AI for creative delivery only) and it is not a GTM enablement or systems role, so it is a poor fit capped well below 70.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:Abacus Insights:8560928002": {
+    "hash": "61b8dd8f3d8e7ca7",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not moving in the AI direction: role is SRE and incident response, not GTM, enablement or applied AI workflow design"
+      ],
+      "fit_score": 8,
+      "location_ok": true,
+      "reasoning": "This is a hands-on SRE and sustaining engineering role requiring 10+ years in software engineering, SRE or production operations, deep AWS operations, Databricks and Spark troubleshooting, and production Python. Bre's Meta work (knowledge infrastructure, the search rebuild with Eng, retrieval troubleshooting with the Gen AI team) and her Hours & Co. products show builder instincts, but none of it is production operations, incident response or data platform engineering, so she lacks several hard requirements and the role is the heavy production engineering risk she should avoid. The role is senior IC and fully remote US, so seniority and location pass, but the core function has almost no overlap with GTM enablement and the work is not in her target function list.",
+      "seniority_match": true
+    }
+  },
   "greenhouse:AcuityMD:6220834004": {
     "hash": "e51b382e5683437d",
     "result": {
@@ -421,6 +955,17 @@
       "fit_score": 28,
       "location_ok": true,
       "reasoning": "This is a pre-sales Solutions Engineer role: demos, POCs, RFPs, and 30-40% travel. Bre's Meta work (the knowledge repository overhaul, the video platform, the sales hub rebuild, the Metamate retrieval troubleshooting with Gen AI engineering) is internal enablement and systems building, not customer-facing pre-sales, so core function overlap is low. The role requires 5+ years in IT pre-sales or technical sales and 'closing techniques', which she lacks, so the score is capped at 70. It is AI-forward and fully remote with listed comp of $140,000-$170,000, and the lead title fits seniority, but the executor-style, customer-facing demo work is the pattern where she converts worst.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Addepar:8886178002": {
+    "hash": "03c5a2ed4d3d1137",
+    "result": {
+      "comp_if_listed": "$184,000 - $265,000 base salary (plus bonus, equity, benefits)",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is GTM strategy and planning (revenue planning, territory design, quota and capacity planning, pricing, financial modeling in Databricks), not enablement or knowledge infrastructure. Bre's Meta proof points (knowledge repository overhaul, video platform, search rebuild, Metamate retrieval work, dashboard with 30+ metrics) share only light overlap through the dashboard and data work with data science and engineering. She lacks the hard requirements of 10+ years in GTM strategy or consulting, 5+ years leading people, and quota, territory and capacity planning experience, which caps the score and makes this a stretch. Addepar is an AI-forward data platform and the Director level with $184,000 to $265,000 base is clearly high comp for NYC, so location is acceptable, but the role is in office and a finance-heavy planning executor profile rather than a builder profile.",
       "seniority_match": true
     }
   },
@@ -434,6 +979,78 @@
       "fit_score": 12,
       "location_ok": true,
       "reasoning": "The title says Enablement, but the work is core banking operations: Finxact administration, ACH and wire approvals, reconciliations, loan funding, regulatory controls and vendor oversight. Bre's Meta proof points (knowledge repository overhaul, video platform 0 to 1, search rebuild with Eng and UX) show no banking, core platform, or regulated-institution experience, so she misses several hard requirements, including 8+ years in banking operations or fintech core delivery. Seniority and remote US location fit, and the cross-functional partnership skills carry over, but this is an executor and control owner role with no AI direction, so fit is very low.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Anaplan:8845737002": {
+    "hash": "f9883df942e43150",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not a GTM, enablement or knowledge infrastructure role, so it is a move away from her target direction",
+        "Pure engineering executor role in QA rather than a systems-building GTM role"
+      ],
+      "fit_score": 8,
+      "location_ok": true,
+      "reasoning": "This is a hands-on QA and test automation engineering role for GenAI systems. It requires 12+ years of test automation in Python, Selenium and Pytest, plus CI/CD and API testing tools, and Bre has none of that on her resume. Her closest proof points are the Metamate retrieval troubleshooting with the Gen AI engineering team and her Claude certifications, but those do not make up for the missing hard requirement. It is a heavy hands-on production AI engineering risk, and it is not an enablement, knowledge infrastructure or GTM role. Location is North Carolina remote, which counts as fully remote US. Comp is not listed.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:Anaplan:8845838002": {
+    "hash": "3704d7bddecffcd6",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not a GTM or enablement role and not moving in her target direction of enablement and GTM systems leadership",
+        "Likely step down in scope to an individual contributor QA executor role"
+      ],
+      "fit_score": 8,
+      "location_ok": true,
+      "reasoning": "This is a hands-on QA automation engineering role for GenAI systems, requiring 8+ years of QA or test engineering, Python, Pytest, API and UI testing, and CI/CD. Bre has none of that as a career history; her Meta proof points (Metamate retrieval troubleshooting, knowledge base integrity, dashboard data fixes with data science) are enablement and knowledge infrastructure work, with only a loose link to evaluating AI output. The role is an IC executor in a QA function, not GTM enablement or systems building for GTM teams, and it is heavy on hands-on production AI engineering, which is her known risk. Missing the 8+ years QA requirement and Python test automation caps the score low. Location is fully remote US so that is fine, and comp is not listed.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:Anthropic:5442842008": {
+    "hash": "4db595a361fe06dc",
+    "result": {
+      "comp_if_listed": "$295,000 - $345,000 USD annual salary",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is an internal communications role: exec advisory, speechwriting for the CCO, all-hands and AMA planning. It is not enablement or knowledge infrastructure. Bre's Meta proof points (repository overhaul, video platform 0 to 1, search rebuild, Metamate retrieval work) show content ops and adoption, but not exec comms, speechwriting or chief-of-staff work. The role asks for 12+ years in comms or an adjacent craft, which she does not clearly have, so that hard requirement caps the score. It does fit the AI-native GTM context, and the listed comp of $295,000 to $345,000 is clearly high, so the NYC option is acceptable. The role is a people-manager scope, but she has no evident record of exec comms or people management in this craft, and it is not a builder or systems role.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Anthropic:5449229008": {
+    "hash": "2c602cc142f41f0b",
+    "result": {
+      "comp_if_listed": "$280,000 - $320,000",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "Bre's Meta work (knowledge infrastructure, the Metamate retrieval troubleshooting with the Gen AI engineering team, cross-functional Eng/UX/Design leadership) and her side builds (Deal Dossier with LLM classification, Whispuur) touch applied AI, but this is a Staff-level hands-on production engineering role. It requires deep experience building and operating production systems, strong Python, enterprise architecture, and advising VP and C-level stakeholders, and her profile shows enablement and product-building work rather than a senior engineering or forward deployed engineering track, so that hard requirement is missing and caps the score. The AI-native company and the systems-builder orientation fit, but the core function is customer-facing technical delivery, which is a real stretch; NYC is listed with high comp ($280k-$320k) so location is acceptable, though the role expects 25% office time and 25% travel.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Anthropic:5451081008": {
+    "hash": "2e02e13dede73b92",
+    "result": {
+      "comp_if_listed": "$265,000 - $295,000 USD annual salary",
+      "deal_breakers_hit": [],
+      "fit_score": 8,
+      "location_ok": true,
+      "reasoning": "This is a technical AI governance and policy role, not GTM enablement or knowledge infrastructure. Bre's real proof points (the Meta knowledge repository overhaul, the 0 to 1 video platform, the Metamate retrieval troubleshooting with the Gen AI team, the Anthropic AI Fluency and Claude 101 certifications) do not map to the required expertise in loss-of-control, alignment, compute governance, model weight security, or reading and commenting on frontier AI legislation. She lacks multiple hard requirements, including fluency in frontier AI safety debates and expertise in the listed domains, with no policy, standards body, or governance research history, so the score is capped well below 70. The AI context is strong and comp is high at $265,000 to $295,000, but the function is a different career track; the NYC option with high listed comp keeps location acceptable, though the 25% in-office policy adds some logistics friction.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Anthropic:5451134008": {
+    "hash": "a570c4ef7cf20433",
+    "result": {
+      "comp_if_listed": "$320,000 - $400,000",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "This is a partner marketing lead role covering reseller strategy, MDF, agency management across regions, and tier advancement, which sits mostly outside Bre's Meta enablement and knowledge infrastructure work. Her real overlaps are building programs from 0 to 1 (the Meta video platform), cross-functional partnership with Eng and Data Science, dashboard and metrics work (30+ new metrics), and AI context (Claude certifications, Metamate partnership). She lacks several hard requirements: owning partner or channel marketing strategy, running MDF and co-marketing programs, managing agencies across regions, and running international marketing programs, so the score is capped at 70 and sits well below it. The NYC option has high listed comp ($320,000 to $400,000 OTE-style range), so location is acceptable, and the role is senior and AI-native, but it is a pure marketing function rather than systems building.",
       "seniority_match": true
     }
   },
@@ -457,6 +1074,133 @@
       "location_ok": true,
       "reasoning": "This is a presales Solutions Consulting role requiring 8+ years in presales or sales engineering and 4+ years selling to enterprise accounts, and Bre has neither, so the score is capped at 70 and sits well below it. Her Meta work gives real overlap on the enablement and tooling slice (playbooks, demo environments, mentoring, cross-functional work with Eng and Product, and the Metamate retrieval partnership), and Apollo is an AI-native company, but the core of the job is deal-driven discovery, POCs, and REST API and Zapier/Workato integration design, which she has not done in a customer-facing quota-adjacent role. Remote US and the listed $185K to $205K OTE are fine, but the role reads as a presales executor tied to deal outcomes rather than the enablement systems builder she is.",
       "seniority_match": true
+    }
+  },
+  "greenhouse:Armada:5249659008": {
+    "hash": "1c5aafa46839c6f1",
+    "result": {
+      "comp_if_listed": "$121,120 - $151,400 USD",
+      "deal_breakers_hit": [],
+      "fit_score": 36,
+      "location_ok": true,
+      "reasoning": "The role is a Senior PMM for an edge AI infrastructure platform. Bre's Meta enablement work (sales knowledge repository overhaul, 0-to-1 video platform, Eng/UX partnership on the hub rebuild) overlaps only with the sales enablement asset portion (pitch decks, battlecards, solution briefs). She has no listed product marketing title, and no experience marketing AI infrastructure, distributed systems, or edge, which are required qualifications and likely to cap the score. It is also positioning and narrative heavy rather than systems building, and the work is aimed at investors, sovereign governments, and defense buyers, so she reads as a builder in a messaging-executor seat. Remote US satisfies location, the Senior Manager scope is a reasonable match, and the AI-forward context is a plus, but the 5-8 years of PMM experience and the technical infrastructure depth are the biggest gaps.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Attentive:4443888009": {
+    "hash": "3c455198e2649b9c",
+    "result": {
+      "comp_if_listed": "$285,000 - $385,000 annually base salary, plus equity and benefits",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "The AI Business Enablement half echoes Bre's Meta work: enablement infrastructure, adoption tracking, the Metamate retrieval troubleshooting with the Gen AI team, and her current AI-native builds at Hours & Co. The role is a Director of two engineering-manager teams, though, and it requires 10+ years in software engineering, 4+ years leading engineering teams, and experience managing managers, plus built developer tooling and test infrastructure. She has none of those hard requirements (B.A. History, enablement background, no engineering management), so the score is capped at 70 and sits well below it because the developer experience half is hands-on engineering platform work, which is her known risk. Location is NYC with a clearly high listed base of $285,000 to $385,000, so location is acceptable.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Avo:4449751009": {
+    "hash": "38204040ef595441",
+    "result": {
+      "comp_if_listed": "$175,000 - $200,000 base salary, plus bonus and equity",
+      "deal_breakers_hit": [],
+      "fit_score": 8,
+      "location_ok": true,
+      "reasoning": "This role requires an active clinical license (MD/DO, NP, or PA) with 3-7 years of hands-on patient care, which Bre does not have, so it is a hard requirement miss and caps the score at 70, though the real fit is far lower. Her Meta work on retrieval troubleshooting with the Gen AI team for Metamate and her Hours & Co. LLM classification in Deal Dossier touch on AI quality and evaluation, but the core function is clinical safety grading and release sign-off, which has almost no overlap with GTM enablement and knowledge infrastructure. Remote US is fine and the director-level scope is comparable, but she cannot credibly do the clinical judgment that is 85% of the job.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:BILL:6098239004": {
+    "hash": "354c627c2b95aab8",
+    "result": {
+      "comp_if_listed": "$146,400 - $183,000 USD (Zone 1: SF Bay Area, NYC, Seattle, LA County); Zone 2 $131,700 - $164,700 (includes Austin TX); Zone 3 $124,500 - $155,700",
+      "deal_breakers_hit": [
+        "Role is not moving in the AI direction"
+      ],
+      "fit_score": 28,
+      "location_ok": true,
+      "reasoning": "This is a Staff Product Marketing Manager role for BILL's Accounting Channel, and it requires 12+ years in product marketing, including time at the Senior PMM level, plus B2B SaaS or fintech and channel sales experience. Bre has six-plus years in enablement at Meta, not product marketing, so she lacks that hard requirement, which caps the score at 70. Her proof points (sales repository overhaul, 0-to-1 video platform for 3,000+ reps, sales hub rebuild with Eng and UX) match the sales enablement and 'GTM systems' portion, but the core of the job is positioning, messaging, launches, win/loss, pricing POVs and channel strategy, and none of that is in her history. The role is not AI-forward, which weakens the AI-direction fit. Location is remote US, so it works. Her pay band is not stated, but the posting lists $146,400 to $183,000.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:BILL:6220355004": {
+    "hash": "22d838c6bb9716c0",
+    "result": {
+      "comp_if_listed": "$75,000 - $90,000 (Zone 1: SF Bay Area, NYC, Seattle, LA County); Zone 2 $67,500 - $81,000 (includes Austin TX); Zone 3 $63,800 - $76,500",
+      "deal_breakers_hit": [
+        "Specialist or Coordinator scope",
+        "Step down in scope and not moving in the AI direction"
+      ],
+      "fit_score": 12,
+      "location_ok": true,
+      "reasoning": "This is a Specialist-level, customer-facing onboarding role doing live calls to activate new fintech customers, which is a step down from her Manager-level Meta enablement and knowledge infrastructure work. Her adoption tracking and onboarding program design touch the theme, but she built internal systems for 3,000+ reps rather than running customer onboarding calls, and the role has no AI or systems-building component. Pay is $75,000 to $90,000 with the role listed as United States, which is likely remote, so location is fine, but Specialist scope is a deal-breaker.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:BILL:6220998004": {
+    "hash": "2d9e7d0965ed6f28",
+    "result": {
+      "comp_if_listed": "$147,200 - $176,500 USD OTE (Zone 1); Zone 2 (Austin TX) $132,500 - $158,900; Zone 3 $125,100 - $150,000",
+      "deal_breakers_hit": [
+        "Role is not moving in the AI direction",
+        "Step down in scope from Manager/Director enablement and systems building",
+        "Pre-sales role tied to sales quota and incentive plan"
+      ],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a pre-sales Solutions Consultant role supporting Mid-Market and Accountant Channel sales on a fintech/AP-AR product. Bre's Meta work in enablement, cross-functional work with Eng and Product, and her search/retrieval diagnosis overlap only at the edges, such as the 'partner with Sales Enablement' and 'coach AEs' duties. The core job is demos, discovery, RFPs and ERP/API conversations, and she has no SaaS pre-sales years (5+ required), no finance or ERP background, and no AI context, so the missing hard requirement caps the score low. Seniority reads as an IC pre-sales role, not Manager or Lead scope, and it is a lateral or step-down move not heading toward AI; location is remote-first US, with comp listed ($147,200 to $176,500 is the Zone 1 range, Austin is Zone 2 at $132,500 to $158,900).",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:BVNK:5006367101": {
+    "hash": "f534c2486e3e9b55",
+    "result": {
+      "comp_if_listed": "$180,000 - $220,000 USD",
+      "deal_breakers_hit": [
+        "Not moving in the AI direction (payments and stablecoin pre-sales, not AI-forward work)"
+      ],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a senior customer-facing Solutions Engineer role selling stablecoin and payments infrastructure, which Bre has not done. Her real overlaps are cross-functional work with Eng, Product and Data Science, the Meta sales hub rebuild, and building enablement and reusable content, which map only to the minor enablement and solution-pattern duties. She lacks the hard requirements: significant Solutions or Sales Engineering experience, payments and API architecture depth, and owning technical enterprise deals through close, so the score is capped well under 70, and it is also not a strong AI-forward role. Location is listed as USA with a pre-filter flag, and the posting emphasizes remote work, so I treat it as remote US; the $180,000 to $220,000 comp is strong.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Blend:6222384004": {
+    "hash": "63fe6d96a87d2a83",
+    "result": {
+      "comp_if_listed": "$124,000 \u2013 $145,000 base salary, plus bonus eligibility and RSUs",
+      "deal_breakers_hit": [],
+      "fit_score": 38,
+      "location_ok": true,
+      "reasoning": "The role is an internal business automation engineer, which is a builder role with some AI workflow overlap. Bre's Meta work on search and retrieval troubleshooting with the Gen AI team, her dashboard rebuild with data science, and her Hours & Co. products (Deal Dossier LLM classification) support the builder and applied AI angles. The biggest gap is that this is hands-on engineering for internal IT and business operations, not GTM or enablement: it requires 3+ years of building automations in code, DevOps and infrastructure-as-code experience (Terraform, Ansible, containers), and workflow platform experience (Workato, Zapier, n8n) that her profile does not show. Those missing hard requirements cap the score, and it is a mid-level IC role that reads as an executor/engineer rather than an enablement leader. Location is listed only as United States, so I treat it as remote US, but the pre-filter flag suggests verifying it.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:Braeburn :8885892002": {
+    "hash": "db0fe574e0442d91",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not moving in the AI direction",
+        "Role is mainly IC administration and operational reporting, not enablement or systems building"
+      ],
+      "fit_score": 18,
+      "location_ok": true,
+      "reasoning": "This is a pharma sales operations role centered on incentive compensation administration, quota modeling, payout validation, and field reporting, which is far from Bre's Meta enablement and knowledge infrastructure work. Her dashboard rebuild (30+ new metrics, resolving data discrepancies with data science and engineering) and cross-functional partnership give a thin overlap on reporting, but she has no IC, quota modeling, or pharma commercial data experience, and the posting asks for 3+ years of pharma or life sciences sales ops, which is a missing hard requirement. The title is Manager level, but the role is an executor of recurring operational cycles rather than a systems builder, and the AI angle is only a preferred skill (Claude/CoPilot use, which she has some grounding in via Anthropic certifications). Location is listed as remote, with Plymouth Meeting PA noted, so I treat it as remote US; comp is unlisted.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:C3 AI:8886602002": {
+    "hash": "7b964434334cc246",
+    "result": {
+      "comp_if_listed": "$120,000 - $158,000 USD base (Maryland)",
+      "deal_breakers_hit": [
+        "Role is not in her GTM enablement or knowledge systems direction (hands-on infrastructure operations, a step down in relevant scope)",
+        "Individual contributor engineering operations role, not Manager/Director-level GTM scope"
+      ],
+      "fit_score": 6,
+      "location_ok": false,
+      "reasoning": "This is an on-site operations and SRE-style role keeping a disconnected C3 AI Platform running in a secure federal facility in Southern Maryland. Bre's Meta work (knowledge infrastructure, enablement systems, Metamate retrieval troubleshooting with the Gen AI team) has almost no overlap with Linux and Kubernetes ops, incident response, or JavaScript and Python software development. She also appears to lack the required active Secret clearance and the software development hard requirement, which caps the score, and the role is a hands-on engineering executor role rather than GTM or enablement systems building. Location is onsite in Lexington Park, MD, which is not Austin or remote.",
+      "seniority_match": false
     }
   },
   "greenhouse:Coinbase:8275226": {
@@ -531,6 +1275,17 @@
       "seniority_match": true
     }
   },
+  "greenhouse:Nebius:5004999101": {
+    "hash": "d240a9ee526ddfe7",
+    "result": {
+      "comp_if_listed": "$177,800 - $222,200",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "This is a Principal Product Marketing role centered on enterprise positioning for an AI cloud, and Bre has no product marketing ownership, no cloud or AI infrastructure GTM background, and no win-rate or pipeline record on enterprise deals. The overlap is the enablement strategy piece (battlecards, field adoption measurement), where her Meta repository overhaul (71% traffic, 12,000 hours saved) and video platform (3,000+ reps onboarded) are real proof points, but that is one of eleven responsibilities. Hard requirements she lacks include 8+ years of product marketing, cloud or AI infrastructure experience, ABM platform work (6sense, Demandbase), deep GPU, Kubernetes and MLOps knowledge, and a technical degree (her B.A. is in History), so the score is capped well under 70. Remote US is allowed and comp is listed at $177,800 to $222,200.",
+      "seniority_match": true
+    }
+  },
   "greenhouse:Samsara:7917475": {
     "hash": "1a919c39d595950f",
     "result": {
@@ -589,6 +1344,72 @@
       "seniority_match": true
     }
   },
+  "greenhouse:Samsara:8281479": {
+    "hash": "1a919c39d595950f",
+    "result": {
+      "comp_if_listed": "$137,445 - $231,000",
+      "deal_breakers_hit": [],
+      "fit_score": 28,
+      "location_ok": true,
+      "reasoning": "This is a hands-on senior data and AI engineering role. It requires 8+ years in data engineering, expert Python and SQL, DBT, Databricks, and LLM or agent systems shipped and monitored in production, and Bre's record does not show those. Her Meta work on knowledge infrastructure, her dashboard rebuild with 30+ new metrics alongside data science and engineering, her retrieval troubleshooting with the Metamate Gen AI team, and the LLM-based Deal Dossier give partial overlap on semantic layers, documentation for AI, and GTM stakeholders. The biggest risk is that this is production data and AI engineering, which is exactly where interviewers have said she needs more depth, and the missing hard requirements cap the score at 70 or lower. Location is Remote - NYC with comp listed at $137,445 to $231,000, which is a decent but not clearly high range for a senior role, so I treat it as acceptable but worth checking.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Samsara:8281482": {
+    "hash": "1a919c39d595950f",
+    "result": {
+      "comp_if_listed": "$137,445 - $231,000",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a senior hands-on data and AI engineering role, and it asks for 8+ years of data engineering, expert Python and SQL, DBT, Databricks, and LLM or agent systems shipped and monitored in production. Bre has no documented data engineering tenure and no production pipeline work; her proof points are Meta knowledge infrastructure, the Metamate retrieval troubleshooting with Gen AI engineers, and the dashboard rebuild with 30+ metrics. Her Hours & Co. products (Deal Dossier with LLM deal classification) give some applied AI credibility. The semantic layer and structured documentation for AI ingestion overlap loosely with her knowledge base work, but several hard requirements are clearly missing, which caps the score, and this is exactly the hands-on production AI engineering risk. Remote US is fine and the comp is strong.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Samsara:8281483": {
+    "hash": "1a919c39d595950f",
+    "result": {
+      "comp_if_listed": "$137,445 - $231,000",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "The AI and knowledge-infrastructure themes overlap a little: her Meta dashboard rebuild (30+ new metrics, data discrepancies resolved with data science and engineering), her work with the Gen AI team on Metamate retrieval logic, and her LLM-based Deal Dossier product. The role itself is a hands-on production data engineering job that requires 8+ years of data engineering, expert Python and SQL, dbt, Databricks and LLM or agent systems shipped in production. She lacks most of these, and these are hard requirements, so the score is capped well below 70. This is the high-risk case of hands-on AI and data engineering, and the Remote - CA location does not meet her fully remote US or Austin rule, since the posting says open to US residents but the listed location is CA.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Samsara:8281489": {
+    "hash": "1a919c39d595950f",
+    "result": {
+      "comp_if_listed": "$137,445 - $231,000",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "The role is a senior hands-on data and AI engineering job at Samsara: Databricks pipelines, dbt, expert Python and SQL, and shipping and monitoring LLM or agent systems in production, with 8+ years in data or AI engineering required. Bre's real overlaps are the semantic-layer and documentation angle (her Meta knowledge repository overhaul and dashboard work enabling 30+ metrics with data science and engineering), her Metamate retrieval troubleshooting with the Gen AI team, GTM stakeholder partnership, and her Hours & Co. builds such as Deal Dossier with LLM classification. She lacks the 8+ years of data engineering, Databricks, dbt, and production LLM evaluation experience, so the missing hard requirements cap the score well below 70, and this is a hands-on production AI engineering role, which is a clear risk. Location (Remote - Austin) and listed comp are fine, and the scope is senior, but she would read as a stretch for an executor-engineer role rather than an enablement or GTM systems builder role.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Samsara:8281490": {
+    "hash": "1a919c39d595950f",
+    "result": {
+      "comp_if_listed": "$137,445 - $231,000 USD annual base salary",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "The role is a senior hands-on data engineering job: 8+ years of data engineering, expert Python and SQL, dbt, Databricks pipelines, and LLM or agent systems shipped and monitored in production. Bre has real adjacent proof points, including the Meta dashboard rebuild with 30+ new metrics and data discrepancy fixes with data science and engineering, the Metamate retrieval troubleshooting, and her Deal Dossier LLM classification work, but she has no data engineering career, no dbt or Databricks, and no production warehouse architecture. Several hard requirements are clearly missing and the role is mostly production data and AI engineering, which is her biggest risk, so the score is capped well below 70. Remote Chicago reads as remote US, and the posting says it is open to US residents.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Samsara:8281491": {
+    "hash": "1a919c39d595950f",
+    "result": {
+      "comp_if_listed": "$137,445 - $231,000",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a hands-on data and AI engineering role requiring 8+ years of data engineering, expert Python and SQL, dbt, Databricks, and LLM or agent systems shipped and monitored in production. Bre has real adjacent proof points: the Meta knowledge repository dashboard rebuild with 30+ new metrics and resolved data discrepancies with data science and engineering, the Metamate retrieval troubleshooting, and her own AI products at Hours & Co. such as Deal Dossier with LLM classification. But she has no data engineering career, no documented dbt or Databricks work, and no production agent evaluation at scale, so she lacks several hard requirements and reads as a builder in enablement rather than a senior data engineer. Remote US is fine and comp is clearly listed, but the core function overlap is low and this is a high-risk stretch.",
+      "seniority_match": true
+    }
+  },
   "greenhouse:Veeam Software:4999633101": {
     "hash": "7d1a2dff2a967a80",
     "result": {
@@ -598,6 +1419,47 @@
       "location_ok": true,
       "reasoning": "Bre's Meta work partnering with Eng, UX and Design on the sales hub rebuild, plus troubleshooting Metamate retrieval logic with the Gen AI team, gives her some cross-functional and applied AI credibility, and the role is remote US with senior-level scope. But the posting requires 2+ years as an AI Solution Architect and 5+ years in Software Engineering, plus distributed systems, AWS, UML and ITIL knowledge, none of which her enablement and knowledge infrastructure history shows, so this is a hard-requirement miss and an internal corporate IT architecture role rather than GTM work. It is also heavy on hands-on technical AI engineering, which is a known risk for her, so the score stays well under the 70 cap.",
       "seniority_match": true
+    }
+  },
+  "greenhouse:apiphani:5263013007": {
+    "hash": "c9f883c2fc046c24",
+    "result": {
+      "comp_if_listed": "$160,000 - $180,000 base salary",
+      "deal_breakers_hit": [
+        "Mainly quota carrying sales role",
+        "Not a systems building or enablement role, so not moving in her target direction"
+      ],
+      "fit_score": 5,
+      "location_ok": true,
+      "reasoning": "This is a quota-carrying, territory-based enterprise sales role selling SAP migration and managed services, which is the opposite of Bre's Meta enablement and knowledge infrastructure work. She has no quota-carrying history, no SAP expertise, no $3M quota record and no managed services sales background, so several hard requirements are missed and the cap applies. The only light overlap is using AI tools like Claude and the AI-led positioning, but she would be a seller here, not a systems builder, and 50-70% travel adds friction.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:apiphani:5263014007": {
+    "hash": "3fb22e6dfbbc4ca4",
+    "result": {
+      "comp_if_listed": "$160,000 - $180,000 base salary",
+      "deal_breakers_hit": [
+        "Role is mainly quota carrying and enterprise sales",
+        "Not a systems-building or enablement role, so not a move in her target direction"
+      ],
+      "fit_score": 5,
+      "location_ok": true,
+      "reasoning": "This is a quota-carrying enterprise sales role requiring 10+ years of quota-carrying managed services sales, a $5M+ quota track record, and SAP and regulated-industry domain expertise. Bre has none of that: her Meta work was enablement and knowledge infrastructure, not carrying a number. The only overlap is the AI-led positioning and the Luumen knowledge continuity angle, which loosely echoes her knowledge base work, but she would be a seller here rather than a builder. Remote US is fine and the pay is listed, but multiple hard requirements are missing and the role is mainly quota carrying, which is a deal-breaker.",
+      "seniority_match": false
+    }
+  },
+  "lever:waabi:cb96e131-357d-4c73-b69a-7feb744699c2": {
+    "hash": "3438440430e6a49b",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Not moving in the direction of her target GTM and enablement roles (research engineering, not GTM)"
+      ],
+      "fit_score": 8,
+      "location_ok": true,
+      "reasoning": "This is a Senior/Staff Research Engineer role in generative AI deployment at an autonomous trucking company, which is hands-on ML research and production engineering. Bre's Meta enablement and knowledge infrastructure work, plus her Hours & Co. products and her work with the Gen AI team on Metamate retrieval logic, do not show the research engineering depth or production ML shipping experience this role almost certainly requires. The posting gives no actual responsibilities or requirements, but the title alone signals a missing hard requirement and a heavy risk on hands-on production AI engineering. Remote US is a plus for location, but the function is far from her enablement, GTM, and systems-building sweet spot.",
+      "seniority_match": false
     }
   }
 }
