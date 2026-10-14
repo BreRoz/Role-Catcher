@@ -509,6 +509,17 @@
       "seniority_match": true
     }
   },
+  "greenhouse:Samsara:7917475": {
+    "hash": "1a919c39d595950f",
+    "result": {
+      "comp_if_listed": "$137,445 - $231,000",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": false,
+      "reasoning": "This is a hands-on senior data and AI engineering role (8+ years in data engineering, expert Python and SQL, dbt, Databricks, and LLM or agent systems shipped to production). Bre's proof points are adjacent: the Metamate retrieval troubleshooting with Gen AI engineers, the sales repository dashboard with 30+ new metrics, and Deal Dossier's LLM classification. But she has no stated data engineering career, no dbt or Databricks, and no production-grade pipeline ownership, so several hard requirements are clearly missing, which caps the score at 70 and in practice puts it far lower. The semantic layer and structured documentation for AI ingestion and the GTM stakeholder work touch her knowledge infrastructure strengths, but the core function is an engineer role, a risk she has been told about in interviews. Location is listed as Remote - SF Bay Area, though the text says it is open to US residents, so it is ambiguous; I am treating it as not clearly fully remote US.",
+      "seniority_match": true
+    }
+  },
   "greenhouse:Samsara:8244432": {
     "hash": "8a82363128addd7f",
     "result": {
@@ -521,6 +532,17 @@
       "location_ok": true,
       "reasoning": "This is a field pre-sales Sales Engineer role for IoT hardware, with up to 50% travel, selling to enterprise fleet and physical operations customers. Bre's Meta enablement and knowledge infrastructure work and her cross-functional work with Eng and Product give only loose overlap with the liaison and documentation duties. She lacks several hard requirements: a B.S. (she has a B.A. in History and an A.S. in Web Development), 5+ years in pre-sales or customer-facing support, experience running hardware evaluations, electronics and networking knowledge, and a record of selling complex technical solutions. Her API scripting is limited to her Hours & Co. products, so the missing hard requirements cap the score at 70 and the real fit is far lower. The role is also quota-adjacent deal-closing work rather than enablement or GTM systems building. It sits in the Southeast, so a remote US candidate may qualify, but the seniority is mid-level IC pre-sales rather than Lead or Principal.",
       "seniority_match": false
+    }
+  },
+  "greenhouse:Samsara:8262123": {
+    "hash": "1a919c39d595950f",
+    "result": {
+      "comp_if_listed": "$137,445 - $231,000",
+      "deal_breakers_hit": [],
+      "fit_score": 24,
+      "location_ok": true,
+      "reasoning": "This is a hands-on senior data and AI engineering role (Databricks, dbt, expert Python and SQL, 8+ years of data engineering, LLM or agent systems shipped and monitored in production). Bre's real proof points only partly line up: the Meta dashboard revamp with 30+ new metrics and data discrepancy fixes with data science, the Metamate retrieval troubleshooting with Gen AI engineering, and the Deal Dossier LLM classification pipeline. She has no listed years of data engineering, dbt, Databricks or production agent evaluation experience, so several hard requirements are missed and the score is capped at 70, and it should land well below that. The role is a pure engineering executor track rather than enablement or GTM systems leadership, which is the main risk. Location is NYC remote with comp listed at $137,445 to $231,000, and the posting says residents of the US are eligible, so location is acceptable.",
+      "seniority_match": true
     }
   },
   "greenhouse:Samsara:8280137": {
