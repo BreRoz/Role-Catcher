@@ -437,6 +437,28 @@
       "seniority_match": true
     }
   },
+  "greenhouse:Apollo.io:6223780004": {
+    "hash": "ef33eab864fe22e9",
+    "result": {
+      "comp_if_listed": "$175,000 - $185,000 USD (total cash, OTE for sales roles)",
+      "deal_breakers_hit": [],
+      "fit_score": 34,
+      "location_ok": true,
+      "reasoning": "This is a presales Solutions Consultant role, which is mostly deal-facing technical selling: discovery, demos, POCs, and integration design with REST APIs and CRMs. Bre's Meta work overlaps only in the periphery (the playbooks, demo environments, enablement assets, and cross-functional work with Eng and Product, plus her sales hub rebuild and Metamate retrieval troubleshooting). She has no listed Sales Engineering or Solution Consulting years, and the 4-8+ years in that function is a hard requirement she lacks, so the score is capped at 70 and sits well below it. The role is AI-native and fully remote US at $175k to $185k OTE, but the work is deal-closing rather than enablement infrastructure, and she reads as a builder, not a presales executor.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:Apollo.io:6223781004": {
+    "hash": "eafd1ecd4dddc769",
+    "result": {
+      "comp_if_listed": "$185,000 - $205,000 USD (total cash compensation, OTE, same range for Tier 1 and Tier 2 US locations)",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "This is a presales Solutions Consulting role requiring 8+ years in presales or sales engineering and 4+ years selling to enterprise accounts, and Bre has neither, so the score is capped at 70 and sits well below it. Her Meta work gives real overlap on the enablement and tooling slice (playbooks, demo environments, mentoring, cross-functional work with Eng and Product, and the Metamate retrieval partnership), and Apollo is an AI-native company, but the core of the job is deal-driven discovery, POCs, and REST API and Zapier/Workato integration design, which she has not done in a customer-facing quota-adjacent role. Remote US and the listed $185K to $205K OTE are fine, but the role reads as a presales executor tied to deal outcomes rather than the enablement systems builder she is.",
+      "seniority_match": true
+    }
+  },
   "greenhouse:Coinbase:8275226": {
     "hash": "8683bfee89b81901",
     "result": {
