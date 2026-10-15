@@ -155,6 +155,17 @@
       "seniority_match": false
     }
   },
+  "ashby:OpenAI:8cad7bcc-3720-4534-822d-d9722599e8a6": {
+    "hash": "eaf05f027b4f8132",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 18,
+      "location_ok": false,
+      "reasoning": "This is a hands-on customer-facing software engineering role: 5+ years as a software or ML engineer, Python and JavaScript, and Spanish, English and Portuguese fluency. Bre's Meta enablement and knowledge infrastructure work (Metamate retrieval troubleshooting with the Gen AI team) and her Hours & Co. products (Deal Dossier with LLM classification) give her some applied AI credibility and a founder angle. But she has no 5+ years as a software engineer and no stated Portuguese or Spanish, so those missing hard requirements cap the score. The role is also hybrid in Sao Paulo with 3 days in office, which fails her location rule, and it is a heavy production AI engineering role, which her interview feedback flags as a risk.",
+      "seniority_match": false
+    }
+  },
   "ashby:OpenAI:a6815609-594d-4f22-93a2-610a69e861a2": {
     "hash": "3e0397bc53f09f38",
     "result": {
@@ -1272,6 +1283,17 @@
       "fit_score": 34,
       "location_ok": true,
       "reasoning": "This is a forecasting and bookings-policy RevOps role, which is a different core function from Bre's Meta enablement and knowledge infrastructure work. Her relevant proof points are the sales repository dashboard revamp (30+ new metrics, data discrepancies resolved with data science and engineering), the sales hub rebuild led across Eng, UX and Design, and field adoption work for 3,000+ reps. She has no documented experience running a forecast process, owning bookings or crediting policy, or working in Clari or Salesforce reporting, so the 'running a forecast process day to day in B2B subscription' requirement is a missing hard requirement and caps the score. Seniority is a senior IC role and the scope is fine, location is fully remote US, and GitLab is AI-forward in its stated culture, but the role has little applied AI or systems building content.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Instacart:8282600": {
+    "hash": "709ce78639ca6229",
+    "result": {
+      "comp_if_listed": "$242,000 - $255,500 USD base for CA, NY, CT, NJ; $232,000 - $245,000 for WA; $222,000 - $234,500 for TX and other listed states; $202,000 - $213,000 for all other states",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a Director of Ads Product Marketing role that requires 12+ years in product marketing, at least 6 in digital advertising, and multi-product team management. Bre has six-plus years in Meta GTM and Sales Enablement and no digital advertising or PMM career, so she lacks several hard requirements, which caps the score at 70 and in practice lands much lower. Her Meta proof points (the video platform, sales hub rebuild, and Sales Enablement partnership) and her AI workflow work touch only the sales education piece and the preferred AI-efficiency garnish, and the role is a narrative and launch ownership job rather than systems building. Location is fine as fully remote US, and the scope is at Director level, but the function and the advertising depth are a stretch.",
       "seniority_match": true
     }
   },

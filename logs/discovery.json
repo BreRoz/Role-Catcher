@@ -1,44 +1,31 @@
 {
-  "time": "2026-10-14T21:34:07.934762+00:00",
-  "full_sweep": true,
-  "boards_tried": 2699,
-  "boards_ok": 2697,
-  "jobs_seen": 85807,
-  "jobs_kept": 85807,
+  "time": "2026-10-15T00:23:04.379805+00:00",
+  "full_sweep": false,
+  "boards_tried": 119,
+  "boards_ok": 119,
+  "jobs_seen": 8417,
+  "jobs_kept": 8417,
   "by_ats": {
     "ashby": {
-      "tried": 1654,
-      "ok": 1653,
-      "errors": 1,
-      "jobs": 35470
+      "tried": 78,
+      "ok": 78,
+      "errors": 0,
+      "jobs": 5347
     },
     "greenhouse": {
-      "tried": 1018,
-      "ok": 1017,
-      "errors": 1,
-      "jobs": 42324
+      "tried": 36,
+      "ok": 36,
+      "errors": 0,
+      "jobs": 2976
     },
     "lever": {
-      "tried": 27,
-      "ok": 27,
+      "tried": 5,
+      "ok": 5,
       "errors": 0,
-      "jobs": 8013
+      "jobs": 94
     }
   },
-  "errors": [
-    {
-      "ats": "ashby",
-      "slug": "anon",
-      "error": "https://api.ashbyhq.com/posting-api/job-board/anon?includeCompensation=true",
-      "kind": "not_found"
-    },
-    {
-      "ats": "greenhouse",
-      "slug": "worksomeaps",
-      "error": "https://boards-api.greenhouse.io/v1/boards/worksomeaps/jobs?content=true",
-      "kind": "not_found"
-    }
-  ],
+  "errors": [],
   "watchlist_unresolved": [
     "1047 Games",
     "37signals",
