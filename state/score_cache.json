@@ -10,6 +10,28 @@
       "seniority_match": false
     }
   },
+  "ashby:Baseten:132295d6-eeb4-4655-9847-a7e9a586d273": {
+    "hash": "168c5a2212451602",
+    "result": {
+      "comp_if_listed": "$215K - $230K",
+      "deal_breakers_hit": [],
+      "fit_score": 38,
+      "location_ok": true,
+      "reasoning": "This is a partner product marketing role at an AI-native inference company. It overlaps with Bre's Meta enablement work only in the partner sales enablement and playbook piece, which is a minor part of the posting. Most of the role is partner storytelling, co-marketing campaigns, webinars and events, and she has no product marketing or partner marketing title, no NVIDIA or cloud provider experience, and no joint GTM history with partners. Those are listed requirements, so the score is capped. The comp is strong, the company is AI-native, and she can learn the technical side, but the role rewards a content and campaign executor more than a systems builder, which is where her search data shows she converts worse.",
+      "seniority_match": true
+    }
+  },
+  "ashby:Baseten:e3677df5-97b8-4a90-8ed8-135742c675f6": {
+    "hash": "57cbe0f6b872b57a",
+    "result": {
+      "comp_if_listed": "$200K - $250K",
+      "deal_breakers_hit": [],
+      "fit_score": 52,
+      "location_ok": true,
+      "reasoning": "The role is a Lead-level enablement position at an AI-native infrastructure company with a clear systems-building bent, which matches Bre's Meta enablement work: the 0-to-1 video platform with 3,000+ reps onboarded, the knowledge repository overhaul, and the sales hub rebuild with Eng, UX and Design. Her AI exposure (Metamate retrieval troubleshooting, Hours & Co. products) supports the AI-forward context, and the remote option and $200K-$250K comp work. The biggest gap is a hard requirement: 5+ years in partner or alliance GTM at a cloud, data, AI or infrastructure company, plus hands-on co-sell with a hyperscaler, and she has neither, since her Meta work was internal enablement for SMB sellers. Technical depth on inference and GPU economics is also a stretch, so the score is capped at 70 and sits lower.",
+      "seniority_match": true
+    }
+  },
   "ashby:Certa:fdd5be82-0180-4f7d-a2c1-4eabbb730f47": {
     "hash": "c5c5cbaa9f094c77",
     "result": {
@@ -274,6 +296,19 @@
       "location_ok": true,
       "reasoning": "This is a hands-on mechanical engineering role (FEA, CAD, marine hardware integration, sea trials) with no overlap with Bre's Meta enablement and knowledge infrastructure work, and she lacks the required mechanical engineering degree and 3+ years of electromechanical experience. Her only loose connections are cross-functional partnership with Eng and a builder mindset, but nothing here involves GTM, enablement, or applied AI. It is also an individual-contributor engineering role, not a Senior Manager/Director or GTM systems role, and it is a step away from her AI-focused GTM direction. Austin is listed, so location works, and comp is not listed.",
       "seniority_match": false
+    }
+  },
+  "ashby:Suno:f93eefd6-5e2d-41a1-8c19-fb74466a8860": {
+    "hash": "b114cd7ae5448162",
+    "result": {
+      "comp_if_listed": "$276,960 - $363,510 + target equity + benefits",
+      "deal_breakers_hit": [
+        "Role is not in her target function (security engineering, not GTM enablement or systems)"
+      ],
+      "fit_score": 4,
+      "location_ok": true,
+      "reasoning": "This is a Staff AI Security Engineer role (the title says Specialist, but the body is staff-level security engineering), and Bre has no security engineering background. Her Meta work (Metamate retrieval troubleshooting with the Gen AI team, knowledge infrastructure) and her AI products at Hours & Co. do not touch cloud security, Kubernetes, IAM, ML infrastructure security, or red-teaming, and she lacks the required 8-10 years in security engineering and Python/Go production coding, so the hard-requirement cap applies and the score should sit far below it. Comp is clearly high for NYC, but the function is a complete mismatch, and the role is hands-on production AI security engineering, which is the biggest risk.",
+      "seniority_match": true
     }
   },
   "ashby:Zapier:1e5d20ae-d2ce-4924-9957-73a8c7c17654": {
@@ -980,6 +1015,19 @@
       "seniority_match": true
     }
   },
+  "greenhouse:Affirm:7872406003": {
+    "hash": "9a9a441a54b154eb",
+    "result": {
+      "comp_if_listed": "$165,000 - $225,000 (CA, WA, NY, NJ, CT); $146,000 - $206,000 (all other U.S. states)",
+      "deal_breakers_hit": [
+        "Role not moving in the AI direction"
+      ],
+      "fit_score": 12,
+      "location_ok": true,
+      "reasoning": "This is a brand marketing role centered on campaign strategy, creative briefing, and brand health measurement. It does not match Bre's Meta enablement and knowledge infrastructure work. The only loose links are cross-functional alignment with Eng, UX and Design, and dashboard and metrics work (30+ new metrics on the repository dashboard). She has no brand or integrated campaign management history, no agency experience, and no fintech background, and the posting asks for 8-10 years in brand marketing, which she clearly lacks. The role has no AI or systems-building angle and reads as an executor of campaigns, which is the generic marketing title pattern where she converts poorly. Remote US and the listed pay are fine.",
+      "seniority_match": true
+    }
+  },
   "greenhouse:Affirm:8015158003": {
     "hash": "b9d8ed5cf61d0d00",
     "result": {
@@ -990,6 +1038,19 @@
       "fit_score": 12,
       "location_ok": true,
       "reasoning": "The title says Enablement, but the work is core banking operations: Finxact administration, ACH and wire approvals, reconciliations, loan funding, regulatory controls and vendor oversight. Bre's Meta proof points (knowledge repository overhaul, video platform 0 to 1, search rebuild with Eng and UX) show no banking, core platform, or regulated-institution experience, so she misses several hard requirements, including 8+ years in banking operations or fintech core delivery. Seniority and remote US location fit, and the cross-functional partnership skills carry over, but this is an executor and control owner role with no AI direction, so fit is very low.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Affirm:8016833003": {
+    "hash": "21b256fe1b67d7f6",
+    "result": {
+      "comp_if_listed": "$175,500 - $243,000 (Pacific OTE); $155,250 - $222,750 (all other U.S. states)",
+      "deal_breakers_hit": [
+        "not moving in the AI direction"
+      ],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "Bre's Meta work in knowledge infrastructure, cross-functional builds with Eng, UX and Design, and the Metamate retrieval troubleshooting touch only the 'Knowledge Scaling' and 'Product Influence' bullets here. The core of this role is pre-sales technical discovery and payments integration architecture, and she has no Sales Engineering, payments or fintech experience, so it misses the 4+ years of sales engineering and 3+ years of payments/fintech hard requirements, which caps the score at 70. It is not enablement or AI-forward, it needs scripting and API integration depth she has not shown at Meta, and it carries 30% travel, though it is remote US with listed comp of $175,500 to $243,000 and senior scope.",
       "seniority_match": true
     }
   },
@@ -1214,6 +1275,17 @@
       "seniority_match": false
     }
   },
+  "greenhouse:Coinbase:8269052": {
+    "hash": "094740a7284bc3e7",
+    "result": {
+      "comp_if_listed": "$170,765 - $200,900 base",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a payments and fintech product marketing role focused on demand gen, events, and co-marketing. Bre's Meta work in enablement infrastructure and the sales hub rebuild touches only the sales enablement slice, and she has no fintech, payments, or stablecoin marketing years and no product marketing ownership of positioning and launches. Several hard requirements are missing (7+ years fintech or payments marketing, 3+ years product marketing, co-marketing programs), so the score is capped well below 70. The role is a marketing executor profile rather than a systems builder, and she converts poorly on generic marketing titles. Remote US and the listed pay are fine, and the agentic finance angle is only a light AI link.",
+      "seniority_match": true
+    }
+  },
   "greenhouse:Coinbase:8275226": {
     "hash": "8683bfee89b81901",
     "result": {
@@ -1237,6 +1309,17 @@
       "fit_score": 14,
       "location_ok": true,
       "reasoning": "This is a customer-facing pre-sales Sales Engineer role that requires 5+ years with logs, metrics, observability, IT operations or security solutions, plus a record of exceeding sales goals and selling to new and existing customers. Bre has none of that: her Meta work is internal enablement and knowledge infrastructure, and her only overlap is demo and content creation (the SMB video platform) and general cross-functional partnership with Eng and Product. The missing hard requirement caps the score, the role is an executor in a sales cycle rather than a systems builder, and it is not an enablement or AI-workflow role, so the fit is weak even though pay and remote location are fine.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:Cribl:6224834004": {
+    "hash": "f00fd95ac3c299cd",
+    "result": {
+      "comp_if_listed": "$180,000 - $240,000 USD base salary",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a Director of Solutions Engineering role that requires 5+ years leading a customer-facing technical pre-sales team and SE Managers, with quota and consumption attainment, MEDDIC, and enterprise deal support. Bre has no pre-sales or SE leadership history, no people-management record of leaders, and no quota-linked ownership; her Meta work was enablement and knowledge infrastructure, and her proof points (repository overhaul, video platform, sales hub search rebuild, Metamate retrieval work) only touch the AI-adoption and technical enablement slice of the job. The remote US location and listed pay fit, and the AI-forward culture is a plus, but the missing hard requirement caps the score low, and the role is also a leader-of-leaders scope above her history.",
       "seniority_match": false
     }
   },
@@ -1272,6 +1355,17 @@
       "fit_score": 50,
       "location_ok": true,
       "reasoning": "This is a senior individual contributor operations role supporting a Solutions Architect org, and it overlaps with Bre's Meta work on enablement infrastructure, dashboard revamps (30+ new metrics, data discrepancy fixes with data science and engineering), and cross-functional rollout and adoption tracking. The sales search rebuild (8.84% call prep time reduction) also maps to workflow improvement and field-feedback-to-system-change. The biggest gaps are that she has no listed Salesforce or CRM hands-on experience, no SQL, and no pre-sales or SA operations background, and the role leans toward an operations executor (intake, routing, capacity modeling in spreadsheets, triage of support requests) rather than a builder, which is a pattern where she converts worse. The AI angle is real but light (AI-native tools for reports), the remote US location and listed comp are fine, and the missing CRM requirement caps the score.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:GitLab:8863314002": {
+    "hash": "3703ce26e8e19fd3",
+    "result": {
+      "comp_if_listed": "$115,200 - $194,400",
+      "deal_breakers_hit": [],
+      "fit_score": 18,
+      "location_ok": true,
+      "reasoning": "This is a senior technical partner solutions architect role centered on hyperscaler cloud architecture, CI/CD and DevSecOps depth, AI model evaluation, and integration prototyping with partners. Bre's real proof points (Metamate retrieval troubleshooting with the Gen AI engineering team, leading Eng, UX and Design through the sales hub rebuild, cross-functional partnership) show a systems-building mindset, and the AI-forward context and remote US location fit. However, she lacks the hard requirements of hands-on cloud architecture with a hyperscaler, deep CI/CD and DevSecOps experience, and prior solutions architect or partner engineer experience, and the role is heavy on hands-on technical and AI engineering, which is her known risk area. Core function is far from enablement and knowledge infrastructure, so the score is capped well below 70.",
       "seniority_match": true
     }
   },
