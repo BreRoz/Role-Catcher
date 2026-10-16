@@ -1,31 +1,38 @@
 {
-  "time": "2026-10-15T21:11:17.508622+00:00",
-  "full_sweep": false,
-  "boards_tried": 119,
-  "boards_ok": 119,
-  "jobs_seen": 8436,
-  "jobs_kept": 8436,
+  "time": "2026-10-16T00:15:44.415405+00:00",
+  "full_sweep": true,
+  "boards_tried": 2697,
+  "boards_ok": 2696,
+  "jobs_seen": 85967,
+  "jobs_kept": 85967,
   "by_ats": {
     "ashby": {
-      "tried": 78,
-      "ok": 78,
-      "errors": 0,
-      "jobs": 5358
+      "tried": 1653,
+      "ok": 1652,
+      "errors": 1,
+      "jobs": 35614
     },
     "greenhouse": {
-      "tried": 36,
-      "ok": 36,
+      "tried": 1017,
+      "ok": 1017,
       "errors": 0,
-      "jobs": 2985
+      "jobs": 42355
     },
     "lever": {
-      "tried": 5,
-      "ok": 5,
+      "tried": 27,
+      "ok": 27,
       "errors": 0,
-      "jobs": 93
+      "jobs": 7998
     }
   },
-  "errors": [],
+  "errors": [
+    {
+      "ats": "ashby",
+      "slug": "a37",
+      "error": "https://api.ashbyhq.com/posting-api/job-board/a37?includeCompensation=true",
+      "kind": "not_found"
+    }
+  ],
   "watchlist_unresolved": [
     "1047 Games",
     "37signals",
