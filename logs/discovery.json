@@ -1,44 +1,31 @@
 {
-  "time": "2026-10-17T15:24:56.227011+00:00",
-  "full_sweep": true,
-  "boards_tried": 2696,
-  "boards_ok": 2694,
-  "jobs_seen": 86100,
-  "jobs_kept": 86100,
+  "time": "2026-10-17T18:20:01.150557+00:00",
+  "full_sweep": false,
+  "boards_tried": 119,
+  "boards_ok": 119,
+  "jobs_seen": 8519,
+  "jobs_kept": 8519,
   "by_ats": {
     "ashby": {
-      "tried": 1652,
-      "ok": 1651,
-      "errors": 1,
-      "jobs": 35673
+      "tried": 78,
+      "ok": 78,
+      "errors": 0,
+      "jobs": 5408
     },
     "greenhouse": {
-      "tried": 1017,
-      "ok": 1016,
-      "errors": 1,
-      "jobs": 42403
+      "tried": 36,
+      "ok": 36,
+      "errors": 0,
+      "jobs": 3014
     },
     "lever": {
-      "tried": 27,
-      "ok": 27,
+      "tried": 5,
+      "ok": 5,
       "errors": 0,
-      "jobs": 8024
+      "jobs": 97
     }
   },
-  "errors": [
-    {
-      "ats": "ashby",
-      "slug": "bitnomial",
-      "error": "https://api.ashbyhq.com/posting-api/job-board/bitnomial?includeCompensation=true",
-      "kind": "not_found"
-    },
-    {
-      "ats": "greenhouse",
-      "slug": "amdaris",
-      "error": "https://boards-api.greenhouse.io/v1/boards/amdaris/jobs?content=true",
-      "kind": "not_found"
-    }
-  ],
+  "errors": [],
   "watchlist_unresolved": [
     "1047 Games",
     "37signals",
