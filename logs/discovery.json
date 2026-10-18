@@ -1,31 +1,44 @@
 {
-  "time": "2026-10-17T21:21:44.082844+00:00",
-  "full_sweep": false,
-  "boards_tried": 119,
-  "boards_ok": 119,
-  "jobs_seen": 8524,
-  "jobs_kept": 8524,
+  "time": "2026-10-18T15:44:45.336111+00:00",
+  "full_sweep": true,
+  "boards_tried": 2694,
+  "boards_ok": 2692,
+  "jobs_seen": 86106,
+  "jobs_kept": 86106,
   "by_ats": {
     "ashby": {
-      "tried": 78,
-      "ok": 78,
-      "errors": 0,
-      "jobs": 5411
+      "tried": 1651,
+      "ok": 1649,
+      "errors": 2,
+      "jobs": 35683
     },
     "greenhouse": {
-      "tried": 36,
-      "ok": 36,
+      "tried": 1016,
+      "ok": 1016,
       "errors": 0,
-      "jobs": 3016
+      "jobs": 42391
     },
     "lever": {
-      "tried": 5,
-      "ok": 5,
+      "tried": 27,
+      "ok": 27,
       "errors": 0,
-      "jobs": 97
+      "jobs": 8032
     }
   },
-  "errors": [],
+  "errors": [
+    {
+      "ats": "ashby",
+      "slug": "collider",
+      "error": "https://api.ashbyhq.com/posting-api/job-board/collider?includeCompensation=true",
+      "kind": "not_found"
+    },
+    {
+      "ats": "ashby",
+      "slug": "nava-benefits",
+      "error": "https://api.ashbyhq.com/posting-api/job-board/nava-benefits?includeCompensation=true",
+      "kind": "not_found"
+    }
+  ],
   "watchlist_unresolved": [
     "1047 Games",
     "37signals",
