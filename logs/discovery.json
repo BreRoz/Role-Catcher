@@ -1,22 +1,22 @@
 {
-  "time": "2026-10-18T18:32:40.577307+00:00",
+  "time": "2026-10-18T21:21:50.394470+00:00",
   "full_sweep": false,
   "boards_tried": 119,
   "boards_ok": 119,
-  "jobs_seen": 8524,
-  "jobs_kept": 8524,
+  "jobs_seen": 8522,
+  "jobs_kept": 8522,
   "by_ats": {
     "ashby": {
       "tried": 78,
       "ok": 78,
       "errors": 0,
-      "jobs": 5411
+      "jobs": 5413
     },
     "greenhouse": {
       "tried": 36,
       "ok": 36,
       "errors": 0,
-      "jobs": 3016
+      "jobs": 3012
     },
     "lever": {
       "tried": 5,
