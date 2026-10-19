@@ -17,7 +17,7 @@ openrouter:
     zdr: false               # true = zero-data-retention endpoints only (may limit model/provider choice)
 
 scoring:
-  threshold: 75            # minimum role-fit score to get an email
+  threshold: 60            # minimum role-fit score to get an email
 
 limits:
   max_roles_scored_per_run: 150    # per-run cap on scoring calls
