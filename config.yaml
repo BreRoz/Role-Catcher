@@ -16,6 +16,10 @@ openrouter:
     data_collection: deny    # only route to providers that do not store or train on prompts
     zdr: false               # true = zero-data-retention endpoints only (may limit model/provider choice)
 
+# Postings dated older than this are never scored or emailed (normal runs and --catchup).
+# Undated postings still go through in normal runs.
+max_posting_age_days: 3
+
 scoring:
   threshold: 60            # minimum role-fit score to get an email
 

@@ -2,7 +2,7 @@
 import unittest
 from datetime import datetime, timezone
 
-from role_catcher.catchup import digest_blocks, order_for_cap, posted_within
+from role_catcher.catchup import digest_blocks, drop_stale, order_for_cap, posted_within
 from role_catcher.models import Job, ScoredJob
 
 NOW = datetime(2026, 10, 12, tzinfo=timezone.utc)
@@ -18,6 +18,11 @@ class CatchupTests(unittest.TestCase):
                 job("A", 3, None), job("A", 4, "2026-10-05T12:00:00Z")]
         kept = posted_within(jobs, 7, NOW)
         self.assertEqual([j.job_id for j in kept], ["1", "4"])
+
+    def test_drop_stale_keeps_recent_and_undated(self):
+        jobs = [job("A", 1, "2026-10-10T00:00:00+00:00"), job("A", 2, "2026-10-08T00:00:00+00:00"),
+                job("A", 3, None)]
+        self.assertEqual([j.job_id for j in drop_stale(jobs, 3, NOW)], ["1", "3"])
 
     def test_order_watchlist_then_newest(self):
         jobs = [job("Zed", 1, "2026-10-11T00:00:00+00:00"), job("Figma", 2, "2026-10-08T00:00:00+00:00"),

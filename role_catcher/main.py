@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 from . import health, state
 from .config import ROOT, load_config, load_yaml
 from .discovery import LAST_SUMMARY, discover, mark_baselined
-from .catchup import already_emailed_keys, digest_blocks, order_for_cap, posted_within
+from .catchup import already_emailed_keys, digest_blocks, drop_stale, order_for_cap, posted_within
 from .emailer import email_roles, render, send_email
 from .filters import prefilter, write_drop_log
 from .firstrun import cap_for_backfill, is_first_run, seed_seen
@@ -84,6 +84,7 @@ def catchup(jobs, config: dict, days: int, max_calls: int | None, dry_run: bool)
     and send a single digest email. Leaves seen_jobs.json alone."""
     cap = max_calls if max_calls is not None else config["backfill"]["max_scoring_calls"]
     config = {**config, "limits": {**config["limits"], "max_roles_scored_per_run": cap}}
+    days = min(days, config["max_posting_age_days"])
     recent = posted_within(jobs, days)
     emailed = already_emailed_keys()
     recent = [j for j in recent if j.key not in emailed]
@@ -173,7 +174,7 @@ def pipeline(args, config: dict, stats: dict) -> None:
     if first_run:
         return
 
-    jobs = unseen(jobs, seen)
+    jobs = drop_stale(unseen(jobs, seen), config["max_posting_age_days"])
     stats["new_roles"] = len(jobs)
     n_in = len(jobs)
     jobs = run_prefilter(jobs)

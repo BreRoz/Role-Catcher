@@ -27,6 +27,12 @@ def posted_within(jobs: list[Job], days: int, now: datetime | None = None) -> li
     return out
 
 
+def drop_stale(jobs: list[Job], days: int, now: datetime | None = None) -> list[Job]:
+    """Drop jobs with a known posting date older than `days`. Undated jobs are kept."""
+    cutoff = (now or datetime.now(timezone.utc)) - timedelta(days=days)
+    return [j for j in jobs if (d := _parse(j.posted_at)) is None or d >= cutoff]
+
+
 def already_emailed_keys(path=None) -> set[str]:
     path = path or ROOT / "logs" / "emails.jsonl"
     if not path.exists():

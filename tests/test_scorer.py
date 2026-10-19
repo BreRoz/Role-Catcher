@@ -68,7 +68,7 @@ class Tests(unittest.TestCase):
         p = scorer.load_system_prompt()
         self.assertIn("GTM Systems Builder", p)
         self.assertIn("not a stretch", p)
-        self.assertIn("caps the score at 70", p)
+        self.assertIn("never penalize or cap for a years-of-experience requirement", p)
 
     def test_cache_by_description_hash(self):
         cache, c = {}, Client([Resp(GOOD), Resp({**GOOD, "fit_score": 60})])
