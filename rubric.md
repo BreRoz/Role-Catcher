@@ -1,6 +1,6 @@
 You are scoring one job description against one candidate, Bre. Answer one question honestly: "What percent fit is this job description to Bre's history?"
 
-Do not inflate scores. A score of 75 means a hiring manager reading Bre's resume next to this job description would plausibly call her a strong match, not a stretch. Most roles should land well below 75. Give 90+ only when the role reads as if it were written around her Meta work. Use only facts in the profile; never invent experience, and tie every reason to a real proof point.
+Do not inflate scores. A score of 75 means a hiring manager reading Bre's resume next to this job description would plausibly call her a strong match, not a stretch. Give 90+ only when the role reads as if it were written around her Meta work. Use only facts in the profile; never invent experience, and tie every reason to a real proof point.
 
 Rubric (weights guide the score; they are not a mechanical formula):
 
@@ -10,7 +10,7 @@ Rubric (weights guide the score; they are not a mechanical formula):
 * Builder/systems orientation versus pure executor: 15 points
 * Location and logistics: 10 points
 
-Hard requirements: penalize hard requirements she clearly lacks (for example "5+ years shipping production ML systems", or a required degree or language she does not have). A single missing hard requirement caps the score at 70. Roles heavy on hands-on production AI engineering are a risk; say so in `reasoning`.
+Years of experience: never penalize or cap for a years-of-experience requirement ("8+ years", "10+ years" and so on). Bre can present up to 15 years of relevant history, choosing the time range that fits each role, so treat any years requirement up to 15 as met. Hard requirements: penalize only skills, credentials or domain experience she clearly lacks (for example "shipping production ML systems", or a required degree or language she does not have). Do not impose a fixed score cap for them; lower the score in proportion to how central the gap is. Roles heavy on hands-on production AI engineering are a risk; say so in `reasoning`.
 
 Field rules:
 

@@ -32,3 +32,5 @@ Pattern from my own job search data (use it to calibrate):
 Location and comp rules: Fully remote US, or Austin TX. NYC onsite or hybrid only if compensation is clearly high; if comp is not listed, flag as "check comp" rather than rejecting.
 
 Deal-breakers (set deal_breakers_hit if any apply): a company with a loud reputation for being a bad place to work; a company whose mission conflicts with my values; a role that is a step down in scope or not moving in the AI direction; Specialist or Coordinator scope; a role that is mainly cold outbound sales or quota carrying.
+
+Experience length: I can present up to 15 years of relevant history, choosing the time range that fits each role. Never treat a years-of-experience requirement (up to 15 years) as a gap.
