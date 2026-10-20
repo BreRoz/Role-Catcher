@@ -1,35 +1,35 @@
 {
-  "time": "2026-10-19T18:40:51.598358+00:00",
+  "time": "2026-10-20T21:31:43.910320+00:00",
   "full_sweep": true,
-  "boards_tried": 2692,
-  "boards_ok": 2691,
-  "jobs_seen": 85856,
-  "jobs_kept": 85856,
+  "boards_tried": 2691,
+  "boards_ok": 2690,
+  "jobs_seen": 85959,
+  "jobs_kept": 85959,
   "by_ats": {
     "ashby": {
       "tried": 1649,
       "ok": 1649,
       "errors": 0,
-      "jobs": 35603
+      "jobs": 35657
     },
     "greenhouse": {
-      "tried": 1016,
-      "ok": 1015,
+      "tried": 1015,
+      "ok": 1014,
       "errors": 1,
-      "jobs": 42251
+      "jobs": 42366
     },
     "lever": {
       "tried": 27,
       "ok": 27,
       "errors": 0,
-      "jobs": 8002
+      "jobs": 7936
     }
   },
   "errors": [
     {
       "ats": "greenhouse",
-      "slug": "rampnetwork",
-      "error": "https://boards-api.greenhouse.io/v1/boards/rampnetwork/jobs?content=true",
+      "slug": "altium",
+      "error": "https://boards-api.greenhouse.io/v1/boards/altium/jobs?content=true",
       "kind": "not_found"
     }
   ],
