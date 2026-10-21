@@ -165,6 +165,17 @@
       "seniority_match": true
     }
   },
+  "ashby:Harvey:03b44b0d-d3a3-4c9f-8b16-f94614aea44d": {
+    "hash": "33d8e0b102f75a0f",
+    "result": {
+      "comp_if_listed": "$159,400 - $219,250 USD OTE 70/30",
+      "deal_breakers_hit": [],
+      "fit_score": 28,
+      "location_ok": true,
+      "reasoning": "This is a partnerships and business development role (cloud hyperscalers, frontier labs, marketplace listings, co-sell, deal structuring, pipeline or revenue targets) with a 70/30 OTE split. Bre's Meta work in enablement, knowledge infrastructure and cross-functional partnership with Eng and Product covers only the enablement materials and program-building slices, and she has no partner channel revenue, commercial negotiation or marketplace experience. The AI-native context and builder, zero-to-one orientation are real positives, but the core function is far from her Meta proof points, and the variable pay tied to partner-sourced revenue edges toward quota carrying; location (remote) is fine and comp is listed.",
+      "seniority_match": true
+    }
+  },
   "ashby:Mercor:c34c84d9-b7f8-436e-ae8d-a9a9120cecac": {
     "hash": "717dd709939fe464",
     "result": {
@@ -1294,6 +1305,17 @@
       "fit_score": 25,
       "location_ok": true,
       "reasoning": "This is a Trust and Safety product marketing role. Bre's Meta work in sales enablement, the video platform launch (691% lift in views, 3,000+ reps onboarded) and adoption tracking gives some overlap with launches, adoption and cross-functional work with Eng, Data Science and UX. The core requirement is deep Trust and Safety subject matter expertise and consumer or community product marketing ownership, which her profile does not show; her work was internal GTM enablement, not external positioning and launches. Her builder and AI strengths are largely unused here, and the role is a pure marketing IC, a pattern where she converts poorly. Remote US and the listed comp are fine.",
+      "seniority_match": true
+    }
+  },
+  "greenhouse:Samsara:8268030": {
+    "hash": "6c7e71b13ebfdb35",
+    "result": {
+      "comp_if_listed": "$122,080 - $218,000",
+      "deal_breakers_hit": [],
+      "fit_score": 72,
+      "location_ok": true,
+      "reasoning": "Strong overlap on the core function: Bre's Meta knowledge repository overhaul (71% traffic increase, about 12,000 hours saved), the sales hub search rebuild led across Eng, UX and Design, and the Metamate retrieval troubleshooting with the Gen AI engineering team map to the knowledge architecture, enterprise search, RAG and adoption measurement this role asks for. The Principal IC systems-building scope fits her builder orientation, and her Hours & Co. products (Deal Dossier, WatchUm, EpiTrace) plus Claude certifications give credible evidence of hands-on prototyping with AI-assisted tools. The biggest gaps are that the audience is R&D (engineers, developer onboarding, developer education) rather than sales, and her AI depth is applied rather than production engineering, so the technical credibility bar with engineers is a risk; the role is fully remote US with comp of $122,080 to $218,000.",
       "seniority_match": true
     }
   },

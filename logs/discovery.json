@@ -1,38 +1,31 @@
 {
-  "time": "2026-10-20T21:31:43.910320+00:00",
-  "full_sweep": true,
-  "boards_tried": 2691,
-  "boards_ok": 2690,
-  "jobs_seen": 85959,
-  "jobs_kept": 85959,
+  "time": "2026-10-21T00:29:05.835928+00:00",
+  "full_sweep": false,
+  "boards_tried": 119,
+  "boards_ok": 119,
+  "jobs_seen": 8581,
+  "jobs_kept": 8581,
   "by_ats": {
     "ashby": {
-      "tried": 1649,
-      "ok": 1649,
+      "tried": 78,
+      "ok": 78,
       "errors": 0,
-      "jobs": 35657
+      "jobs": 5423
     },
     "greenhouse": {
-      "tried": 1015,
-      "ok": 1014,
-      "errors": 1,
-      "jobs": 42366
+      "tried": 36,
+      "ok": 36,
+      "errors": 0,
+      "jobs": 3062
     },
     "lever": {
-      "tried": 27,
-      "ok": 27,
+      "tried": 5,
+      "ok": 5,
       "errors": 0,
-      "jobs": 7936
+      "jobs": 96
     }
   },
-  "errors": [
-    {
-      "ats": "greenhouse",
-      "slug": "altium",
-      "error": "https://boards-api.greenhouse.io/v1/boards/altium/jobs?content=true",
-      "kind": "not_found"
-    }
-  ],
+  "errors": [],
   "watchlist_unresolved": [
     "1047 Games",
     "37signals",

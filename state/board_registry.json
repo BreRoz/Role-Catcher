@@ -50,7 +50,7 @@
     },
     "ashby:1password": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "1Password",
       "jobs": 76,
       "source": "watchlist",
@@ -336,7 +336,7 @@
     },
     "ashby:acorns": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Acorns",
       "jobs": 14,
       "source": "watchlist",
@@ -539,7 +539,7 @@
     },
     "ashby:afterquery": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "AfterQuery",
       "jobs": 40,
       "source": "watchlist",
@@ -1794,7 +1794,7 @@
     },
     "ashby:armadin": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Armadin",
       "jobs": 25,
       "source": "watchlist",
@@ -1935,7 +1935,7 @@
     },
     "ashby:ashby": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Ashby",
       "jobs": 67,
       "source": "watchlist",
@@ -1990,7 +1990,7 @@
     },
     "ashby:assorthealth": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Assort Health",
       "jobs": 35,
       "source": "watchlist",
@@ -2498,7 +2498,7 @@
     },
     "ashby:axiommath": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Axiom Math",
       "jobs": 2,
       "source": "watchlist",
@@ -2724,7 +2724,7 @@
     },
     "ashby:baseten": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Baseten",
       "jobs": 103,
       "source": "watchlist",
@@ -3158,7 +3158,7 @@
     },
     "ashby:black-forest-labs": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Black Forest Labs",
       "jobs": 13,
       "source": "watchlist",
@@ -3753,7 +3753,7 @@
     },
     "ashby:buffer": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Buffer",
       "jobs": 1,
       "source": "watchlist",
@@ -4421,7 +4421,7 @@
     },
     "ashby:certa": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Certa",
       "jobs": 11,
       "source": "watchlist",
@@ -4452,7 +4452,7 @@
     },
     "ashby:chaidiscovery": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Chai Discovery",
       "jobs": 21,
       "source": "watchlist",
@@ -4631,7 +4631,7 @@
     },
     "ashby:chilipiper": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Chili Piper",
       "jobs": 2,
       "source": "watchlist",
@@ -4677,7 +4677,7 @@
     },
     "ashby:circle": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Circle",
       "jobs": 8,
       "source": "watchlist",
@@ -4963,7 +4963,7 @@
     },
     "ashby:close": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Close",
       "jobs": 6,
       "source": "watchlist",
@@ -5167,9 +5167,9 @@
     },
     "ashby:cognition": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Cognition",
-      "jobs": 104,
+      "jobs": 105,
       "source": "watchlist",
       "status": "live"
     },
@@ -5245,7 +5245,7 @@
     },
     "ashby:column": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Column",
       "jobs": 22,
       "source": "watchlist",
@@ -5949,9 +5949,9 @@
     },
     "ashby:crusoe": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Crusoe",
-      "jobs": 348,
+      "jobs": 347,
       "source": "watchlist",
       "status": "live"
     },
@@ -6052,7 +6052,7 @@
     },
     "ashby:cuspai": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "CuspAI",
       "jobs": 13,
       "source": "watchlist",
@@ -6336,9 +6336,9 @@
     },
     "ashby:decagon": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Decagon",
-      "jobs": 135,
+      "jobs": 134,
       "source": "watchlist",
       "status": "live"
     },
@@ -6366,7 +6366,7 @@
     },
     "ashby:deel": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Deel",
       "jobs": 0,
       "source": "watchlist",
@@ -6593,7 +6593,7 @@
     },
     "ashby:discovery-loop": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Discovery Loop",
       "jobs": 1,
       "source": "watchlist",
@@ -6625,7 +6625,7 @@
     },
     "ashby:distyl": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Distyl",
       "jobs": 26,
       "source": "watchlist",
@@ -6649,7 +6649,7 @@
     },
     "ashby:dnsfilter": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "DNSFilter",
       "jobs": 5,
       "source": "watchlist",
@@ -7076,9 +7076,9 @@
     },
     "ashby:elevenlabs": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "ElevenLabs",
-      "jobs": 158,
+      "jobs": 157,
       "source": "watchlist",
       "status": "live"
     },
@@ -7359,7 +7359,7 @@
     },
     "ashby:erebor": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Erebor",
       "jobs": 0,
       "source": "watchlist",
@@ -7391,7 +7391,7 @@
     },
     "ashby:etched": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Etched",
       "jobs": 118,
       "source": "watchlist",
@@ -7510,7 +7510,7 @@
     },
     "ashby:exa": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Exa",
       "jobs": 56,
       "source": "watchlist",
@@ -7597,7 +7597,7 @@
     },
     "ashby:factory": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Factory",
       "jobs": 62,
       "source": "watchlist",
@@ -7794,7 +7794,7 @@
     },
     "ashby:figure": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Figure",
       "jobs": 0,
       "source": "watchlist",
@@ -7949,7 +7949,7 @@
     },
     "ashby:fireworks": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Fireworks",
       "jobs": 90,
       "source": "watchlist",
@@ -8390,7 +8390,7 @@
     },
     "ashby:fractile": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Fractile",
       "jobs": 38,
       "source": "watchlist",
@@ -8697,7 +8697,7 @@
     },
     "ashby:generalist": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Generalist",
       "jobs": 21,
       "source": "watchlist",
@@ -8767,7 +8767,7 @@
     },
     "ashby:genspark": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Genspark",
       "jobs": 10,
       "source": "watchlist",
@@ -9129,7 +9129,7 @@
     },
     "ashby:granola": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Granola",
       "jobs": 22,
       "source": "watchlist",
@@ -9553,7 +9553,7 @@
     },
     "ashby:harmonic": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Harmonic",
       "jobs": 9,
       "source": "watchlist",
@@ -9593,9 +9593,9 @@
     },
     "ashby:harvey": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Harvey",
-      "jobs": 338,
+      "jobs": 343,
       "source": "watchlist",
       "status": "live"
     },
@@ -9830,7 +9830,7 @@
     },
     "ashby:higgsfieldai": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Higgsfield AI",
       "jobs": 98,
       "source": "watchlist",
@@ -11137,7 +11137,7 @@
     },
     "ashby:kalshi": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Kalshi",
       "jobs": 47,
       "source": "watchlist",
@@ -11777,7 +11777,7 @@
     },
     "ashby:legora": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Legora",
       "jobs": 310,
       "source": "watchlist",
@@ -12042,7 +12042,7 @@
     },
     "ashby:linear": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Linear",
       "jobs": 27,
       "source": "watchlist",
@@ -12089,7 +12089,7 @@
     },
     "ashby:liquid-ai": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Liquid AI",
       "jobs": 22,
       "source": "watchlist",
@@ -12262,7 +12262,7 @@
     },
     "ashby:lovable": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Lovable",
       "jobs": 81,
       "source": "watchlist",
@@ -12355,7 +12355,7 @@
     },
     "ashby:lumilens": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Lumilens",
       "jobs": 161,
       "source": "watchlist",
@@ -12638,7 +12638,7 @@
     },
     "ashby:marianaminerals": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Mariana Minerals",
       "jobs": 92,
       "source": "watchlist",
@@ -12983,7 +12983,7 @@
     },
     "ashby:mercor": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Mercor",
       "jobs": 111,
       "source": "watchlist",
@@ -13146,7 +13146,7 @@
     },
     "ashby:midjourney": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Midjourney",
       "jobs": 17,
       "source": "watchlist",
@@ -13234,7 +13234,7 @@
     },
     "ashby:mirendil": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Mirendil",
       "jobs": 12,
       "source": "watchlist",
@@ -13313,7 +13313,7 @@
     },
     "ashby:modal": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Modal",
       "jobs": 43,
       "source": "watchlist",
@@ -13649,7 +13649,7 @@
     },
     "ashby:mural": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Mural",
       "jobs": 13,
       "source": "watchlist",
@@ -14498,7 +14498,7 @@
     },
     "ashby:olix": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Olix",
       "jobs": 22,
       "source": "watchlist",
@@ -14569,7 +14569,7 @@
     },
     "ashby:ondeck": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "OnDeck",
       "jobs": 0,
       "source": "watchlist",
@@ -14672,15 +14672,15 @@
     },
     "ashby:openai": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "OpenAI",
-      "jobs": 810,
+      "jobs": 809,
       "source": "watchlist",
       "status": "live"
     },
     "ashby:openevidence": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "OpenEvidence",
       "jobs": 8,
       "source": "watchlist",
@@ -14688,7 +14688,7 @@
     },
     "ashby:oratomic": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Oratomic",
       "jobs": 19,
       "source": "watchlist",
@@ -14696,7 +14696,7 @@
     },
     "ashby:perplexity": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Perplexity",
       "jobs": 133,
       "source": "watchlist",
@@ -14704,7 +14704,7 @@
     },
     "ashby:physicalintelligence": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Physical Intelligence",
       "jobs": 44,
       "source": "watchlist",
@@ -14712,15 +14712,15 @@
     },
     "ashby:plaid": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Plaid",
-      "jobs": 131,
+      "jobs": 128,
       "source": "watchlist",
       "status": "live"
     },
     "ashby:poolside": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Poolside",
       "jobs": 2,
       "source": "watchlist",
@@ -14728,7 +14728,7 @@
     },
     "ashby:profound": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Profound",
       "jobs": 80,
       "source": "watchlist",
@@ -14736,7 +14736,7 @@
     },
     "ashby:protocol": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Protocol Labs",
       "jobs": 0,
       "source": "watchlist",
@@ -14744,7 +14744,7 @@
     },
     "ashby:ramp": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Ramp",
       "jobs": 169,
       "source": "watchlist",
@@ -14752,7 +14752,7 @@
     },
     "ashby:recursive-superintelligence": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Recursive Superintelligence",
       "jobs": 3,
       "source": "watchlist",
@@ -14760,7 +14760,7 @@
     },
     "ashby:reddit": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Reddit",
       "jobs": 0,
       "source": "watchlist",
@@ -14768,15 +14768,15 @@
     },
     "ashby:replit": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Replit",
-      "jobs": 57,
+      "jobs": 54,
       "source": "watchlist",
       "status": "live"
     },
     "ashby:rogo": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Rogo",
       "jobs": 96,
       "source": "watchlist",
@@ -14784,15 +14784,15 @@
     },
     "ashby:saronic": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Saronic",
-      "jobs": 232,
+      "jobs": 233,
       "source": "watchlist",
       "status": "live"
     },
     "ashby:sierra": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Sierra",
       "jobs": 189,
       "source": "watchlist",
@@ -14800,7 +14800,7 @@
     },
     "ashby:simile": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Simile",
       "jobs": 10,
       "source": "watchlist",
@@ -14808,7 +14808,7 @@
     },
     "ashby:suno": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Suno",
       "jobs": 69,
       "source": "watchlist",
@@ -14816,7 +14816,7 @@
     },
     "ashby:surge-ai": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Surge AI",
       "jobs": 28,
       "source": "watchlist",
@@ -14824,7 +14824,7 @@
     },
     "ashby:thebotcompany": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "The Bot Company",
       "jobs": 7,
       "source": "watchlist",
@@ -14832,15 +14832,15 @@
     },
     "ashby:thinkingmachines": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Thinking Machines",
-      "jobs": 53,
+      "jobs": 52,
       "source": "watchlist",
       "status": "live"
     },
     "ashby:typesafe-ai": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "TypeSafe AI",
       "jobs": 15,
       "source": "watchlist",
@@ -14848,7 +14848,7 @@
     },
     "ashby:volta": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Volta",
       "jobs": 48,
       "source": "watchlist",
@@ -14856,7 +14856,7 @@
     },
     "ashby:wispr-flow": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Wispr Flow",
       "jobs": 31,
       "source": "watchlist",
@@ -14864,7 +14864,7 @@
     },
     "ashby:wonderful": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Wonderful",
       "jobs": 125,
       "source": "watchlist",
@@ -14872,7 +14872,7 @@
     },
     "ashby:zapier": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Zapier",
       "jobs": 12,
       "source": "watchlist",
@@ -15841,7 +15841,7 @@
     },
     "greenhouse:affirm": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Affirm",
       "jobs": 219,
       "source": "watchlist",
@@ -15865,9 +15865,9 @@
     },
     "greenhouse:ag1": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "AG1",
-      "jobs": 5,
+      "jobs": 4,
       "source": "watchlist",
       "status": "live"
     },
@@ -16007,7 +16007,7 @@
     },
     "greenhouse:airbnb": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Airbnb",
       "jobs": 183,
       "source": "watchlist",
@@ -17187,7 +17187,7 @@
     },
     "greenhouse:apolloio": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Apollo.io",
       "jobs": 56,
       "source": "watchlist",
@@ -19308,7 +19308,7 @@
     },
     "greenhouse:bird": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Bird",
       "jobs": 32,
       "source": "watchlist",
@@ -20177,7 +20177,7 @@
     },
     "greenhouse:brex": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Brex",
       "jobs": 263,
       "source": "watchlist",
@@ -20482,7 +20482,7 @@
     },
     "greenhouse:bungie": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Bungie",
       "jobs": 5,
       "source": "watchlist",
@@ -20684,7 +20684,7 @@
     },
     "greenhouse:calendly": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Calendly",
       "jobs": 9,
       "source": "watchlist",
@@ -20707,7 +20707,7 @@
     },
     "greenhouse:calm": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Calm",
       "jobs": 2,
       "source": "watchlist",
@@ -20747,7 +20747,7 @@
     },
     "greenhouse:cameo": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Cameo",
       "jobs": 1,
       "source": "watchlist",
@@ -20848,7 +20848,7 @@
     },
     "greenhouse:canonical": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Canonical",
       "jobs": 310,
       "source": "watchlist",
@@ -20998,7 +20998,7 @@
     },
     "greenhouse:chainguard": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Chainguard",
       "jobs": 78,
       "source": "watchlist",
@@ -21129,9 +21129,9 @@
     },
     "greenhouse:coinbase": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Coinbase",
-      "jobs": 229,
+      "jobs": 230,
       "source": "watchlist",
       "status": "live"
     },
@@ -21240,7 +21240,7 @@
     },
     "greenhouse:cribl": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Cribl",
       "jobs": 74,
       "source": "watchlist",
@@ -21319,7 +21319,7 @@
     },
     "greenhouse:degreed": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Degreed",
       "jobs": 1,
       "source": "watchlist",
@@ -21406,7 +21406,7 @@
     },
     "greenhouse:dnsfilter": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "DNSFilter",
       "jobs": 5,
       "source": "watchlist",
@@ -21422,7 +21422,7 @@
     },
     "greenhouse:dropbox": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Dropbox",
       "jobs": 21,
       "source": "watchlist",
@@ -21506,9 +21506,9 @@
     },
     "greenhouse:elastic": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Elastic",
-      "jobs": 370,
+      "jobs": 371,
       "source": "watchlist",
       "status": "live"
     },
@@ -21662,7 +21662,7 @@
     },
     "greenhouse:figure": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Figure",
       "jobs": 18,
       "source": "watchlist",
@@ -21769,7 +21769,7 @@
     },
     "greenhouse:fractile": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Fractile",
       "jobs": 38,
       "source": "watchlist",
@@ -21812,7 +21812,7 @@
     },
     "greenhouse:genesis": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Genesis AI",
       "jobs": 0,
       "source": "watchlist",
@@ -21857,7 +21857,7 @@
     },
     "greenhouse:gitlab": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "GitLab",
       "jobs": 232,
       "source": "watchlist",
@@ -21993,7 +21993,7 @@
     },
     "greenhouse:guidewheel": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Guidewheel",
       "jobs": 4,
       "source": "watchlist",
@@ -22231,7 +22231,7 @@
     },
     "greenhouse:instacart": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Instacart",
       "jobs": 125,
       "source": "watchlist",
@@ -22500,7 +22500,7 @@
     },
     "greenhouse:kalshi": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Kalshi",
       "jobs": 28,
       "source": "watchlist",
@@ -22649,7 +22649,7 @@
     },
     "greenhouse:lilasciences": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Lila Sciences",
       "jobs": 107,
       "source": "watchlist",
@@ -22704,7 +22704,7 @@
     },
     "greenhouse:lokalise": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Lokalise",
       "jobs": 2,
       "source": "watchlist",
@@ -22728,7 +22728,7 @@
     },
     "greenhouse:lovable": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Lovable",
       "jobs": 61,
       "source": "watchlist",
@@ -23231,7 +23231,7 @@
     },
     "greenhouse:osano": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Osano",
       "jobs": 11,
       "source": "watchlist",
@@ -23268,7 +23268,7 @@
     },
     "greenhouse:pacvue": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Pacvue",
       "jobs": 26,
       "source": "watchlist",
@@ -23433,7 +23433,7 @@
     },
     "greenhouse:profound": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Profound",
       "jobs": 2,
       "source": "watchlist",
@@ -23557,9 +23557,9 @@
     },
     "greenhouse:reddit": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Reddit",
-      "jobs": 156,
+      "jobs": 155,
       "source": "watchlist",
       "status": "live"
     },
@@ -23581,7 +23581,7 @@
     },
     "greenhouse:remote": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Remote",
       "jobs": 2,
       "source": "watchlist",
@@ -23715,7 +23715,7 @@
     },
     "greenhouse:runzero": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "runZero",
       "jobs": 0,
       "source": "watchlist",
@@ -23739,9 +23739,9 @@
     },
     "greenhouse:samsara": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Samsara",
-      "jobs": 283,
+      "jobs": 286,
       "source": "watchlist",
       "status": "live"
     },
@@ -24396,7 +24396,7 @@
     },
     "greenhouse:valaratomics": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Valar Atomics",
       "jobs": 101,
       "source": "watchlist",
@@ -24699,7 +24699,7 @@
     },
     "lever:angellist": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "AngelList",
       "jobs": 25,
       "source": "watchlist",
@@ -24769,7 +24769,7 @@
     },
     "lever:genesis-ai": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Genesis AI",
       "jobs": 0,
       "source": "watchlist",
@@ -24801,7 +24801,7 @@
     },
     "lever:moonpay": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "MoonPay",
       "jobs": 20,
       "source": "watchlist",
@@ -24879,7 +24879,7 @@
     },
     "lever:teamshares": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Teamshares",
       "jobs": 22,
       "source": "watchlist",
@@ -24887,7 +24887,7 @@
     },
     "lever:toptal": {
       "baselined": true,
-      "checked": "2026-10-20",
+      "checked": "2026-10-21",
       "company": "Toptal",
       "jobs": 29,
       "source": "watchlist",
