@@ -132,6 +132,17 @@
       "seniority_match": false
     }
   },
+  "ashby:Baseten:976f89ef-1065-45a7-8b51-31fecd1ef1e6": {
+    "hash": "8ff6a3fd98b6f78b",
+    "result": {
+      "comp_if_listed": "$165K - $330K",
+      "deal_breakers_hit": [],
+      "fit_score": 38,
+      "location_ok": true,
+      "reasoning": "Baseten is an AI-native company and the role is a senior-scope program management job, and Bre's Meta work leading Eng, UX and Design through the sales hub rebuild, the cross-functional data fixes with data science and engineering, and the Metamate retrieval troubleshooting show real cross-team program ownership and new-hire enablement experience. The core function is infrastructure TPM work (Kubernetes, GPUs, distributed systems, incident channels, capacity rollouts, cluster migrations), and she has no TPM title or ML infra background, so the 5+ years of TPM on infrastructure and the technical depth requirement are central gaps and the main risk, since interviewers have already pushed her for more technical and AI depth. The scorecard metrics and enablement and certification pieces line up with her dashboard and onboarding work, and remote is listed with $165K to $330K comp, but the role is more of an executor/coordinator for an engineering team than a GTM systems builder.",
+      "seniority_match": true
+    }
+  },
   "ashby:CuspAI:66ce863a-312d-4e13-9927-c34f6a03bec6": {
     "hash": "77c3d7c6986c7717",
     "result": {
@@ -164,6 +175,17 @@
       "fit_score": 58,
       "location_ok": true,
       "reasoning": "The role is product enablement at an AI-native company, and Bre has real overlap: six-plus years of GTM enablement at Meta, onboarding for 3,000+ reps, the 0-to-1 video platform (691% view lift), the knowledge repository overhaul (71% traffic lift, about 12,000 hours saved), and Gen AI retrieval work on Metamate. Her own AI products (Deal Dossier, Whispuur) support the AI-native angle. The biggest gaps are that it is described as a specialist-level, first-hire executor role reporting to a lead, and that it wants a former enterprise seller or SE who can demo and sell API and voice agent products, which Bre has not been. Her systems-builder profile may read as a mismatch for that hands-on seller-credibility requirement. Comp is not listed, and the remote role requires overlap with US and European time zones, which is workable.",
+      "seniority_match": false
+    }
+  },
+  "ashby:ElevenLabs:a3097257-a07a-4a7e-b9fe-b8555c1a0fa7": {
+    "hash": "31e61a0d409d1a84",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 42,
+      "location_ok": true,
+      "reasoning": "The AI-native context and the internal GTM-facing builder shape fit her sweet spot, and her Meta work supports it: she partnered with the Gen AI engineering team on Metamate retrieval troubleshooting, rebuilt the sales hub search with Eng and UX, and built dashboards with data science. Her Hours & Co. products (Deal Dossier with LLM classification and Stripe billing) show applied AI building, and the Figma-style calibration role is similar in shape. The biggest gap is that this is a hands-on production AI engineering role requiring deep Python and SQL backend skills, Kubernetes, Docker, GCP, and enterprise auth flows, which she does not clearly show, so it is a real stretch. Remote is allowed, but the posting lists many non-US locations and does not state US remote explicitly, and comp is not listed. Seniority is an engineer-level builder role without clear manager or lead scope, which is a mixed match for her target.",
       "seniority_match": false
     }
   },
@@ -263,6 +285,17 @@
       "seniority_match": true
     }
   },
+  "ashby:OpenAI:104eb2c4-bf85-4fec-a7e5-0616d235818a": {
+    "hash": "bfe753063175abd3",
+    "result": {
+      "comp_if_listed": "$342K - $380K",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "The role owns employer brand, candidate experience, recruitment marketing and recruiting enablement for a talent organization, which is HR and talent marketing, not GTM or sales enablement. Bre's Meta proof points (knowledge repository overhaul, 3,000+ rep onboarding, adoption tracking, cross-functional work with Eng and UX) overlap only with the recruiting enablement slice and the adoption measurement piece, and she has no employer brand, recruitment marketing or recruiting experience. The seniority is fine as a senior IC Head-of role, OpenAI is AI-native, and the posting says San Francisco | Remote with high comp, so location is treated as acceptable, but the core function mismatch and the heavy reliance on communications and brand narrative work make this a stretch.",
+      "seniority_match": true
+    }
+  },
   "ashby:OpenAI:bc80a3ae-1e69-4a8d-8366-77fcdd56ff61": {
     "hash": "1acc04be99672667",
     "result": {
@@ -282,6 +315,30 @@
       "fit_score": 18,
       "location_ok": false,
       "reasoning": "This is a revenue operations planning and sales compensation role: capacity modeling, headcount, quotas, and incentive plan design for 100+ GTM staff, plus managing 5+ operational team members. Bre's Meta work was enablement and knowledge infrastructure (the repository overhaul, the video platform, the sales hub search rebuild, the 30+ metric dashboard), and her profile shows no comp plan design, quota setting, capacity modeling, or commission software experience, so the central function is a clear gap. The AI-forward company and the head-level scope are real positives, and the dashboard metrics work gives a thin analytics link, but she reads as a builder, not a finance-style planning and comp operator. Location is listed as 'San Francisco | Remote' but the description states hybrid 3 days a week in San Francisco, which is not Austin or fully remote, so location fails even though comp is high at $347K to $385K, since SF is not in her NYC exception.",
+      "seniority_match": true
+    }
+  },
+  "ashby:Plaid:6466dc3d-8717-4be3-ad86-121ad0e43c04": {
+    "hash": "c9bd27aacdfe1128",
+    "result": {
+      "comp_if_listed": "$196.8K - $322.8K",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "The role is a pre-sales Sales Engineer for regulated industries (public sector, healthcare, education, utilities), centered on API pilots, RFPs, architecture design and technical wins alongside AEs. Bre's Meta work in enablement infrastructure, cross-functional work with Eng and Product, and reusable assets maps only to the 'build reusable solution guides and enablement' slice, and she has no customer-facing technical selling, no regulated-industry experience, and no fintech or API integration selling history. Seniority is a senior IC builder-ish role (first SE for the vertical), but the core function is customer-facing technical sales, which is not her sweet spot, so this is a stretch; remote is listed so location works and comp is high.",
+      "seniority_match": true
+    }
+  },
+  "ashby:Plaid:8f977054-b828-44be-820e-68807e076d6d": {
+    "hash": "c9bd27aacdfe1128",
+    "result": {
+      "comp_if_listed": "$196.8K - $322.8K",
+      "deal_breakers_hit": [
+        "not moving in the AI direction"
+      ],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is a customer-facing pre-sales Sales Engineer role (discovery, demos, RFPs, API pilots and POCs, regulated-industry experience). Bre's Meta work was internal enablement and knowledge infrastructure, so only the reusable solution guides, enablement assets and Eng/Product partnership overlap. She has no technical selling or solutions engineering history, no regulated-industry or fintech experience, and no hands-on API architecture depth, which are central requirements. Remote is listed and comp is high ($196.8K - $322.8K), but this is a different function, and it is a pre-sales role with some quota-adjacent pressure; the AI context is weak since Plaid is a fintech data network, not an AI-native company.",
       "seniority_match": true
     }
   },
@@ -1751,6 +1808,20 @@
       "seniority_match": true
     }
   },
+  "greenhouse:Chainguard:4723354006": {
+    "hash": "b9d87972fe217de6",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [
+        "Step down in scope or not moving in the AI direction: individual-contributor pre-sales role in container security, not enablement or GTM systems building",
+        "Mainly quota-supporting sales work: technical wins and new-logo acquisition"
+      ],
+      "fit_score": 12,
+      "location_ok": true,
+      "reasoning": "This is a pre-sales Sales Engineer role selling container security and hardened open source to enterprises, and nothing in Bre's Meta enablement or knowledge infrastructure history maps to it. She has no listed experience in Kubernetes, Docker, cloud security, app security, MEDDPICC, or running POCs and RFPs, and those are central requirements. Her cross-functional work with Eng and the Gen AI team and her Hours & Co. builds show technical fluency, but this is a quota-adjacent executor role in a domain she hasn't worked in. Location is a conflict: the header says remote US, but the posting states it must be filled in the Greater New York City area and comp is unlisted, so I am treating it as the NYC case and flagging that comp is unlisted.",
+      "seniority_match": false
+    }
+  },
   "greenhouse:Cribl:6225090004": {
     "hash": "b1aabcb0f7eea33a",
     "result": {
@@ -1806,6 +1877,17 @@
       "seniority_match": true
     }
   },
+  "greenhouse:Elastic:8281506": {
+    "hash": "d1339fe466088a93",
+    "result": {
+      "comp_if_listed": "$159,800 - $252,800 USD base salary (alternate range $191,900 - $303,500 in Seattle, Los Angeles, SF Bay Area, NYC metro); eligible for stock",
+      "deal_breakers_hit": [],
+      "fit_score": 24,
+      "location_ok": true,
+      "reasoning": "This is a Principal-level marketing analytics role centered on attribution, incrementality, marketing mix modeling, dbt/SQL/BigQuery data modeling, and production ML. Bre's real overlap is narrower: she rebuilt the Meta sales repository dashboard (30+ new metrics, fixed data discrepancies with data science and engineering), tracked adoption, and partnered with Eng and Data Science on retrieval logic, and the natural language Q&A bonus loosely echoes her Metamate work and Deal Dossier. The biggest gap is that the core function is quantitative analytics and data engineering (MMM, incrementality, dbt, Python/R, production ML, a quantitative degree), which she clearly lacks, so this is a stretch even though Elastic is AI-forward, the scope is senior, and the role is remote US (listed range $159,800 to $252,800).",
+      "seniority_match": true
+    }
+  },
   "greenhouse:Eon:4883923101": {
     "hash": "c40b466c4f239201",
     "result": {
@@ -1839,6 +1921,28 @@
       "location_ok": true,
       "reasoning": "This is a Senior Manager role leading a team of technical pre-sales SMEs across DevSecOps product groups, with variable pay tied to regional commit and consumption. Bre's Meta work (cross-functional Eng/UX/Data partnership, 30+ metric dashboards, Metamate retrieval troubleshooting, the AI tooling at Hours & Co.) touches the AI and data comfort pieces, but the core function is solutions architecture and pre-sales leadership. She has no record of leading technical pre-sales, running a team of SAs, hiring technical specialists, doing PoVs, or forecasting with sales leaders, and no DevSecOps depth. Scope and seniority are in range and it is fully remote US with listed comp of $166,200 to $249,300, but the central requirements are gaps, so this is a stretch.",
       "seniority_match": true
+    }
+  },
+  "greenhouse:GitLab:8907111002": {
+    "hash": "61e0ec99812e57e7",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 18,
+      "location_ok": true,
+      "reasoning": "This is a pre-sales Solutions Architect role selling a DevSecOps platform to public sector customers, centered on technical discovery, proofs of concept, CI/CD and cloud security guidance. Bre's Meta enablement and knowledge infrastructure work (repository overhaul, video platform, Metamate retrieval troubleshooting) and her partnership with Eng and Product give only a thin link through the reusable collateral and field feedback duties, and she has no pre-sales, DevSecOps, CI/CD or GitLab experience, which is the central requirement. The role is an individual contributor SA position, not clearly Manager/Director or senior systems-building scope, and while it is fully remote US and AI-forward, the work is customer-facing sales support rather than the GTM systems building she converts best on. The listing also mentions APJ in the overview, which sits oddly with a PubSec US title, and compensation is not listed.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:GitLab:8907130002": {
+    "hash": "d07202f03b867caf",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 18,
+      "location_ok": false,
+      "reasoning": "The overlap is thin: Bre's Meta enablement and knowledge infrastructure work (the repository overhaul, the 0 to 1 video platform, the Metamate retrieval troubleshooting) maps only loosely to the cross-functional voice-of-customer and workshop design parts of this pre-sales role. The core job is technical pre-sales for a DevSecOps platform, with proof-of-value ownership, CI/CD and cloud architecture advice, and tenders. She has no hands-on GitLab, CI/CD or cloud architecture experience, and that gap is central. The posting is also inconsistent: the header says Remote, United States and PubSec, but the body describes Southern EMEA, Italy and MEA and requires Arabic fluency, which she lacks, so I scored location as not ok. Comp is not listed.",
+      "seniority_match": false
     }
   },
   "greenhouse:Instacart:8292786": {

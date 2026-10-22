@@ -1,28 +1,28 @@
 {
-  "time": "2026-10-22T00:37:11.801417+00:00",
-  "full_sweep": true,
-  "boards_tried": 2690,
-  "boards_ok": 2690,
-  "jobs_seen": 85993,
-  "jobs_kept": 85993,
+  "time": "2026-10-22T21:24:08.460804+00:00",
+  "full_sweep": false,
+  "boards_tried": 119,
+  "boards_ok": 119,
+  "jobs_seen": 8628,
+  "jobs_kept": 8628,
   "by_ats": {
     "ashby": {
-      "tried": 1649,
-      "ok": 1649,
+      "tried": 78,
+      "ok": 78,
       "errors": 0,
-      "jobs": 35717
+      "jobs": 5441
     },
     "greenhouse": {
-      "tried": 1014,
-      "ok": 1014,
+      "tried": 36,
+      "ok": 36,
       "errors": 0,
-      "jobs": 42346
+      "jobs": 3090
     },
     "lever": {
-      "tried": 27,
-      "ok": 27,
+      "tried": 5,
+      "ok": 5,
       "errors": 0,
-      "jobs": 7930
+      "jobs": 97
     }
   },
   "errors": [],
