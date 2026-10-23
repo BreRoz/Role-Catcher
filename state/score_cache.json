@@ -353,6 +353,75 @@
       "seniority_match": false
     }
   },
+  "ashby:Sierra:020a5b49-082f-4883-952a-1594408e35bc": {
+    "hash": "4bf6ac0dea385465",
+    "result": {
+      "comp_if_listed": "$305K - $315K",
+      "deal_breakers_hit": [],
+      "fit_score": 28,
+      "location_ok": true,
+      "reasoning": "This is a strategic pre-sales Sales Engineer role selling an AI agent platform to healthcare enterprises, and it is quota-adjacent technical sales. Bre's Meta work (the knowledge repository overhaul, the 0 to 1 video platform, the search diagnosis and rebuild led across Eng, UX and Design, and the Metamate retrieval troubleshooting) is internal enablement infrastructure, not customer-facing pre-sales, so core function overlap is low. She has no record of closing $1M+ strategic deals, leading architecture or security reviews with enterprise buyers, or healthcare domain experience, and these are central requirements; the AI-forward context and the playbook-writing and mentoring parts are the only real overlap, and her Hours & Co. products show applied AI building but not a SE track record. Remote US is listed, and comp of $305K-$315K is clearly high, so location works, but the role is a poor match for her builder-and-enablement pattern.",
+      "seniority_match": true
+    }
+  },
+  "ashby:Sierra:3656758f-a16c-4122-8726-5e46868a35fa": {
+    "hash": "b2aa86302f7931d8",
+    "result": {
+      "comp_if_listed": "$305K - $315K",
+      "deal_breakers_hit": [],
+      "fit_score": 28,
+      "location_ok": true,
+      "reasoning": "This is a strategic pre-sales Sales Engineer role at an AI-native company, focused on $1M+ enterprise deals, architecture and security reviews, and C-suite relationships in financial services. Bre's Meta work (knowledge infrastructure, the video platform, working with Gen AI engineers on Metamate retrieval) and her Hours & Co. AI products give her some credible demo-building and AI fluency, but she has no Sales Engineering, quota-adjacent deal ownership, or customer-facing technical sales history. The core function gap is large, and the role is an executor in live deals rather than an enablement systems builder, so the fit is a stretch despite the strong AI context, the remote US option, and the high listed comp.",
+      "seniority_match": true
+    }
+  },
+  "ashby:Sierra:3f887295-0d46-4861-9674-242de052ec0c": {
+    "hash": "645ed64ef3b223c2",
+    "result": {
+      "comp_if_listed": "$280K - $290K",
+      "deal_breakers_hit": [],
+      "fit_score": 30,
+      "location_ok": true,
+      "reasoning": "This is a pre-sales Sales Engineer role selling an AI agent platform to public sector buyers, owning technical discovery, architecture reviews, demos and deal cycles of $500K to $1M. Bre's Meta work (the sales hub rebuild with Eng and UX, the Metamate retrieval troubleshooting with the Gen AI team) and her builder projects (Deal Dossier, Whispuur) show technical credibility and AI fluency, but she has never held a Sales or Solutions Engineering title, run enterprise deal cycles, or sold a technical AI product. The core function is a customer-facing quota-adjacent pre-sales motion, not enablement or knowledge infrastructure, so overlap is low, and the role is closer to an executor in a sales cycle than a systems builder. Remote US is listed and comp is high, so location works, and the AI-native context is strong, but the function gap is central.",
+      "seniority_match": false
+    }
+  },
+  "ashby:Sierra:426b6c4a-ad64-46b4-a6a0-4754a5b72636": {
+    "hash": "859804141a5cb1ab",
+    "result": {
+      "comp_if_listed": "$230K - $240K",
+      "deal_breakers_hit": [],
+      "fit_score": 38,
+      "location_ok": true,
+      "reasoning": "This is a pre-sales Sales Engineer role selling an AI agent platform to financial services enterprises, so it is AI-native and remote-US eligible with high listed comp, but the core function is a different job from her Meta enablement and knowledge infrastructure work. Her proof points (Metamate retrieval troubleshooting with the Gen AI team, the sales hub rebuild led with Eng and UX, her Deal Dossier and Whispuur builds) show applied AI and cross-functional building, but she has no Sales Engineering or Solutions Engineering experience, no enterprise deal-cycle ownership of $200-$500k deals, and no financial services domain background, which are central requirements. The role is an executor-style, deal-driven customer-facing seat in a company that is primarily in-person, and her pattern shows weaker conversion when she reads as a builder against an executor role, so this is a stretch rather than a strong match.",
+      "seniority_match": false
+    }
+  },
+  "ashby:Sierra:b5284659-60e9-4e9c-beb1-bc64f5f0a55b": {
+    "hash": "955513cb8b5e9019",
+    "result": {
+      "comp_if_listed": "$160K - $300K",
+      "deal_breakers_hit": [],
+      "fit_score": 38,
+      "location_ok": true,
+      "reasoning": "Sierra is a strong AI-native company and the role is remote-eligible in the US, but the core function is enterprise pre-sales Solutions Engineering: scoping use cases, building demos, running architecture reviews and leading the sales cycle with enterprise executives. Bre's Meta proof points (knowledge repository overhaul, 0-to-1 video platform, search rebuild with Eng/UX, Metamate retrieval troubleshooting with the Gen AI team) and her Hours & Co. builds (Deal Dossier, Whispuur) show systems building and applied AI, but she has no listed experience in customer-facing technical pre-sales or enterprise deal cycles, and the posting wants 5-7+ years of Solutions Engineering specifically. Her Solutions Engineering target and demo and cross-functional partnership skills give some overlap, but this is a stretch rather than a strong match, and the quota-adjacent sales-cycle ownership and deep technical architecture credibility are the biggest risks.",
+      "seniority_match": true
+    }
+  },
+  "ashby:Sierra:b5cf15fa-977e-4ae3-9e7c-02158a60609d": {
+    "hash": "d0ce923f5ad620db",
+    "result": {
+      "comp_if_listed": "$180K - $190K",
+      "deal_breakers_hit": [
+        "Step down in scope: mid-level pre-sales IC role rather than Manager/Director or systems-building scope",
+        "Role is tied to a sales deal motion and is not the enablement or GTM systems-building work she targets"
+      ],
+      "fit_score": 28,
+      "location_ok": true,
+      "reasoning": "This is an AI-native company, and a US-remote option is listed, but the role is a customer-facing pre-sales Sales Engineer owning technical discovery, architecture reviews, demos and enterprise deals of $200-500k. Bre's Meta work (knowledge repository overhaul, video platform 0 to 1, the Metamate retrieval troubleshooting with the Gen AI team) is internal enablement infrastructure, not external technical pre-sales, and she has no listed Sales or Solutions Engineering experience or selling of a technical AI product. Her Hours & Co. builds (Deal Dossier, Whispuur) and Claude certifications give some credible applied AI and demo-building signal, but the central function is a large gap, and the role reads as an executor of deals rather than a systems builder. Seniority is also mid-level individual contributor scope at $180-190K, which reads as a step down from her Manager to Director target.",
+      "seniority_match": false
+    }
+  },
   "ashby:Suno:70bb2a0c-b32d-41ad-9848-158edd5e9bac": {
     "hash": "8df97def6f0b2633",
     "result": {
@@ -1632,6 +1701,17 @@
       "fit_score": 12,
       "location_ok": true,
       "reasoning": "This is a partner and co-marketing leadership role: managing marketplace, partner and platform marketing teams, events strategy, and co-marketing investment allocation with external merchant negotiations. Bre's Meta work (knowledge repository overhaul, video platform 0 to 1, sales hub rebuild with Eng/UX, Metamate retrieval partnership) is internal enablement and knowledge infrastructure, so there is almost no core function overlap, and she has no proof points in partner marketing, events, media budgets, or leading through people leaders. The AI angle is absent, the scope sits well above her history as a leader of leaders, and the executive negotiation focus reads as an executor of commercial strategy rather than a systems builder; the remote US location and the high listed comp are the only clear positives.",
+      "seniority_match": false
+    }
+  },
+  "greenhouse:Airbnb:8316130": {
+    "hash": "c75c782dd3118391",
+    "result": {
+      "comp_if_listed": "$212,000 to $265,000 USD base pay",
+      "deal_breakers_hit": [],
+      "fit_score": 22,
+      "location_ok": true,
+      "reasoning": "This is an Engineering Manager role leading a developer AI platform team and coaching Staff+ engineers, which Bre has not done: her proof points are enablement and knowledge infrastructure at Meta (the sales hub search rebuild, the Metamate retrieval troubleshooting with the Gen AI engineering team) plus her own AI products at Hours & Co. The AI-forward context and builder orientation fit, but the core function does not. The role requires 2+ years as a full-time engineering manager, experience coaching Staff+ engineers, and developer infrastructure experience, none of which she has, and it leans on hands-on production AI engineering, which is a known risk for her. Location is fully remote US and comp is listed, but she must live in a state where Airbnb has a registered entity, and she is in Austin, TX, which should be confirmed.",
       "seniority_match": false
     }
   },
