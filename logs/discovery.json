@@ -1,44 +1,31 @@
 {
-  "time": "2026-10-23T21:19:44.170082+00:00",
-  "full_sweep": true,
-  "boards_tried": 2690,
-  "boards_ok": 2688,
-  "jobs_seen": 85933,
-  "jobs_kept": 85933,
+  "time": "2026-10-24T00:25:25.724980+00:00",
+  "full_sweep": false,
+  "boards_tried": 119,
+  "boards_ok": 119,
+  "jobs_seen": 8695,
+  "jobs_kept": 8695,
   "by_ats": {
     "ashby": {
-      "tried": 1649,
-      "ok": 1648,
-      "errors": 1,
-      "jobs": 35858
+      "tried": 78,
+      "ok": 78,
+      "errors": 0,
+      "jobs": 5480
     },
     "greenhouse": {
-      "tried": 1014,
-      "ok": 1013,
-      "errors": 1,
-      "jobs": 42391
+      "tried": 36,
+      "ok": 36,
+      "errors": 0,
+      "jobs": 3118
     },
     "lever": {
-      "tried": 27,
-      "ok": 27,
+      "tried": 5,
+      "ok": 5,
       "errors": 0,
-      "jobs": 7684
+      "jobs": 97
     }
   },
-  "errors": [
-    {
-      "ats": "ashby",
-      "slug": "ellamind",
-      "error": "https://api.ashbyhq.com/posting-api/job-board/ellamind?includeCompensation=true",
-      "kind": "not_found"
-    },
-    {
-      "ats": "greenhouse",
-      "slug": "nothing",
-      "error": "https://boards-api.greenhouse.io/v1/boards/nothing/jobs?content=true",
-      "kind": "not_found"
-    }
-  ],
+  "errors": [],
   "watchlist_unresolved": [
     "1047 Games",
     "37signals",

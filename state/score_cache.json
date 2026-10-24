@@ -386,6 +386,19 @@
       "seniority_match": true
     }
   },
+  "ashby:Plaid:5b5ff8c1-f0c2-41b6-958a-dad63a71d784": {
+    "hash": "f6063a45f2ade3ea",
+    "result": {
+      "comp_if_listed": "$160.8K - $240K",
+      "deal_breakers_hit": [
+        "Role is not moving in the AI direction"
+      ],
+      "fit_score": 38,
+      "location_ok": true,
+      "reasoning": "This is a core product marketing role (messaging, positioning, ICPs, launch strategy, pricing and TAM input) for Plaid's Credit product, with sales enablement as one of five responsibilities. Bre's Meta enablement work (the knowledge repository overhaul with 71% traffic growth, the 0-to-1 video platform, and the sales hub rebuild) supports only the enablement and cross-functional partnership pieces. She has no credit or lending domain experience and no evidence of owning product messaging, positioning or launch strategy at a B2B software company. The role is not AI-forward and is not systems building, so it reads as an executor-style PMM seat where she would present as a builder, which is a weak spot in her search data. The listed remote option and the high comp keep location fine, and Plaid has no well-known reputation problem.",
+      "seniority_match": true
+    }
+  },
   "ashby:Plaid:6466dc3d-8717-4be3-ad86-121ad0e43c04": {
     "hash": "c9bd27aacdfe1128",
     "result": {
