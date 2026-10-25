@@ -1,38 +1,31 @@
 {
-  "time": "2026-10-24T21:31:34.755718+00:00",
-  "full_sweep": true,
-  "boards_tried": 2688,
-  "boards_ok": 2687,
-  "jobs_seen": 85954,
-  "jobs_kept": 85954,
+  "time": "2026-10-25T00:09:29.253387+00:00",
+  "full_sweep": false,
+  "boards_tried": 119,
+  "boards_ok": 119,
+  "jobs_seen": 8692,
+  "jobs_kept": 8692,
   "by_ats": {
     "ashby": {
-      "tried": 1648,
-      "ok": 1648,
+      "tried": 78,
+      "ok": 78,
       "errors": 0,
-      "jobs": 35842
+      "jobs": 5474
     },
     "greenhouse": {
-      "tried": 1013,
-      "ok": 1012,
-      "errors": 1,
-      "jobs": 42418
+      "tried": 36,
+      "ok": 36,
+      "errors": 0,
+      "jobs": 3121
     },
     "lever": {
-      "tried": 27,
-      "ok": 27,
+      "tried": 5,
+      "ok": 5,
       "errors": 0,
-      "jobs": 7694
+      "jobs": 97
     }
   },
-  "errors": [
-    {
-      "ats": "greenhouse",
-      "slug": "bluecrestcapitalmanagement",
-      "error": "https://boards-api.greenhouse.io/v1/boards/bluecrestcapitalmanagement/jobs?content=true",
-      "kind": "not_found"
-    }
-  ],
+  "errors": [],
   "watchlist_unresolved": [
     "1047 Games",
     "37signals",
