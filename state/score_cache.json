@@ -2029,6 +2029,39 @@
       "seniority_match": true
     }
   },
+  "ashby:lorikeet:078c3133-7512-4f62-9b34-fda0434a09e1": {
+    "hash": "285daea69397450e",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 58,
+      "location_ok": true,
+      "reasoning": "This is an AI-native, remote US role that rewards adoption coaching, working in the product, and partnering with engineers, which lines up with her Meta knowledge infrastructure work (the sales hub search rebuild led through Eng, UX and Design, and the Metamate retrieval troubleshooting with the Gen AI team) and her Claude certifications and Hours & Co. builds (Deal Dossier, Whispuur). Teaching customer teams to build and improve Concierge themselves resembles her onboarding and adoption work for 3,000+ reps. The gaps are that it is customer-facing account management with expansion and usage-against-contract ownership, which she has not done with external customers, and it needs hands-on agent building and API and log debugging at a Series A startup, where interviewers have said she needs more applied AI depth. The title and scope read as a mid-level individual contributor role rather than Manager or Director, though it is a systems-building role, and comp is not listed.",
+      "seniority_match": true
+    }
+  },
+  "ashby:lorikeet:196faad7-457f-4b99-aace-617e660a6188": {
+    "hash": "66c89a5562752b68",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 50,
+      "location_ok": true,
+      "reasoning": "The role is AI-native and senior, and it rewards building in the product with Claude Code plus coaching others, which echoes Bre's Metamate retrieval troubleshooting with Gen AI engineering, the search-diagnosis rebuild led with Eng/UX/Design, and her own AI products at Hours & Co. (Deal Dossier, Whispuur) and Claude certifications. The core function is different, though: it is executive-facing account ownership for enterprise customers, with expansion, retention, procurement and security reviews, and no Meta proof point shows her owning external customer revenue or deploying customer-facing AI agents in regulated fintech or health settings. Building playbooks and coaching other FDPMs fits her enablement background, but the hands-on production deployment work is a risk, and the NYC hybrid four days a week has comp unlisted (base, equity and variable only), so check comp.",
+      "seniority_match": true
+    }
+  },
+  "ashby:lorikeet:fdd30368-c3a4-4431-91a8-5ebe30f1ec99": {
+    "hash": "5b484c4172625556",
+    "result": {
+      "comp_if_listed": null,
+      "deal_breakers_hit": [],
+      "fit_score": 50,
+      "location_ok": true,
+      "reasoning": "This is an AI-native, remote US role that rewards building with AI (Claude Code, agent tuning) and cross-functional work with Eng, which matches her Meta work partnering with Gen AI engineering on Metamate retrieval, her search diagnosis and rebuild with Eng/UX, and her Hours & Co. products (Deal Dossier with LLM classification, Whispuur). Senior IC scope with a strategic-account and systems-building flavor fits her seniority. Core function is a gap, though: the role is mainly customer-facing account ownership, executive relationships, renewals and expansion, plus procurement/security/legal reviews, and she has no external enterprise customer account ownership or regulated fintech/health deployment history. Her Meta work was internal enablement, so this is a risk and she would be reading as a builder into an account-owner role. Comp is not listed.",
+      "seniority_match": true
+    }
+  },
   "ashby:lucidlink:ef83087d-036d-4dd3-98d2-0c2818117006": {
     "hash": "e4845148012fb74d",
     "result": {
