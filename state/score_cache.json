@@ -2725,6 +2725,17 @@
       "seniority_match": true
     }
   },
+  "greenhouse:Brex:8914950002": {
+    "hash": "0191e327f6d148bf",
+    "result": {
+      "comp_if_listed": "$221,480 to $276,850",
+      "deal_breakers_hit": [],
+      "fit_score": 8,
+      "location_ok": true,
+      "reasoning": "This is a paid media and performance marketing leadership role that requires managing $30M+ in annual ad spend, deep CTV, programmatic and paid social buying, and media mix and incrementality work. Bre has none of that in her history. Her Meta enablement and knowledge infrastructure work, cross-functional Eng and Data partnership, and AI tool experience overlap only with the minor AI-enabled workflow and measurement-reporting pieces. The core function gap is central and large, so this is a weak fit despite the Director seniority and AI-native company context. The NYC location comp is clearly high at $221,480 to $276,850, so location passes, but the role is not in her target function.",
+      "seniority_match": true
+    }
+  },
   "greenhouse:Canopy Works:4465401009": {
     "hash": "f504feb1e613e38e",
     "result": {
