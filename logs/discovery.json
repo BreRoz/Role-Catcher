@@ -1,38 +1,31 @@
 {
-  "time": "2026-10-25T21:38:33.074978+00:00",
-  "full_sweep": true,
-  "boards_tried": 2687,
-  "boards_ok": 2686,
-  "jobs_seen": 85939,
-  "jobs_kept": 85939,
+  "time": "2026-10-26T00:00:22.645668+00:00",
+  "full_sweep": false,
+  "boards_tried": 119,
+  "boards_ok": 119,
+  "jobs_seen": 8691,
+  "jobs_kept": 8691,
   "by_ats": {
     "ashby": {
-      "tried": 1648,
-      "ok": 1648,
+      "tried": 78,
+      "ok": 78,
       "errors": 0,
-      "jobs": 35837
+      "jobs": 5469
     },
     "greenhouse": {
-      "tried": 1012,
-      "ok": 1011,
-      "errors": 1,
-      "jobs": 42407
+      "tried": 36,
+      "ok": 36,
+      "errors": 0,
+      "jobs": 3125
     },
     "lever": {
-      "tried": 27,
-      "ok": 27,
+      "tried": 5,
+      "ok": 5,
       "errors": 0,
-      "jobs": 7695
+      "jobs": 97
     }
   },
-  "errors": [
-    {
-      "ats": "greenhouse",
-      "slug": "bitcoindepot",
-      "error": "https://boards-api.greenhouse.io/v1/boards/bitcoindepot/jobs?content=true",
-      "kind": "not_found"
-    }
-  ],
+  "errors": [],
   "watchlist_unresolved": [
     "1047 Games",
     "37signals",
