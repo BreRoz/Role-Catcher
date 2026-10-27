@@ -127,7 +127,9 @@ def complete(
         {"role": "system", "content": _system_content(system_cached, cfg["prompt_cache_ttl"])},
         {"role": "user", "content": user},
     ]
-    kwargs: dict = {}
+    # OpenRouter reserves credit for the full max_tokens up front (the model's
+    # 65k default would reserve ~$3), so cap it near the real reply size.
+    kwargs: dict = {"max_tokens": cfg.get("max_tokens", 4096)}
     if schema:
         kwargs["response_format"] = {
             "type": "json_schema",
