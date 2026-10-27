@@ -1,31 +1,44 @@
 {
-  "time": "2026-10-26T18:33:22.937987+00:00",
-  "full_sweep": false,
-  "boards_tried": 119,
-  "boards_ok": 119,
-  "jobs_seen": 8683,
-  "jobs_kept": 8683,
+  "time": "2026-10-27T16:23:31.128072+00:00",
+  "full_sweep": true,
+  "boards_tried": 2686,
+  "boards_ok": 2684,
+  "jobs_seen": 85902,
+  "jobs_kept": 85902,
   "by_ats": {
     "ashby": {
-      "tried": 78,
-      "ok": 78,
-      "errors": 0,
-      "jobs": 5456
+      "tried": 1648,
+      "ok": 1646,
+      "errors": 2,
+      "jobs": 35910
     },
     "greenhouse": {
-      "tried": 36,
-      "ok": 36,
+      "tried": 1011,
+      "ok": 1011,
       "errors": 0,
-      "jobs": 3131
+      "jobs": 42401
     },
     "lever": {
-      "tried": 5,
-      "ok": 5,
+      "tried": 27,
+      "ok": 27,
       "errors": 0,
-      "jobs": 96
+      "jobs": 7591
     }
   },
-  "errors": [],
+  "errors": [
+    {
+      "ats": "ashby",
+      "slug": "browse.ai",
+      "error": "https://api.ashbyhq.com/posting-api/job-board/browse.ai?includeCompensation=true",
+      "kind": "not_found"
+    },
+    {
+      "ats": "ashby",
+      "slug": "mintmcp",
+      "error": "https://api.ashbyhq.com/posting-api/job-board/mintmcp?includeCompensation=true",
+      "kind": "not_found"
+    }
+  ],
   "watchlist_unresolved": [
     "1047 Games",
     "37signals",
